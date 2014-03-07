@@ -2,65 +2,101 @@
 using System.Collections;
 
 public class PlatMovement : MonoBehaviour {
-	private Vector3 offset;
-	public Vector2 FirstPosition;
-	public Vector2 SecondPosition;
-	public GameObject positionDot;
-	public int secondPositionOffset = 6;
-	public bool Vertical = false;
-	public bool Moveable = false;
-	
+	public GameObject goPositionDot;
+	public GameObject goMotionLine;
+
+	private Vector2 m_firstPosition;
+	private Vector2 m_secondPosition;
+	private Vector2 m_centerPosition;
+
+	public float fltPositionOffest = 1.5f;
+
+	public bool vertical = false;
+	public bool moveable = false;
+
+	public float fltLockedPosition;
+
 	void Start () 
 	{
-		if(Moveable)
+		if(moveable)
 		{
-			FirstPosition = transform.position;
-			Debug.Log(FirstPosition);
-			if(Vertical)
+			m_firstPosition = new Vector2(transform.position.x, 
+			                              transform.position.y);
+			if(vertical)
 			{
-				SecondPosition = new Vector2(FirstPosition.x, FirstPosition.y + secondPositionOffset);
+				m_secondPosition = new Vector2(m_firstPosition.x, 
+				                             m_firstPosition.y + fltPositionOffest);
+				m_centerPosition = new Vector2(m_firstPosition.x, 
+				                             m_firstPosition.y + ((m_secondPosition.y - m_firstPosition.y)/2));
 			}
 			else
 			{
-				SecondPosition = new Vector2(FirstPosition.x + secondPositionOffset, FirstPosition.y);
+				m_secondPosition = new Vector2(m_firstPosition.x + fltPositionOffest, 
+				                             m_firstPosition.y);
+				m_centerPosition = new Vector2(m_firstPosition.x + ((m_secondPosition.x - m_firstPosition.x)/2),
+				                               m_firstPosition.y);
 			}
-			Instantiate(positionDot, FirstPosition, Quaternion.identity);
-			Instantiate(positionDot, SecondPosition, Quaternion.identity);
+			Debug.Log(m_firstPosition + " | " + m_secondPosition + " | " + m_centerPosition);
+
+			Instantiate(goPositionDot, m_firstPosition, Quaternion.identity);
+			Instantiate(goPositionDot, m_secondPosition, Quaternion.identity);
+			if(vertical)
+				Instantiate(goMotionLine, m_centerPosition, Quaternion.identity);
+			else
+				Instantiate(goMotionLine, m_centerPosition, Quaternion.Euler(0, 0, 90));
 		}
 	}
 	void Update () 
 	{
-		foreach (Touch touch in Input.touches) 
-		{
-			if (touch.phase == TouchPhase.Began)
-			{
-				Ray ray = Camera.main.ScreenPointToRay (touch.position);
-				if (Physics.Raycast (ray)) {
-					Instantiate (positionDot, transform.position, transform.rotation);
-				}
-			}
-		}
+//		foreach (Touch touch in Input.touches) 
+//		{
+//			if (touch.phase == TouchPhase.Began)
+//			{
+//				Ray ray = Camera.main.ScreenPointToRay (touch.position);
+//				if (Physics.Raycast (ray)) {
+//					Instantiate (positionDot, transform.position, transform.rotation);
+//				}
+//			}
+//		}
 	}
-	void OnMouseDown() 
-	{
-		if(Moveable)
-		{
-			offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
-		}
+	void OnMouseDown() {
+		if(vertical) 
+			fltLockedPosition = transform.position.x;
+		else
+			fltLockedPosition = transform.position.y;
+
+		Screen.showCursor = false;
 	}
 	
-	void OnMouseDrag () 
-	{
-		if(Moveable)
+	void OnMouseDrag() 
+	{ 
+		Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane);
+		Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint);
+		Debug.Log (curPosition.x);
+		if(vertical)
 		{
-			if(Vertical) 
-			{
+			curPosition.x = fltLockedPosition;
 
-			} 
-			else 
-			{
+			if(curPosition.y > m_secondPosition.y)
+				curPosition.y = m_secondPosition.y;
+			if(curPosition.y < m_firstPosition.y)
+				curPosition.y = m_firstPosition.y;
 
-			}
+			//curPosition.y += transform.GetChild(0).transform.localScale.y;
 		}
+		else
+		{
+			curPosition.y = fltLockedPosition;
+			if(curPosition.x > m_secondPosition.x)
+				curPosition.x = m_secondPosition.x;
+			if(curPosition.x < m_firstPosition.x)
+				curPosition.x = m_firstPosition.x;
+		}
+		transform.position = new Vector2 (curPosition.x, curPosition.y);
+	}
+	
+	void OnMouseUp()
+	{
+		Screen.showCursor = true;
 	}
 }
