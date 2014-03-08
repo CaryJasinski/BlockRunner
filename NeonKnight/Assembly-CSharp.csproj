@@ -46,8 +46,12 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\ButtonScript.cs" />
      <Compile Include="Assets\Scripts\ClickAndRotate.cs" />
+     <Compile Include="Assets\Scripts\CollectBehavior.cs" />
      <Compile Include="Assets\Scripts\MovePlatform.cs" />
+     <Compile Include="Assets\Scripts\ParticleBehavior.cs" />
+     <Compile Include="Assets\Scripts\PlayerScript.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
