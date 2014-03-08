@@ -7,6 +7,7 @@ public class PlayerScript: MonoBehaviour {
 	public float power;
 	public float setJumpVelocity;
 	public Texture btnTexture;
+	public Transform playerTransform;
 	int score;
 
 	// Use this for initialization
@@ -47,6 +48,23 @@ public class PlayerScript: MonoBehaviour {
 		}
 
 
+
+	}
+	void OnCollisionEnter2D(Collision2D collision)
+	{
+
+
+		if(collision.gameObject.tag == "MovablePlat")
+		{
+			playerTransform.parent = collision.gameObject.transform;
+		}
+
+
+
+	}
+	void OnCollisionExit2D(Collision2D collision)
+	{
+		this.transform.parent = null;
 
 	}
 	void OnGUI()

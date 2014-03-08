@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 616e7fe4ebf2bc0469caa7199db767e4
+guid: eda9309b55c734e4e8e2c6eff5942abc
 TextureImporter:
   serializedVersion: 2
   mipmaps:
@@ -24,13 +24,13 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 1
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -38,12 +38,152 @@ TextureImporter:
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
-  buildTargetSettings:
-  - buildTarget: iPhone
-    maxTextureSize: 1024
-    textureFormat: -2
-    compressionQuality: 50
+  buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: portal_glitchsprites_0
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 1002
+        width: 241
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: portal_glitchsprites_1
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 1011
+        width: 231
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: portal_glitchsprites_2
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 1008
+        width: 218
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: portal_glitchsprites_3
+      rect:
+        serializedVersion: 2
+        x: 997
+        y: 1008
+        width: 224
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: portal_glitchsprites_4
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 714
+        width: 261
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: portal_glitchsprites_5
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 714
+        width: 247
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: portal_glitchsprites_6
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 714
+        width: 250
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: portal_glitchsprites_7
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 714
+        width: 263
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: portal_glitchsprites_8
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 408
+        width: 258
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: portal_glitchsprites_9
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 408
+        width: 245
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: portal_glitchsprites_10
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 403
+        width: 237
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: portal_glitchsprites_11
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 408
+        width: 255
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: portal_glitchsprites_12
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 76
+        width: 242
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: portal_glitchsprites_13
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 76
+        width: 221
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: portal_glitchsprites_14
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 71
+        width: 260
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: portal_glitchsprites_15
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 76
+        width: 247
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
   spritePackingTag: 
   userData: 
