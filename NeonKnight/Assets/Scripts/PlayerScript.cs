@@ -47,6 +47,14 @@ public class PlayerScript: MonoBehaviour {
 			score += 300;
 		}
 
+		if(collider.gameObject.tag == "EndPortal"){
+			Application.LoadLevel("WinScreen");
+		}
+
+		if(collider.gameObject.tag == "KillTrigger"){
+			Application.LoadLevel("LoseScreen");
+		}
+
 
 
 	}
@@ -69,10 +77,12 @@ public class PlayerScript: MonoBehaviour {
 	}
 	void OnGUI()
 	{
-		if (GUI.Button(new Rect(10,10,50,50),btnTexture))
-		{
+		//if (GUI.Button(new Rect(10,10,50,50),btnTexture))
+		//{
 			//Add Pause/slowtime function
-		}
-		GUI.Label(new Rect(800,10,100,20),score.ToString());
+		//}
+		//GUI.Label(new Rect(800,10,100,20),score.ToString());
 	}
+
+	
 }
