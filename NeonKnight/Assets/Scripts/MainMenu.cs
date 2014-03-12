@@ -44,7 +44,7 @@ public class MainMenu : MonoBehaviour {
 		GUI.DrawTexture(new Rect(0f,0f, Screen.width, Screen.height), startScreen);
 		if (GUI.Button (new Rect(Screen.width / 2 + 50, Screen.height / 2, 300, 300),playButton, startButtonStyle))
 		    {
-			Application.LoadLevel("2DTest");
+			Application.LoadLevel("Tutorial");
 		    }
 	}
 
@@ -52,7 +52,7 @@ public class MainMenu : MonoBehaviour {
 		GUI.DrawTexture(new Rect(0f,0f, Screen.width, Screen.height), winScreen);
 		if (GUI.Button (new Rect(Screen.width / 2 - 100, Screen.height / 2 + 100, 300, 300),"Play Again?", winScreenStyle))
 		{
-			Application.LoadLevel("2DTest");
+			Application.LoadLevel("MainMenu");
 		}
 	}
 
@@ -61,7 +61,7 @@ public class MainMenu : MonoBehaviour {
 		GUI.DrawTexture(new Rect(0f,0f, Screen.width, Screen.height), gameOverScreen);
 		if (GUI.Button (new Rect(Screen.width / 2 - 100, Screen.height / 2 + 100, 300, 300),"Try Again?", winScreenStyle))
 		{
-			Application.LoadLevel("2DTest");
+			Application.LoadLevel("MainMenu");
 		}
 	}
 

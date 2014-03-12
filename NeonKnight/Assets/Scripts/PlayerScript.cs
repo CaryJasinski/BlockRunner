@@ -10,6 +10,7 @@ public class PlayerScript: MonoBehaviour {
 	public Transform playerTransform;
 	int score;
 
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -47,12 +48,20 @@ public class PlayerScript: MonoBehaviour {
 			score += 300;
 		}
 
-		if(collider.gameObject.tag == "EndPortal"){
+		if(collider.gameObject.tag == "EndPortalTutorial"){
+			Application.LoadLevel("LevelOne");
+		}
+
+		if(collider.gameObject.tag == "EndPortalLevelOne"){
+			Application.LoadLevel("LevelTwo");
+		}
+
+		if(collider.gameObject.tag == "EndPortalLevelTwo"){
 			Application.LoadLevel("WinScreen");
 		}
 
 		if(collider.gameObject.tag == "KillTrigger"){
-			Application.LoadLevel("LoseScreen");
+			//
 		}
 
 
@@ -81,7 +90,8 @@ public class PlayerScript: MonoBehaviour {
 		//{
 			//Add Pause/slowtime function
 		//}
-		//GUI.Label(new Rect(800,10,100,20),score.ToString());
+		GUI.Label(new Rect (800, 10, 100, 20), "Score: "+score+"");
+		GUI.Label(new Rect (0, 10, 100, 20),"Lives: "+lives+"");
 	}
 
 	
