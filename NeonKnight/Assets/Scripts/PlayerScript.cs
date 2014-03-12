@@ -8,91 +8,72 @@ public class PlayerScript: MonoBehaviour {
 	public float setJumpVelocity;
 	public Texture btnTexture;
 	public Transform playerTransform;
+	private Vector2 m_startingPosition;
+	public GUISkin NeonKnightGUI;
 	int score;
 
+	private PlayerManager m_playerManager;
 
 	// Use this for initialization
 	void Start () 
 	{
-
+		m_startingPosition = transform.position;
+		m_playerManager = GameObject.FindGameObjectWithTag("PlayerManager").GetComponent<PlayerManager>();
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
 		if(this.rigidbody2D.velocity.magnitude <= maxPower)
-		{
-		this.rigidbody2D.AddForce(gameObject.transform.right*power);
-		}
-
-
+			this.rigidbody2D.AddForce(gameObject.transform.right*power);
 	}
 	void OnTriggerEnter2D(Collider2D collider)
 	{
-		float jumpVelocity = setJumpVelocity;
-		Vector2 currentVelocity = this.rigidbody2D.velocity;
+				float jumpVelocity = setJumpVelocity;
+				Vector2 currentVelocity = this.rigidbody2D.velocity;
 
-		if(collider.gameObject.tag == "JumpPad")
-		{
+				if (collider.gameObject.tag == "JumpPad")
+						this.rigidbody2D.velocity = new Vector2 (currentVelocity.x, jumpVelocity);
 
-			this.rigidbody2D.velocity = new Vector2(currentVelocity.x,jumpVelocity);
+				if (collider.gameObject.tag == "SmallCollect")
+						score += 100;
+				if (collider.gameObject.tag == "LargeCollect")
+						score += 300;
+	
+				if (collider.gameObject.tag == "KillTrigger") {
+						transform.position = m_startingPosition;
+						m_playerManager.SendMessage ("deductLife");
+				}
+
+				if (collider.gameObject.tag == "EndPortalTutorial") {
+						Application.LoadLevel ("LevelOne");
+				}
+		
+				if (collider.gameObject.tag == "EndPortalLevelOne") {
+						Application.LoadLevel ("LevelTwo");
+				}
+		
+				if (collider.gameObject.tag == "EndPortalLevelTwo") {
+						Application.LoadLevel ("WinScreen");
+				}
+
 		}
-
-
-		if(collider.gameObject.tag == "SmallCollect")
-		{
-			score += 100;
-		}
-		if(collider.gameObject.tag == "LargeCollect")
-		{
-			score += 300;
-		}
-
-		if(collider.gameObject.tag == "EndPortalTutorial"){
-			Application.LoadLevel("LevelOne");
-		}
-
-		if(collider.gameObject.tag == "EndPortalLevelOne"){
-			Application.LoadLevel("LevelTwo");
-		}
-
-		if(collider.gameObject.tag == "EndPortalLevelTwo"){
-			Application.LoadLevel("WinScreen");
-		}
-
-		if(collider.gameObject.tag == "KillTrigger"){
-			//
-		}
-
-
-
-	}
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-
-
 		if(collision.gameObject.tag == "MovablePlat")
-		{
 			playerTransform.parent = collision.gameObject.transform;
-		}
-
-
-
 	}
 	void OnCollisionExit2D(Collision2D collision)
 	{
 		this.transform.parent = null;
-
 	}
 	void OnGUI()
 	{
+		GUI.skin = NeonKnightGUI;
 		//if (GUI.Button(new Rect(10,10,50,50),btnTexture))
 		//{
 			//Add Pause/slowtime function
 		//}
-		GUI.Label(new Rect (800, 10, 100, 20), "Score: "+score+"");
-		GUI.Label(new Rect (0, 10, 100, 20),"Lives: "+lives+"");
+		GUI.Label(new Rect (Screen.width / 2 - 100, 10, 200, 200), "Score: "+score+"");
 	}
-
-	
 }
