@@ -13,6 +13,9 @@ public class HorizontalPlatformBehavior : MonoBehaviour {
 	Vector2 currentPosition;
 	
 	public float fltSolutionOffset = 5.0f;
+
+	public Vector2 GetStartPosition(){ return m_startPosition; }
+	public Vector2 GetSolutionPosition(){ return m_solutionPosition; }
 	
 	void Start () 
 	{
@@ -26,7 +29,7 @@ public class HorizontalPlatformBehavior : MonoBehaviour {
 		
 		displayPath();
 	}
-	
+
 	void LateUpdate () 
 	{
 		

@@ -13,12 +13,14 @@ public class PlayerScript: MonoBehaviour {
 	int score;
 
 	private PlayerManager m_playerManager;
+	private PlatformManager m_platformManager;
 
 	// Use this for initialization
 	void Start () 
 	{
 		m_startingPosition = transform.position;
-		m_playerManager = GameObject.FindGameObjectWithTag("PlayerManager").GetComponent<PlayerManager>();
+		m_playerManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<PlayerManager>();
+		m_platformManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<PlatformManager>();
 	}
 	
 	// Update is called once per frame
@@ -43,6 +45,7 @@ public class PlayerScript: MonoBehaviour {
 				if (collider.gameObject.tag == "KillTrigger") {
 						transform.position = m_startingPosition;
 						m_playerManager.SendMessage ("deductLife");
+						m_platformManager.SendMessage("ResetPlatformPositions");
 				}
 
 				if (collider.gameObject.tag == "EndPortalTutorial") {

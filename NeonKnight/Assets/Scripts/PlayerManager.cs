@@ -4,18 +4,21 @@ using System.Collections;
 public class PlayerManager : MonoBehaviour {
 	public int intPlayerLives = 5;
 	public GUISkin NeonKnightGUI;
-	
+
+	void Start ()
+	{
+		intPlayerLives *= 2;
+	}
 	public void deductLife()
 	{
-		if(intPlayerLives > 0)
-			intPlayerLives--;
-		else
+		intPlayerLives--;
+		if(intPlayerLives <= 0)
 			Application.LoadLevel("LoseScreen");
 	}
 
 	void OnGUI()
 	{
 		GUI.skin = NeonKnightGUI;
-		GUI.Label(new Rect (0, 10, 200, 200), "Lives: "+intPlayerLives+"");
+		GUI.Label(new Rect (0, 10, 200, 200), "Lives: " + intPlayerLives/2 + "");
 	}
 }
