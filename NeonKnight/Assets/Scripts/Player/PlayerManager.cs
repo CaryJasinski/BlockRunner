@@ -19,6 +19,6 @@ public class PlayerManager : MonoBehaviour {
 	void OnGUI()
 	{
 		GUI.skin = NeonKnightGUI;
-		GUI.Label(new Rect (0, 10, 200, 200), "Lives: " + intPlayerLives/2 + "");
+		GUI.Label(new Rect (0, 0, 170, 50), "Lives: " + intPlayerLives/2 + "");
 	}
 }

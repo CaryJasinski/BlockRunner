@@ -77,6 +77,6 @@ public class PlayerScript: MonoBehaviour {
 		//{
 			//Add Pause/slowtime function
 		//}
-		GUI.Label(new Rect (Screen.width / 2 - 100, 10, 200, 200), "Score: "+score+"");
+		GUI.Label(new Rect (Screen.width / 2 - 100, 10, 200, 50), "Score: "+score+"");
 	}
 }
