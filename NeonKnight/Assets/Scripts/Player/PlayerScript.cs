@@ -49,11 +49,11 @@ public class PlayerScript: MonoBehaviour {
 				}
 
 				if (collider.gameObject.tag == "EndPortalTutorial") {
-						Application.LoadLevel ("LevelOne");
+						Application.LoadLevel ("Level One");
 				}
 		
 				if (collider.gameObject.tag == "EndPortalLevelOne") {
-						Application.LoadLevel ("LevelTwo");
+						Application.LoadLevel ("Level Two");
 				}
 		
 				if (collider.gameObject.tag == "EndPortalLevelTwo") {

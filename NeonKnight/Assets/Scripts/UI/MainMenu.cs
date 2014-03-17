@@ -44,31 +44,31 @@ public class MainMenu : MonoBehaviour {
 	
 	void showTitleScreen(){
 		GUI.DrawTexture(new Rect(0f,0f, Screen.width, Screen.height), startScreen);
-		if (GUI.Button (new Rect(Screen.width/ 2 - 150, Screen.height/2 + 20, 1024, 288),""))
+		if (GUI.Button (new Rect(Screen.width/ 2 - 200, Screen.height/2, 750, 250),""))
 		    {
 			Application.LoadLevel("Tutorial");
 		    }
-		GUI.Label(new Rect(Screen.width/2 - 100, Screen.height/2 - 100, 1024,576), playButton);
+		GUI.Label(new Rect(Screen.width/2 - 100, Screen.height/2 - 170, 600,576), playButton);
 	}
 
 	void showWinScreen(){
 		GUI.DrawTexture(new Rect(0f,0f, Screen.width, Screen.height), winScreen);
-		if (GUI.Button (new Rect(Screen.width/2 - 535, Screen.height/2 + 120, 1024, 288),""))
+		if (GUI.Button (new Rect(Screen.width/2 - 535, Screen.height/2, 1024, 288),""))
 		{
 			Application.LoadLevel("MainMenu");
 		}
 
-		GUI.Label(new Rect(Screen.width/2 - 512, Screen.height/2, 1024,576), playAgain);
+		GUI.Label(new Rect(Screen.width/2 - 512, Screen.height/2 - 150, 1024,576), playAgain);
 	}
 
 
 	void showLoseScreen(){
 		GUI.DrawTexture(new Rect(0f,0f, Screen.width, Screen.height), gameOverScreen);
-		if (GUI.Button (new Rect(Screen.width/ 2 - 535, Screen.height/ 2 + 120, 1024, 288),""))
+		if (GUI.Button (new Rect(Screen.width/ 2 - 535, Screen.height/ 2, 1024, 288),""))
 		{
 			Application.LoadLevel("MainMenu");
 		}
-		GUI.Label(new Rect(Screen.width/2 - 512, Screen.height/2, 1024,576), tryAgain);
+		GUI.Label(new Rect(Screen.width/2 - 512, Screen.height/2 - 150, 1024,576), tryAgain);
 	}
 
 	
