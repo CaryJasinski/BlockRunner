@@ -57,7 +57,19 @@ public class PlayerScript: MonoBehaviour {
 				}
 		
 				if (collider.gameObject.tag == "EndPortalLevelTwo") {
-						Application.LoadLevel ("WinScreen");
+						Application.LoadLevel ("Level Three");
+				} 
+
+				if (collider.gameObject.tag == "EndPortalLevelThree") {
+						Application.LoadLevel ("Level Four");
+				}
+
+				if (collider.gameObject.tag == "EndPortalLevelFour") {
+						Application.LoadLevel ("Level Five");
+				}
+
+				if (collider.gameObject.tag == "EndPortalLevelFive") {
+					Application.LoadLevel ("WinScreen");
 				}
 
 		}

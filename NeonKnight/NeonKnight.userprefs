@@ -1,10 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UI\LevelDisplay.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\PlayerScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\UI\MainMenu.cs" Line="35" Column="4" />
-      <File FileName="Assets\Scripts\Player\PlayerScript.cs" Line="80" Column="49" />
-      <File FileName="Assets\Scripts\UI\LevelDisplay.cs" Line="10" Column="83" />
+      <File FileName="Assets\Scripts\GameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI\MainMenu.cs" Line="32" Column="4" />
+      <File FileName="Assets\Scripts\Player\PlayerScript.cs" Line="71" Column="55" />
       <File FileName="Assets\Scripts\Player\PlayerManager.cs" Line="22" Column="31" />
     </Files>
   </MonoDevelop.Ide.Workbench>
