@@ -47,7 +47,7 @@ public class MainMenu : MonoBehaviour {
 		if (GUI.Button (new Rect(Screen.width/ 2 - 200, Screen.height/2, 750, 250),""))
 		    {
 			///Application.LoadLevel("Tutorial");
-			     Application.LoadLevel("Level One");
+			     Application.LoadLevel("Level 1-1");
 		    }
 		GUI.Label(new Rect(Screen.width/2 - 100, Screen.height/2 - 170, 600,576), playButton);
 	}
