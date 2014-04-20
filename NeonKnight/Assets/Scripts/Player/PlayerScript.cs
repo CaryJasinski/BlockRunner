@@ -6,7 +6,6 @@ public class PlayerScript: MonoBehaviour
 	public float fltMoveSpeed = 4;
 	public float fltJumpHeight = 10;
 	public Vector3 StartingPosition;
-	public GUISkin NeonKnightGUI;
 	
 	void Start () 
 	{
