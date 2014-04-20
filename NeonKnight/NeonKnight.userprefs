@@ -1,10 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UI\MainMenu.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\KillVolume.cs">
     <Files>
-      <File FileName="Assets\Scripts\Player\PlayerScript.cs" Line="95" Column="1" />
-      <File FileName="Assets\Scripts\Player\PlayerManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UI\MainMenu.cs" Line="77" Column="1" />
+      <File FileName="Assets\Scripts\Player\PlayerScript.cs" Line="8" Column="16" />
+      <File FileName="Assets\Scripts\GameManager.cs" Line="36" Column="2" />
+      <File FileName="Assets\Scripts\EndPortal.cs" Line="15" Column="4" />
+      <File FileName="Assets\Scripts\KillVolume.cs" Line="20" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

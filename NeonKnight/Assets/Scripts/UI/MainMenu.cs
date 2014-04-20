@@ -12,17 +12,6 @@ public class MainMenu : MonoBehaviour {
 	public Texture2D tryAgain;
 	public GUISkin NeonKnightGUI;
 
-	
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-	
 	void OnGUI(){
 
 		GUI.skin = NeonKnightGUI;
