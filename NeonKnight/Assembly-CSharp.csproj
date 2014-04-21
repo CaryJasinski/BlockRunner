@@ -46,14 +46,14 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\AnimationBehavior.cs" />
-     <Compile Include="Assets\Scripts\CameraLock.cs" />
-     <Compile Include="Assets\Scripts\CollectBehavior.cs" />
-     <Compile Include="Assets\Scripts\EndPortal.cs" />
-     <Compile Include="Assets\Scripts\EndPortalBehavior.cs" />
-     <Compile Include="Assets\Scripts\GameManager.cs" />
-     <Compile Include="Assets\Scripts\KillVolume.cs" />
-     <Compile Include="Assets\Scripts\ParticleBehavior.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\AnimationBehavior.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\CameraLock.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\CollectBehavior.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\EndPortal.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\EndPortalBehavior.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\GameManager.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\KillVolume.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\ParticleBehavior.cs" />
      <Compile Include="Assets\Scripts\Platforms\ClickAndRotate.cs" />
      <Compile Include="Assets\Scripts\Platforms\HorizontalPlatformBehavior.cs" />
      <Compile Include="Assets\Scripts\Platforms\MovePlatform.cs" />

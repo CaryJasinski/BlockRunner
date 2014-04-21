@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour {
 
 	public GameObject Player;
 	private PlayerScript m_playerScript;
-	public int intScore = 0;
+	public int intCollectibles = 0;
 	public int intPlayerLives = 5;
 	private GameObject[] m_moveablePlatforms;
 
@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour {
 	{
 		GUI.skin = NeonKnightGUI;
 		GUI.Label(new Rect (0, 0, 170, 50), "Lives: " + intPlayerLives/2 + "");
-		GUI.Label(new Rect (Screen.width / 2 - 100, 10, 200, 50), "Score: " + intScore + "");
+		GUI.Label(new Rect (Screen.width / 2 - 100, 10, 200, 50), ""+ intCollectibles +" out of 10");
 	}
 
 	public void KillPlayer()
@@ -52,16 +52,32 @@ public class GameManager : MonoBehaviour {
 				platform.transform.position = platform.GetComponent<VerticalPlatformBehavior>().GetStartPosition();
 		}
 	}
-	void IncreaseScore(Collider2D collider)
+	public void IncreaseScore()
 	{
-		switch(collider.tag)
-		{
-		case "SmallCollect":
-			intScore += 100;
-			break;
-		case "LargeCollect":
-			intScore += 300;
-			break;
-		}
+		if( m_playerScript.triggerCollectionSmall)
+			 intCollectibles += 1;
+		      m_playerScript.triggerCollectionSmall = false;
+
+		if(m_playerScript.triggerCollectionLarge)
+			  intCollectibles += 1;
+		       m_playerScript.triggerCollectionLarge = false;
 	}
+
+
+
+	//OLD
+//	public void IncreaseScore(Collider2D collider)
+//	{
+//		switch(collider.tag)
+//		{
+//		case "SmallCollect":
+//			if(m_playerScript.triggerCollectionSmall)
+//				intCollectibles += 1;
+//			break;
+//		case "LargeCollect":
+//			if(m_playerScript.triggerCollectionLarge)
+//				intCollectibles += 1;
+//			break;
+//		}
+//	}
 }
