@@ -20,6 +20,10 @@ public class MainMenu : MonoBehaviour {
 			showTitleScreen();
 		}
 
+		if (Application.loadedLevelName == "MainMenuPrototype") {
+			show3DTitle();		
+		}
+
 		if(Application.loadedLevelName == "WinScreen"){
 			showWinScreen();
 		}
@@ -39,6 +43,10 @@ public class MainMenu : MonoBehaviour {
 			     Application.LoadLevel("Level 1-1");
 		    }
 		GUI.Label(new Rect(Screen.width/2 - 100, Screen.height/2 - 170, 600,576), playButton);
+	}
+
+	void show3DTitle(){
+		GUI.Label(new Rect(Screen.width/2 - 300, Screen.height/2 - 50, 1024,300), "Swipe To Begin!");
 	}
 
 	void showWinScreen(){
