@@ -52,32 +52,18 @@ public class GameManager : MonoBehaviour {
 				platform.transform.position = platform.GetComponent<VerticalPlatformBehavior>().GetStartPosition();
 		}
 	}
-	public void IncreaseScore()
+
+	public void IncreaseScore(Collider2D collider)
 	{
-		if( m_playerScript.triggerCollectionSmall)
-			 intCollectibles += 1;
-		      m_playerScript.triggerCollectionSmall = false;
-
-		if(m_playerScript.triggerCollectionLarge)
-			  intCollectibles += 1;
-		       m_playerScript.triggerCollectionLarge = false;
+		//Debug.Log (collider.tag); 
+		switch(collider.tag)
+		{
+		case "SmallCollect":
+			intCollectibles += 1;
+			break;
+		case "LargeCollect":
+			intCollectibles += 1;
+			break;
+		}
 	}
-
-
-
-	//OLD
-//	public void IncreaseScore(Collider2D collider)
-//	{
-//		switch(collider.tag)
-//		{
-//		case "SmallCollect":
-//			if(m_playerScript.triggerCollectionSmall)
-//				intCollectibles += 1;
-//			break;
-//		case "LargeCollect":
-//			if(m_playerScript.triggerCollectionLarge)
-//				intCollectibles += 1;
-//			break;
-//		}
-//	}
 }

@@ -8,15 +8,13 @@ public class PlayerScript: MonoBehaviour
 	public Vector3 StartingPosition;
 	public bool triggerCollectionSmall = false;
 	public bool triggerCollectionLarge = false;
-
-	public GameObject GameManager;
+	
 	private GameManager m_gameManager;
 	
 	void Start () 
 	{	
 		StartingPosition = transform.position;
-		GameManager = GameObject.Find("GameManager"); 
-		m_gameManager = GameManager.GetComponent<GameManager>();
+		m_gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 	}
 
 	void Update () 
@@ -28,19 +26,7 @@ public class PlayerScript: MonoBehaviour
 		if (collider.CompareTag ("JumpPad"))
 			this.rigidbody2D.velocity = new Vector2 (fltMoveSpeed, fltJumpHeight);
 
-		switch (collider.tag) 
-		{
-			case "SmallCollect":
-				triggerCollectionSmall = true;
-				m_gameManager.IncreaseScore();
-				break;
-
-			case "LargeCollect":
-				triggerCollectionLarge = true;
-			    m_gameManager.IncreaseScore();
-				break;
-		}
-		
+		m_gameManager.IncreaseScore (collider);
 	}
 	
 	void OnCollisionEnter2D(Collision2D collision)

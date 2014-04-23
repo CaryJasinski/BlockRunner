@@ -41,7 +41,6 @@ public class MenuPlatformSwipe : MonoBehaviour {
 	{
 		if (transform.position.x == m_solutionPosition.x) 
 		{
-			Debug.Log ("It Worked!");
 			Application.LoadLevel("Level 1-1");
 		}
 	}

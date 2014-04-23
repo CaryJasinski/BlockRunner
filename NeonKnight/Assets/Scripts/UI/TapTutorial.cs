@@ -12,11 +12,15 @@ public class TapTutorial : MonoBehaviour {
 	void Update () {
 	
 	}
-	void OnDrag( DragGesture gesture ) 
+	void OnTap(TapGesture gesture)
 	{
-		if( gesture.Selection )
-			Debug.Log( "Dragged object: " + gesture.Selection.name );
-		else
-			Debug.Log( "No object was dragged at " + gesture.Position );
+		Debug.Log (gesture.Selection.name);
 	}
+//	void OnDrag( DragGesture gesture ) 
+//	{
+//		if( gesture.Selection )
+//			Debug.Log( "Dragged object: " + gesture.Selection.name );
+//		else
+//			Debug.Log( "No object was dragged at " + gesture.Position );
+//	}
 }

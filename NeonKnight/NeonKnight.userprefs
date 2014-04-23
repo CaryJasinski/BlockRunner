@@ -1,12 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Gameplay\GameManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Gameplay\CollectBehavior.cs">
     <Files>
-      <File FileName="Assets\Scripts\Player\PlayerScript.cs" Line="40" Column="8" />
-      <File FileName="Assets\Scripts\Gameplay\GameManager.cs" Line="60" Column="3" />
-      <File FileName="Assets\Scripts\Platforms\HorizontalPlatformBehavior.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UI\MenuPlatformSwipe.cs" Line="22" Column="15" />
-      <File FileName="Assets\Scripts\Gameplay\CollectBehavior.cs" Line="26" Column="41" />
+      <File FileName="Assets\Scripts\UI\TapTutorial.cs" Line="27" Column="1" />
+      <File FileName="Assets\Scripts\Player\PlayerScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Gameplay\GameManager.cs" Line="58" Column="5" />
+      <File FileName="Assets\Scripts\Gameplay\CollectBehavior.cs" Line="9" Column="32" />
+      <File FileName="Assets\Scripts\Gameplay\KillVolume.cs" Line="20" Column="1" />
+      <File FileName="Assets\Plugins\FingerGestures\Scripts\Finger Event Detectors\FingerDownDetector.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Platforms\HorizontalPlatformBehavior.cs" Line="13" Column="26" />
+      <File FileName="Assets\Plugins\FingerGestures\Readme.txt" Line="16" Column="4" />
+      <File FileName="Assets\Plugins\FingerGestures\Scripts\FingerGestures.cs" Line="146" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
