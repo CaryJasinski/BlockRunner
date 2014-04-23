@@ -21,19 +21,19 @@ public class PlayerScript: MonoBehaviour
 	{
 		this.rigidbody2D.velocity = new Vector2(fltMoveSpeed, this.rigidbody2D.velocity.y);
 	}
+
 	void OnTriggerEnter2D(Collider2D collider)
 	{
 		if (collider.CompareTag ("JumpPad"))
 			this.rigidbody2D.velocity = new Vector2 (fltMoveSpeed, fltJumpHeight);
-
-		m_gameManager.IncreaseScore (collider);
 	}
-	
+
 	void OnCollisionEnter2D(Collision2D collision)
 	{
 		if(collision.gameObject.tag == "MovablePlat")
 			this.transform.parent = collision.gameObject.transform;
 	}
+
 	void OnCollisionExit2D(Collision2D collision)
 	{
 		this.transform.parent = null;

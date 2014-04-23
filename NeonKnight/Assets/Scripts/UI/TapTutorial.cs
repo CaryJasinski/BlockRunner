@@ -14,7 +14,7 @@ public class TapTutorial : MonoBehaviour {
 	}
 	void OnTap(TapGesture gesture)
 	{
-		Debug.Log (gesture.Selection.name);
+		//Debug.Log (gesture.Selection.name);
 	}
 //	void OnDrag( DragGesture gesture ) 
 //	{

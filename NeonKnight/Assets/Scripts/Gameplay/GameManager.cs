@@ -8,12 +8,14 @@ public class GameManager : MonoBehaviour {
 	public int intCollectibles = 0;
 	public int intPlayerLives = 5;
 	private GameObject[] m_moveablePlatforms;
+	private GameObject[] m_collectibles;
 
 	public GUISkin NeonKnightGUI;
 
 	void Start () 
 	{
 		m_moveablePlatforms = GameObject.FindGameObjectsWithTag("MoveablePlatform");
+		m_collectibles = GameObject.FindGameObjectsWithTag("Collectible");
 
 		Player = GameObject.Find("NeonKnight"); 
 		m_playerScript = Player.GetComponent<PlayerScript>();
@@ -31,7 +33,7 @@ public class GameManager : MonoBehaviour {
 	{
 		GUI.skin = NeonKnightGUI;
 		GUI.Label(new Rect (0, 0, 170, 50), "Lives: " + intPlayerLives/2 + "");
-		GUI.Label(new Rect (Screen.width / 2 - 100, 10, 200, 50), ""+ intCollectibles +" out of 10");
+		GUI.Label(new Rect (Screen.width / 2 - 100, 10, 200, 50), ""+ intCollectibles +" out of "+ m_collectibles.Length);
 	}
 
 	public void KillPlayer()
@@ -53,17 +55,8 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	public void IncreaseScore(Collider2D collider)
+	public void IncreaseScore()
 	{
-		//Debug.Log (collider.tag); 
-		switch(collider.tag)
-		{
-		case "SmallCollect":
-			intCollectibles += 1;
-			break;
-		case "LargeCollect":
-			intCollectibles += 1;
-			break;
-		}
+		intCollectibles +=1;
 	}
 }

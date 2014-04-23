@@ -13,9 +13,12 @@ public class VerticalPlatformBehavior : MonoBehaviour {
 	Vector2 currentPosition;
 	
 	public float fltSolutionOffset = 5.0f;
+	public float fltSnappingSpeed = 0.5f;
 
 	public Vector2 GetStartPosition(){ return m_startPosition; }
 	public Vector2 GetSolutionPosition(){ return m_solutionPosition; }
+
+	private Vector3 velocity = Vector3.zero;
 
 	void Start () 
 	{
@@ -32,29 +35,32 @@ public class VerticalPlatformBehavior : MonoBehaviour {
 
 	void LateUpdate () 
 	{
-		
 		transform.position = new Vector2(m_startPosition.x, transform.position.y);
 		if(m_positive) 
 		{
+			if(transform.position.y < m_centerPosition.y)
+				transform.position = Vector3.SmoothDamp(transform.position, m_startPosition, ref velocity, fltSnappingSpeed);
+			else
+				transform.position = Vector3.SmoothDamp(transform.position, m_solutionPosition, ref velocity, fltSnappingSpeed);
+
 			if(this.transform.position.y >= m_solutionPosition.y)
-			{
 				this.transform.position = new Vector2(transform.position.x, m_solutionPosition.y);
-			}
+
 			if(this.transform.position.y <= m_startPosition.y)
-			{
 				this.transform.position = new Vector2(transform.position.x, m_startPosition.y);
-			}
 		}
 		else
 		{
+			if(transform.position.y < m_centerPosition.y)
+				transform.position = Vector3.SmoothDamp(transform.position, m_solutionPosition, ref velocity, fltSnappingSpeed);
+			else
+				transform.position = Vector3.SmoothDamp(transform.position, m_startPosition, ref velocity, fltSnappingSpeed);
+
 			if(this.transform.position.y >= m_startPosition.y)
-			{
 				this.transform.position = new Vector2(transform.position.x, m_startPosition.y);
-			}
+
 			if(this.transform.position.y <= m_solutionPosition.y)
-			{
 				this.transform.position = new Vector2(transform.position.x, m_solutionPosition.y);
-			}
 		}
 	}
 

@@ -13,9 +13,12 @@ public class HorizontalPlatformBehavior : MonoBehaviour {
 	Vector2 currentPosition;
 	
 	public float fltSolutionOffset = 5.0f;
+	public float fltSnappingSpeed = 1.0f;
 
 	public Vector2 GetStartPosition(){ return m_startPosition; }
 	public Vector2 GetSolutionPosition(){ return m_solutionPosition; }
+
+	private Vector3 velocity = Vector3.zero;
 	
 	void Start () 
 	{
@@ -36,6 +39,11 @@ public class HorizontalPlatformBehavior : MonoBehaviour {
 		transform.position = new Vector2(transform.position.x, m_startPosition.y);
 		if(m_positive) 
 		{
+			if(transform.position.x < m_centerPosition.x)
+				transform.position = Vector3.SmoothDamp(transform.position, m_startPosition, ref velocity, fltSnappingSpeed);
+			else
+				transform.position = Vector3.SmoothDamp(transform.position, m_solutionPosition, ref velocity, fltSnappingSpeed);
+
 			if(this.transform.position.x >= m_solutionPosition.x)
 			{
 				this.transform.position = new Vector2(m_solutionPosition.x, transform.position.y);
@@ -47,6 +55,11 @@ public class HorizontalPlatformBehavior : MonoBehaviour {
 		}
 		else
 		{
+			if(transform.position.x < m_centerPosition.x)
+				transform.position = Vector3.SmoothDamp(transform.position, m_solutionPosition, ref velocity, fltSnappingSpeed);
+			else
+				transform.position = Vector3.SmoothDamp(transform.position, m_startPosition, ref velocity, fltSnappingSpeed);
+
 			if(this.transform.position.x >= m_startPosition.x)
 			{
 				this.transform.position = new Vector2(m_startPosition.x, transform.position.y);
