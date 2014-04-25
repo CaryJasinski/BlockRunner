@@ -7,6 +7,7 @@ public class DisplayLives : MonoBehaviour {
 
 	public GUISkin NeonKnightGUI;
 	public Texture2D neonKnightIcon;
+	public GUIStyle smallerText;
 
 	void Start () 
 	{
@@ -18,7 +19,8 @@ public class DisplayLives : MonoBehaviour {
 	void OnGUI()
 	{
 		GUI.skin = NeonKnightGUI;
-		GUI.Label(new Rect (0, 0, 170, 50), "x" + m_gameManager.intPlayerLives/2 + "");
-		GUI.Label(new Rect (0, 0, 100, 50), neonKnightIcon);
+		GUI.Label(new Rect (60, 32, 20, 30), "x", smallerText);
+		GUI.Label(new Rect (5, 0, 170, 50), "" + m_gameManager.intPlayerLives/2 + "");
+		GUI.Label(new Rect (-5, 0, 100, 50), neonKnightIcon);
 	}
 }

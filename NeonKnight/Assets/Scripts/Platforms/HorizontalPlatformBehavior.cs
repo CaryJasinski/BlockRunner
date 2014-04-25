@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+﻿//TODO Adjust pathway instantiation positions
+using UnityEngine;
 using System.Collections;
-
 public class HorizontalPlatformBehavior : MonoBehaviour {
 	public GameObject goPositionDot;
 	public GameObject goMotionLine;

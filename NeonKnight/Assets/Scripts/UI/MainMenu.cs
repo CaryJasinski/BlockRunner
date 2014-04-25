@@ -16,11 +16,7 @@ public class MainMenu : MonoBehaviour {
 
 		GUI.skin = NeonKnightGUI;
 
-		if(Application.loadedLevelName == "MainMenu"){
-			showTitleScreen();
-		}
-
-		if (Application.loadedLevelName == "MainMenuPrototype") {
+		if (Application.loadedLevelName == "MainMenu") {
 			show3DTitle();		
 		}
 
@@ -33,17 +29,7 @@ public class MainMenu : MonoBehaviour {
 		}
               
 	}
-	
-	
-	void showTitleScreen(){
-		GUI.DrawTexture(new Rect(0f,0f, Screen.width, Screen.height), startScreen);
-		if (GUI.Button (new Rect(Screen.width/ 2 - 200, Screen.height/2, 750, 250),""))
-		    {
-			///Application.LoadLevel("Tutorial");
-			     Application.LoadLevel("Level 1-1");
-		    }
-		GUI.Label(new Rect(Screen.width/2 - 100, Screen.height/2 - 170, 600,576), playButton);
-	}
+
 
 	void show3DTitle(){
 		GUI.Label(new Rect(Screen.width/2 - 300, Screen.height/2 - 50, 1024,300), "Swipe To Begin!");

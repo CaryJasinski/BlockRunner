@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿//TODO Adjust pathway instantiation positions
+using UnityEngine;
 using System.Collections;
 
 public class VerticalPlatformBehavior : MonoBehaviour {

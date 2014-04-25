@@ -17,7 +17,7 @@ public class KillVolume : MonoBehaviour {
 	{
 		if (collider.CompareTag("Player")) 
 		{
-			Debug.Log ("Why won't this work :/");
+			Debug.Log ("Why does this work :/");
 			m_gameManager.SendMessage ("KillPlayer");
 		}
 	}

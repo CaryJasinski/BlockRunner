@@ -9,8 +9,7 @@ public class GameManager : MonoBehaviour {
 	public int intPlayerLives = 5;
 	private GameObject[] m_moveablePlatforms;
 	private GameObject[] m_collectibles;
-
-	public GUISkin NeonKnightGUI;
+	
 
 	void Start () 
 	{
@@ -19,7 +18,6 @@ public class GameManager : MonoBehaviour {
 
 		Player = GameObject.Find("NeonKnight"); 
 		m_playerScript = Player.GetComponent<PlayerScript>();
-
 		intPlayerLives *= 2;
 	}
 
@@ -28,12 +26,7 @@ public class GameManager : MonoBehaviour {
 		if(intPlayerLives <= 0)
 			Application.LoadLevel("LoseScreen");
 	}
-
-	void OnGUI()
-	{
-		GUI.skin = NeonKnightGUI;
-		GUI.Label(new Rect (Screen.width / 2 - 100, 10, 200, 50), ""+ intCollectibles +" out of "+ m_collectibles.Length);
-	}
+	
 
 	public void KillPlayer()
 	{
