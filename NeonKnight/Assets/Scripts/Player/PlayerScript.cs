@@ -6,8 +6,7 @@ public class PlayerScript: MonoBehaviour
 	public float fltMoveSpeed = 4;
 	public float fltJumpHeight = 10;
 	public Vector3 StartingPosition;
-	public bool triggerCollectionSmall = false;
-	public bool triggerCollectionLarge = false;
+	public bool blnPlayerActive = true;
 	
 	private GameManager m_gameManager;
 
@@ -20,15 +19,15 @@ public class PlayerScript: MonoBehaviour
 		StartingPosition = transform.position;
 		m_gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 		playerAnimator = transform.GetChild(0).GetComponent<Animator>();
+		playerAnimator.SetInteger("Movement", 1);
 	}
 
 	void Update () 
 	{
-		this.rigidbody2D.velocity = new Vector2(fltMoveSpeed, this.rigidbody2D.velocity.y);
+		MovePlayer();
+
 		if(!jumping)
-		{
 			playerAnimator.SetInteger("Movement", 1);
-		}
 	}
 
 	void OnTriggerEnter2D(Collider2D collider)
@@ -56,5 +55,18 @@ public class PlayerScript: MonoBehaviour
 		jumping = true;
 		yield return new WaitForSeconds(0.5f);
 		playerAnimator.SetInteger("Movement", 1);
+	}
+	void MovePlayer()
+	{
+		if(blnPlayerActive)
+		{
+			this.rigidbody2D.isKinematic = false;
+			this.rigidbody2D.velocity = new Vector2(fltMoveSpeed, this.rigidbody2D.velocity.y);
+		}
+		else
+		{
+			this.rigidbody2D.isKinematic = true;
+			this.rigidbody2D.velocity = Vector2.zero;
+		}
 	}
 }

@@ -1,7 +1,4 @@
-﻿//TODO: Add functionality that pauses the player movement after death 
-//movement will resume when camera X position equals player X position
-
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class CameraLock : MonoBehaviour {
@@ -27,5 +24,8 @@ public class CameraLock : MonoBehaviour {
 		CameraPos.z = PlayerPos.z;
 		
 		transform.position = Vector3.SmoothDamp(CameraPos, PlayerPos, ref velocity, fltSmoothTime);
+
+		if(PlayerPos.x + 5 > CameraPos.x)
+			Player.GetComponent<PlayerScript>().blnPlayerActive = true;
 	}
 }

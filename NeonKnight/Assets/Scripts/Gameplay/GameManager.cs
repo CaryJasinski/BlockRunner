@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour {
 	public void KillPlayer()
 	{
 		Player.transform.position = m_playerScript.StartingPosition;
+		m_playerScript.blnPlayerActive = false;
+
 		intPlayerLives--;
 
 		ResetPlatformPositions();
