@@ -73,9 +73,13 @@ public class HorizontalPlatformBehavior : MonoBehaviour {
 	private void displayPath ()
 	{
 		GameObject motionLine;
-		Instantiate(goPositionDot, m_startPosition, Quaternion.identity);
-		Instantiate(goPositionDot, m_solutionPosition, Quaternion.identity);
-		motionLine = (GameObject)Instantiate(goMotionLine, m_centerPosition, Quaternion.Euler(0, 0, 90));
+		Vector2 startDotPos = new Vector2(m_startPosition.x + 0.0775f, m_startPosition.y - 0.35f);
+		Vector2 solutionDotPos = new Vector2(m_solutionPosition.x + 0.0775f, m_solutionPosition.y - 0.35f);
+		Vector2 centerLinePos = new Vector2 ((startDotPos.x + solutionDotPos.x)/2, startDotPos.y - 0.025f);
+
+		Instantiate(goPositionDot, startDotPos, Quaternion.identity);
+		Instantiate(goPositionDot, solutionDotPos, Quaternion.identity);
+		motionLine = (GameObject)Instantiate(goMotionLine, centerLinePos, Quaternion.Euler(0, 0, 90));
 		motionLine.transform.GetChild(0).transform.localScale = new Vector3(Mathf.Abs(fltSolutionOffset), 5, 0);
 	}
 }
