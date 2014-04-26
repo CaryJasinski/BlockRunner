@@ -4,7 +4,7 @@ using System.Collections;
 public class MenuPlatformSwipe : MonoBehaviour {
 	public GameObject goPositionDot;
 	public GameObject goMotionLine;
-	
+
 	private Vector2 m_startPosition;
 	private Vector2 m_centerPosition;
 	private Vector2 m_solutionPosition;

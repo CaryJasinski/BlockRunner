@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour {
 	public Texture2D playButton;
 	public Texture2D playAgain;
 	public Texture2D tryAgain;
+	public AudioSource backButton;
 	public GUISkin NeonKnightGUI;
 
 	void OnGUI(){
@@ -39,7 +40,8 @@ public class MainMenu : MonoBehaviour {
 		GUI.DrawTexture(new Rect(0f,0f, Screen.width, Screen.height), winScreen);
 		if (GUI.Button (new Rect(Screen.width/2 - 535, Screen.height/2, 1024, 288),""))
 		{
-			Application.LoadLevel("MainMenu");
+			backButton.Play();
+			StartCoroutine(startGame(0.5f));
 		}
 
 		GUI.Label(new Rect(Screen.width/2 - 512, Screen.height/2 - 150, 1024,576), playAgain);
@@ -50,9 +52,25 @@ public class MainMenu : MonoBehaviour {
 		GUI.DrawTexture(new Rect(0f,0f, Screen.width, Screen.height), gameOverScreen);
 		if (GUI.Button (new Rect(Screen.width/ 2 - 535, Screen.height/ 2, 1024, 288),""))
 		{
-			Application.LoadLevel("MainMenu");
+			backButton.Play();
+			StartCoroutine(startGame(0.5f));
 		}
 		GUI.Label(new Rect(Screen.width/2 - 512, Screen.height/2 - 150, 1024,576), tryAgain);
+	}
+
+	IEnumerator startGame(float waitTime)
+	{
+		yield return new WaitForSeconds(waitTime);
+
+		switch(Application.loadedLevelName)
+		{
+		case "LoseScreen":
+			Application.LoadLevel("Level 1-1");
+			break;
+		case "WinScreen":
+			Application.LoadLevel("MainMenu");
+			break;
+		}
 	}
 
 	
