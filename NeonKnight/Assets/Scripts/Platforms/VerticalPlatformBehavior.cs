@@ -38,7 +38,7 @@ public class VerticalPlatformBehavior : MonoBehaviour {
 		transform.position = new Vector2(m_startPosition.x, transform.position.y);
 		if(m_positive) 
 		{
-			if(transform.position.y < m_centerPosition.y)
+			if(transform.position.y < m_centerPosition.y - fltSolutionOffset/8)
 				transform.position = Vector3.SmoothDamp(transform.position, m_startPosition, ref velocity, fltSnappingSpeed);
 			else
 				transform.position = Vector3.SmoothDamp(transform.position, m_solutionPosition, ref velocity, fltSnappingSpeed);
@@ -51,7 +51,7 @@ public class VerticalPlatformBehavior : MonoBehaviour {
 		}
 		else
 		{
-			if(transform.position.y < m_centerPosition.y)
+			if(transform.position.y < m_centerPosition.y - fltSolutionOffset/8)
 				transform.position = Vector3.SmoothDamp(transform.position, m_solutionPosition, ref velocity, fltSnappingSpeed);
 			else
 				transform.position = Vector3.SmoothDamp(transform.position, m_startPosition, ref velocity, fltSnappingSpeed);

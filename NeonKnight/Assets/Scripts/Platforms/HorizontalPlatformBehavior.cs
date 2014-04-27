@@ -39,7 +39,7 @@ public class HorizontalPlatformBehavior : MonoBehaviour {
 		transform.position = new Vector2(transform.position.x, m_startPosition.y);
 		if(m_positive) 
 		{
-			if(transform.position.x < m_centerPosition.x)
+			if(transform.position.x < m_centerPosition.x - fltSolutionOffset/8)
 				transform.position = Vector3.SmoothDamp(transform.position, m_startPosition, ref velocity, fltSnappingSpeed);
 			else
 				transform.position = Vector3.SmoothDamp(transform.position, m_solutionPosition, ref velocity, fltSnappingSpeed);
@@ -55,7 +55,7 @@ public class HorizontalPlatformBehavior : MonoBehaviour {
 		}
 		else
 		{
-			if(transform.position.x < m_centerPosition.x)
+			if(transform.position.x < m_centerPosition.x - fltSolutionOffset/8)
 				transform.position = Vector3.SmoothDamp(transform.position, m_solutionPosition, ref velocity, fltSnappingSpeed);
 			else
 				transform.position = Vector3.SmoothDamp(transform.position, m_startPosition, ref velocity, fltSnappingSpeed);
