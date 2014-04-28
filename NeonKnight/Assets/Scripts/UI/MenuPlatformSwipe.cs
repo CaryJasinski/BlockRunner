@@ -14,11 +14,12 @@ public class MenuPlatformSwipe : MonoBehaviour {
 	
 	public float fltSolutionOffset = 5.0f;
 	public float fltSnappingSpeed = 1.0f;
-	private Vector3 velocity = Vector3.zero;
 	
 	public Vector2 GetStartPosition(){ return m_startPosition; }
 	public Vector2 GetSolutionPosition(){ return m_solutionPosition; }
-	
+
+	private Vector3 velocity = Vector3.zero;
+
 	void Update()
 	{
 		SwipeToStart();
@@ -41,7 +42,7 @@ public class MenuPlatformSwipe : MonoBehaviour {
 	   //When Player swipes the platform, start level one
 	void SwipeToStart()
 	{
-		if (transform.position.x == m_solutionPosition.x) 
+		if (transform.position.x > m_solutionPosition.x - 0.1f) 
 		{
 			Application.LoadLevel("Level 1-1");
 		}
@@ -53,11 +54,11 @@ public class MenuPlatformSwipe : MonoBehaviour {
 		transform.position = new Vector2(transform.position.x, m_startPosition.y);
 		if(m_positive) 
 		{
-			if(transform.position.x < m_centerPosition.x)
+			if(transform.position.x < m_centerPosition.x - fltSolutionOffset/8)
 				transform.position = Vector3.SmoothDamp(transform.position, m_startPosition, ref velocity, fltSnappingSpeed);
 			else
 				transform.position = Vector3.SmoothDamp(transform.position, m_solutionPosition, ref velocity, fltSnappingSpeed);
-
+			
 			if(this.transform.position.x >= m_solutionPosition.x)
 			{
 				this.transform.position = new Vector2(m_solutionPosition.x, transform.position.y);
@@ -69,6 +70,11 @@ public class MenuPlatformSwipe : MonoBehaviour {
 		}
 		else
 		{
+			if(transform.position.x < m_centerPosition.x - fltSolutionOffset/8)
+				transform.position = Vector3.SmoothDamp(transform.position, m_solutionPosition, ref velocity, fltSnappingSpeed);
+			else
+				transform.position = Vector3.SmoothDamp(transform.position, m_startPosition, ref velocity, fltSnappingSpeed);
+			
 			if(this.transform.position.x >= m_startPosition.x)
 			{
 				this.transform.position = new Vector2(m_startPosition.x, transform.position.y);
@@ -82,9 +88,13 @@ public class MenuPlatformSwipe : MonoBehaviour {
 	private void displayPath ()
 	{
 		GameObject motionLine;
-		Instantiate(goPositionDot, m_startPosition, Quaternion.identity);
-		Instantiate(goPositionDot, m_solutionPosition, Quaternion.identity);
-		motionLine = (GameObject)Instantiate(goMotionLine, m_centerPosition, Quaternion.Euler(0, 0, 90));
+		Vector2 startDotPos = new Vector2(m_startPosition.x + 0.0775f, m_startPosition.y - 0.35f);
+		Vector2 solutionDotPos = new Vector2(m_solutionPosition.x + 0.0775f, m_solutionPosition.y - 0.35f);
+		Vector2 centerLinePos = new Vector2 ((startDotPos.x + solutionDotPos.x)/2, startDotPos.y - 0.025f);
+		
+		Instantiate(goPositionDot, startDotPos, Quaternion.identity);
+		Instantiate(goPositionDot, solutionDotPos, Quaternion.identity);
+		motionLine = (GameObject)Instantiate(goMotionLine, centerLinePos, Quaternion.Euler(0, 0, 90));
 		motionLine.transform.GetChild(0).transform.localScale = new Vector3(Mathf.Abs(fltSolutionOffset), 5, 0);
 	}
 }
