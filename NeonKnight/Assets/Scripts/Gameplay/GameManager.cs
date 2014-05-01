@@ -8,22 +8,22 @@ public class GameManager : MonoBehaviour {
 	public int intCollectibles = 0;
 	public int intPlayerLives = 5;
 	private GameObject[] m_moveablePlatforms;
-	private GameObject[] m_collectibles;
-	
+	private bool m_blnCanDie = true;
 
 	void Start () 
 	{
-		m_moveablePlatforms = GameObject.FindGameObjectsWithTag("MoveablePlatform");
-		m_collectibles = GameObject.FindGameObjectsWithTag("Collectible");
-
 		Player = GameObject.Find("NeonKnight"); 
 		m_playerScript = Player.GetComponent<PlayerScript>();
-		intPlayerLives *= 2;
+		m_moveablePlatforms = GameObject.FindGameObjectsWithTag("MoveablePlatform");
+		if(intPlayerLives > 0)
+			intPlayerLives *= 2;
+		else
+			m_blnCanDie = false;
 	}
 
 	void Update () 
 	{
-		if(intPlayerLives <= 0)
+		if(m_blnCanDie && intPlayerLives <= 0)
 			Application.LoadLevel("LoseScreen");
 	}
 	
@@ -33,7 +33,8 @@ public class GameManager : MonoBehaviour {
 		Player.transform.position = m_playerScript.StartingPosition;
 		m_playerScript.blnPlayerActive = false;
 
-		intPlayerLives--;
+		if(m_blnCanDie)
+			intPlayerLives--;
 
 		ResetPlatformPositions();
 	}
