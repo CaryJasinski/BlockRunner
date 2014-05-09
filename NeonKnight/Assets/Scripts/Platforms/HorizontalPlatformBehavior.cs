@@ -5,9 +5,9 @@ public class HorizontalPlatformBehavior : MonoBehaviour {
 	public GameObject goPositionDot;
 	public GameObject goMotionLine;
 	
-	private Vector2 m_startPosition;
-	private Vector2 m_centerPosition;
-	private Vector2 m_solutionPosition;
+	[HideInInspector] public Vector2 startPosition;
+	[HideInInspector] public Vector2 centerPosition;
+	[HideInInspector] public Vector2 solutionPosition;
 	private bool m_positive;
 	
 	Vector2 currentPosition;
@@ -15,17 +15,17 @@ public class HorizontalPlatformBehavior : MonoBehaviour {
 	public float fltSolutionOffset = 5.0f;
 	public float fltSnappingSpeed = 1.0f;
 
-	public Vector2 GetStartPosition(){ return m_startPosition; }
-	public Vector2 GetSolutionPosition(){ return m_solutionPosition; }
+	public Vector2 GetStartPosition(){ return startPosition; }
+	public Vector2 GetSolutionPosition(){ return solutionPosition; }
 
 	private Vector3 velocity = Vector3.zero;
 	
 	void Start () 
 	{
-		m_startPosition = transform.position;
-		m_solutionPosition = new Vector2 (m_startPosition.x + fltSolutionOffset, m_startPosition.y);
-		m_centerPosition = new Vector2 ((m_solutionPosition.x + m_startPosition.x)/2, m_startPosition.y);
-		if(m_solutionPosition.x - m_startPosition.x > 0)
+		startPosition = transform.position;
+		solutionPosition = new Vector2 (startPosition.x + fltSolutionOffset, startPosition.y);
+		centerPosition = new Vector2 ((solutionPosition.x + startPosition.x)/2, startPosition.y);
+		if(solutionPosition.x - startPosition.x > 0)
 			m_positive = true;
 		else
 			m_positive = false;
@@ -36,45 +36,45 @@ public class HorizontalPlatformBehavior : MonoBehaviour {
 	void LateUpdate () 
 	{
 		
-		transform.position = new Vector2(transform.position.x, m_startPosition.y);
+		transform.position = new Vector2(transform.position.x, startPosition.y);
 		if(m_positive) 
 		{
-			if(transform.position.x < m_centerPosition.x - fltSolutionOffset/8)
-				transform.position = Vector3.SmoothDamp(transform.position, m_startPosition, ref velocity, fltSnappingSpeed);
+			if(transform.position.x < centerPosition.x - fltSolutionOffset/8)
+				transform.position = Vector3.SmoothDamp(transform.position, startPosition, ref velocity, fltSnappingSpeed);
 			else
-				transform.position = Vector3.SmoothDamp(transform.position, m_solutionPosition, ref velocity, fltSnappingSpeed);
+				transform.position = Vector3.SmoothDamp(transform.position, solutionPosition, ref velocity, fltSnappingSpeed);
 
-			if(this.transform.position.x >= m_solutionPosition.x)
+			if(this.transform.position.x >= solutionPosition.x)
 			{
-				this.transform.position = new Vector2(m_solutionPosition.x, transform.position.y);
+				this.transform.position = new Vector2(solutionPosition.x, transform.position.y);
 			}
-			if(this.transform.position.x <= m_startPosition.x)
+			if(this.transform.position.x <= startPosition.x)
 			{
-				this.transform.position = new Vector2(m_startPosition.x, transform.position.y);
+				this.transform.position = new Vector2(startPosition.x, transform.position.y);
 			}
 		}
 		else
 		{
-			if(transform.position.x < m_centerPosition.x - fltSolutionOffset/8)
-				transform.position = Vector3.SmoothDamp(transform.position, m_solutionPosition, ref velocity, fltSnappingSpeed);
+			if(transform.position.x < centerPosition.x - fltSolutionOffset/8)
+				transform.position = Vector3.SmoothDamp(transform.position, solutionPosition, ref velocity, fltSnappingSpeed);
 			else
-				transform.position = Vector3.SmoothDamp(transform.position, m_startPosition, ref velocity, fltSnappingSpeed);
+				transform.position = Vector3.SmoothDamp(transform.position, startPosition, ref velocity, fltSnappingSpeed);
 
-			if(this.transform.position.x >= m_startPosition.x)
+			if(this.transform.position.x >= startPosition.x)
 			{
-				this.transform.position = new Vector2(m_startPosition.x, transform.position.y);
+				this.transform.position = new Vector2(startPosition.x, transform.position.y);
 			}
-			if(this.transform.position.x <= m_solutionPosition.x)
+			if(this.transform.position.x <= solutionPosition.x)
 			{
-				this.transform.position = new Vector2(m_solutionPosition.x, transform.position.y);
+				this.transform.position = new Vector2(solutionPosition.x, transform.position.y);
 			}
 		}
 	}
 	private void displayPath ()
 	{
 		GameObject motionLine;
-		Vector2 startDotPos = new Vector2(m_startPosition.x + 0.0775f, m_startPosition.y - 0.35f);
-		Vector2 solutionDotPos = new Vector2(m_solutionPosition.x + 0.0775f, m_solutionPosition.y - 0.35f);
+		Vector2 startDotPos = new Vector2(startPosition.x + 0.0775f, startPosition.y - 0.35f);
+		Vector2 solutionDotPos = new Vector2(solutionPosition.x + 0.0775f, solutionPosition.y - 0.35f);
 		Vector2 centerLinePos = new Vector2 ((startDotPos.x + solutionDotPos.x)/2, startDotPos.y - 0.025f);
 
 		Instantiate(goPositionDot, startDotPos, Quaternion.identity);
