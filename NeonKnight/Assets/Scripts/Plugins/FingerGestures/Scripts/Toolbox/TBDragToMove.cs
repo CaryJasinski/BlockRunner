@@ -7,9 +7,13 @@ using System.Collections;
 [AddComponentMenu( "FingerGestures/Toolbox/Drag To Move" )]
 public class TBDragToMove : MonoBehaviour
 {
-    public Collider DragPlaneCollider;      // collider used when dragPlaneType is set to DragPlaneType.UseCollider
+	public Pausing pauseManager;
+
+	public Collider DragPlaneCollider;      // collider used when dragPlaneType is set to DragPlaneType.UseCollider
     public float DragPlaneOffset = 0.0f;    // distance between dragged object and drag constraint plane
     public Camera RaycastCamera;
+
+	//private Pausing pauseManager;
 
     public bool DragFromObjectCenter = false;
 
@@ -25,6 +29,7 @@ public class TBDragToMove : MonoBehaviour
     
     public bool Dragging
     {
+		//if(pauseManager.trigPause = false)
         get { return dragging; }
         private set
         {
@@ -58,11 +63,12 @@ public class TBDragToMove : MonoBehaviour
         UseCollider, // project on the collider specified by dragPlaneCollider
     }
 
-    void Start()
-    {
-        if( !RaycastCamera )
-            RaycastCamera = Camera.main;
-    }
+	void Start()
+	{
+		pauseManager = GameObject.Find("GameManager").GetComponent<Pausing>();	
+		if( !RaycastCamera )
+			RaycastCamera = Camera.main;
+	}
 
     // converts a screen-space position to a world-space position constrained to the current drag plane type
     // returns false if it was unable to get a valid world-space position
@@ -167,6 +173,7 @@ void HandleDrag( DragGesture gesture )
 
     void OnDrag( DragGesture gesture )
     {
+		if(pauseManager.trigPause == false)
         HandleDrag( gesture );
     }
 

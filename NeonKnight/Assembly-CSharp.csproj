@@ -60,6 +60,41 @@
      <Compile Include="Assets\Scripts\Platforms\MovePlatform.cs" />
      <Compile Include="Assets\Scripts\Platforms\VerticalPlatformBehavior.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerScript.cs" />
+     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Dev\FingerDebug.cs" />
+     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Base\ContinuousGestureRecognizer.cs" />
+     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Base\DiscreteGestureRecognizer.cs" />
+     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Base\FingerEventDetector.cs" />
+     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Base\GestureRecognizer.cs" />
+     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Base\GestureRecognizerDelegate.cs" />
+     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Components\FingerClusterManager.cs" />
+     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Components\ScreenRaycaster.cs" />
+     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Finger Event Detectors\FingerDownDetector.cs" />
+     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Finger Event Detectors\FingerHoverDetector.cs" />
+     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Finger Event Detectors\FingerMotionDetector.cs" />
+     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Finger Event Detectors\FingerUpDetector.cs" />
+     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\FingerGestures.cs" />
+     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Gesture Recognizers\DragRecognizer.cs" />
+     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Gesture Recognizers\LongPressRecognizer.cs" />
+     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Gesture Recognizers\PinchRecognizer.cs" />
+     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Gesture Recognizers\PointCloudGestureTemplate.cs" />
+     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Gesture Recognizers\PointCloudRegognizer.cs" />
+     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Gesture Recognizers\SwipeRecognizer.cs" />
+     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Gesture Recognizers\TapRecognizer.cs" />
+     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Gesture Recognizers\TwistRecognizer.cs" />
+     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Input Providers\FGInputProvider.cs" />
+     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Input Providers\FGMouseInputProvider.cs" />
+     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Input Providers\FGTouchInputProvider.cs" />
+     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Toolbox\Camera\TBDragView.cs" />
+     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Toolbox\Camera\TBLookAtTap.cs" />
+     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Toolbox\Camera\TBOrbit.cs" />
+     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Toolbox\Camera\TBPan.cs" />
+     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Toolbox\Camera\TBPinchZoom.cs" />
+     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Toolbox\TBDragToMove.cs" />
+     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Toolbox\TBHoverChangeMaterial.cs" />
+     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Toolbox\TBHoverChangeScale.cs" />
+     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Toolbox\TBPinchToScale.cs" />
+     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Toolbox\TBQuickSetup.cs" />
+     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Toolbox\TBTwistToRotate.cs" />
      <Compile Include="Assets\Scripts\UI\ButtonScript.cs" />
      <Compile Include="Assets\Scripts\UI\DisplayLives.cs" />
      <Compile Include="Assets\Scripts\UI\DisplayScore.cs" />
@@ -69,11 +104,6 @@
      <Compile Include="Assets\Scripts\UI\Pausing.cs" />
      <Compile Include="Assets\Scripts\UI\SwipeLevelLoad.cs" />
      <Compile Include="Assets\Scripts\UI\TapTutorial.cs" />
-     <None Include="Assets\Plugins\FingerGestures\Readme.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{931F4A15-A626-A576-0204-27EA1EAA4CB8}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

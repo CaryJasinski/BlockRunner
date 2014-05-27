@@ -8,7 +8,8 @@ public class PlayerScript: MonoBehaviour
 	public Vector3 StartingPosition;
 	public bool blnPlayerActive = true;
 	
-	private GameManager m_gameManager;
+	//private GameManager m_gameManager;
+
 
 	[HideInInspector]
 	public Animator playerAnimator;
@@ -17,7 +18,7 @@ public class PlayerScript: MonoBehaviour
 	void Start () 
 	{	
 		StartingPosition = transform.position;
-		m_gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+		//m_gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 		playerAnimator = transform.GetChild(0).GetComponent<Animator>();
 		playerAnimator.SetInteger("Movement", 1);
 	}
