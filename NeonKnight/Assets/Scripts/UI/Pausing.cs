@@ -38,10 +38,12 @@ public class Pausing : MonoBehaviour {
 
 	void PauseMenu()
 	{
-		if (GUI.Button (new Rect (Screen.width/2,Screen.height/2,100,50), "Main Menu"))
+		if (GUI.Button (new Rect (Screen.width/2,Screen.height/2 - 50,100,50), "Main Menu"))
 			Application.LoadLevel("MainMenu");
-		if (GUI.Button (new Rect (Screen.width/2,Screen.height/2 - 50,100,50), "Resume"))
+		if (GUI.Button (new Rect (Screen.width/2,Screen.height/2 - 100,100,50), "Resume"))
 			trigPause = false;
+		if (GUI.Button (new Rect (Screen.width/2,Screen.height/2,100,50), "Quit"))
+			Application.Quit();
 	}
 
 }
