@@ -20,6 +20,7 @@ public class Pausing : MonoBehaviour {
 
 	void OnGUI()
 	    {
+		if (Application.loadedLevelName != "MainMenu")
 		  if (GUI.Button (new Rect (0,Screen.height - 50,100,50), "Pause"))
 			{
 				Debug.Log("you clicked");
