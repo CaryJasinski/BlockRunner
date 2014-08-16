@@ -4,6 +4,7 @@ using System.Collections;
 public class Pausing : MonoBehaviour {
 
 	public bool trigPause = false;
+	public bool startFrozen = true;
 
 	// Use this for initialization
 	void Start () {
@@ -11,11 +12,11 @@ public class Pausing : MonoBehaviour {
 
 	void Update()
 	{
+		Freeze();
+
 		if(trigPause)
 			Pause();
 		    PauseMenu();
-		if(!trigPause)
-		 Time.timeScale = 1.0F;
 	}
 
 	void OnGUI()
@@ -23,9 +24,11 @@ public class Pausing : MonoBehaviour {
 		if (Application.loadedLevelName != "MainMenu")
 		  if (GUI.Button (new Rect (0,Screen.height - 50,100,50), "Pause"))
 			{
-				Debug.Log("you clicked");
 				trigPause = true;
 	   	    }
+
+		 if (startFrozen && Application.loadedLevelName != "MainMenu")
+			 startButton ();
 		 
 		if(trigPause)
 			PauseMenu();
@@ -33,9 +36,19 @@ public class Pausing : MonoBehaviour {
 
 	void Pause()
 	{
-		if(trigPause)
+		if (trigPause)
 			Time.timeScale = 0F;
+		else
+			Time.timeScale = 1f;
 	}
+
+	void Freeze()
+		{
+			if (startFrozen) 
+			   Time.timeScale = 0F;
+			else 
+			   Time.timeScale = 1f;
+		}
 
 	void PauseMenu()
 	{
@@ -47,4 +60,12 @@ public class Pausing : MonoBehaviour {
 			Application.Quit();
 	}
 
+	void startButton()
+	{
+		if (GUI.Button (new Rect (Screen.width/2,Screen.height/2,100,50), "Go!"))
+		{
+			startFrozen = false;
+		}
+	}
+	
 }

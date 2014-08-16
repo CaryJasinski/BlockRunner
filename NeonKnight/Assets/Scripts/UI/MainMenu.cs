@@ -17,17 +17,20 @@ public class MainMenu : MonoBehaviour {
 
 		GUI.skin = NeonKnightGUI;
 
-		if (Application.loadedLevelName == "MainMenu") {
-			show3DTitle();		
-		}
+		if (Application.loadedLevelName == "MainMenu") 
+			{
+				show3DTitle();		
+			}
 
-		if(Application.loadedLevelName == "WinScreen"){
-			showWinScreen();
-		}
+		if(Application.loadedLevelName == "WinScreen")
+			{
+				showWinScreen();
+			}
 
-		if(Application.loadedLevelName == "LoseScreen"){
-			showLoseScreen();
-		}
+		if(Application.loadedLevelName == "LoseScreen")
+			{
+				showLoseScreen();
+			}
               
 	}
 
