@@ -64,6 +64,7 @@ public class Pausing : MonoBehaviour {
 	{
 		if (GUI.Button (new Rect (Screen.width/2,Screen.height/2,100,50), "Go!"))
 		{
+			GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraLock>().isPlaying = true;
 			startFrozen = false;
 		}
 	}

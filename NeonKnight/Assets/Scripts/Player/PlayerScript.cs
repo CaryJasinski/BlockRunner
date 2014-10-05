@@ -9,8 +9,7 @@ public class PlayerScript: MonoBehaviour
 	public bool blnPlayerActive = true;
 	
 	//private GameManager m_gameManager;
-
-
+	
 	[HideInInspector]
 	public Animator playerAnimator;
 	private bool jumping = false;
@@ -23,21 +22,21 @@ public class PlayerScript: MonoBehaviour
 		playerAnimator.SetInteger("Movement", 1);
 	}
 
-	void Update () 
+	void FixedUpdate () 
 	{
 		MovePlayer();
+
+		if (Input.GetKeyDown (KeyCode.Space))
+			Jump ();
 
 		if(!jumping)
 			playerAnimator.SetInteger("Movement", 1);
 	}
 
-	void OnTriggerEnter2D(Collider2D collider)
+	void Jump()
 	{
-		if (collider.CompareTag ("JumpPad"))
-		{
-			this.rigidbody2D.velocity = new Vector2 (fltMoveSpeed, fltJumpHeight);
-			StartCoroutine(JumpAnimation());
-		}
+		this.rigidbody2D.velocity = new Vector2 (fltMoveSpeed, fltJumpHeight);
+		StartCoroutine(JumpAnimation());
 	}
 
 	void OnCollisionEnter2D(Collision2D collision)
@@ -50,6 +49,7 @@ public class PlayerScript: MonoBehaviour
 	{
 		this.transform.parent = null;
 	}
+
 	IEnumerator JumpAnimation()
 	{
 		playerAnimator.SetInteger("Movement", 0);
@@ -57,6 +57,7 @@ public class PlayerScript: MonoBehaviour
 		yield return new WaitForSeconds(0.5f);
 		playerAnimator.SetInteger("Movement", 1);
 	}
+
 	void MovePlayer()
 	{
 		if(blnPlayerActive)
