@@ -22,8 +22,14 @@ public class CameraLock : MonoBehaviour {
 	{
 		if (isPlaying) 
 		{
-			if (camera.orthographicSize < cameraSize)
-					camera.orthographicSize += growthSpeed * Time.fixedDeltaTime;
+            if (camera.orthographicSize < cameraSize)
+            {
+                if(transform.localScale.y < 1)
+                {
+                    transform.localScale += new Vector3((growthSpeed/8) * Time.fixedDeltaTime, (growthSpeed/8) * Time.fixedDeltaTime, 0);
+                }
+                camera.orthographicSize += growthSpeed * Time.fixedDeltaTime;
+            }
 		}
 
 		PlayerPos.x = Player.transform.position.x + fltCameraOffset;
