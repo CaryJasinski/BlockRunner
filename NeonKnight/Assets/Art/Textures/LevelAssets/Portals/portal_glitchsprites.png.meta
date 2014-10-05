@@ -1,6 +1,23 @@
 fileFormatVersion: 2
 guid: 616e7fe4ebf2bc0469caa7199db767e4
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: portal_glitchsprites_0
+    21300002: portal_glitchsprites_1
+    21300004: portal_glitchsprites_2
+    21300006: portal_glitchsprites_3
+    21300008: portal_glitchsprites_4
+    21300010: portal_glitchsprites_5
+    21300012: portal_glitchsprites_6
+    21300014: portal_glitchsprites_7
+    21300016: portal_glitchsprites_8
+    21300018: portal_glitchsprites_9
+    21300020: portal_glitchsprites_10
+    21300022: portal_glitchsprites_11
+    21300024: portal_glitchsprites_12
+    21300026: portal_glitchsprites_13
+    21300028: portal_glitchsprites_14
+    21300030: portal_glitchsprites_15
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -35,6 +52,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
@@ -50,6 +68,7 @@ TextureImporter:
         height: 204
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: portal_glitchsprites_1
       rect:
         serializedVersion: 2
@@ -59,6 +78,7 @@ TextureImporter:
         height: 198
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: portal_glitchsprites_2
       rect:
         serializedVersion: 2
@@ -68,6 +88,7 @@ TextureImporter:
         height: 196
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: portal_glitchsprites_3
       rect:
         serializedVersion: 2
@@ -77,6 +98,7 @@ TextureImporter:
         height: 193
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: portal_glitchsprites_4
       rect:
         serializedVersion: 2
@@ -86,6 +108,7 @@ TextureImporter:
         height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: portal_glitchsprites_5
       rect:
         serializedVersion: 2
@@ -95,6 +118,7 @@ TextureImporter:
         height: 202
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: portal_glitchsprites_6
       rect:
         serializedVersion: 2
@@ -104,6 +128,7 @@ TextureImporter:
         height: 204
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: portal_glitchsprites_7
       rect:
         serializedVersion: 2
@@ -113,6 +138,7 @@ TextureImporter:
         height: 205
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: portal_glitchsprites_8
       rect:
         serializedVersion: 2
@@ -122,6 +148,7 @@ TextureImporter:
         height: 198
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: portal_glitchsprites_9
       rect:
         serializedVersion: 2
@@ -131,6 +158,7 @@ TextureImporter:
         height: 193
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: portal_glitchsprites_10
       rect:
         serializedVersion: 2
@@ -140,6 +168,7 @@ TextureImporter:
         height: 198
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: portal_glitchsprites_11
       rect:
         serializedVersion: 2
@@ -149,6 +178,7 @@ TextureImporter:
         height: 196
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: portal_glitchsprites_12
       rect:
         serializedVersion: 2
@@ -158,6 +188,7 @@ TextureImporter:
         height: 205
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: portal_glitchsprites_13
       rect:
         serializedVersion: 2
@@ -167,6 +198,7 @@ TextureImporter:
         height: 195
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: portal_glitchsprites_14
       rect:
         serializedVersion: 2
@@ -176,6 +208,7 @@ TextureImporter:
         height: 197
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: portal_glitchsprites_15
       rect:
         serializedVersion: 2
@@ -185,5 +218,6 @@ TextureImporter:
         height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

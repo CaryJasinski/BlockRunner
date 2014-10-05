@@ -1,6 +1,19 @@
 fileFormatVersion: 2
 guid: 320229ab65fe9214d84f8e746cf0585c
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: character_sheetRun_0
+    21300002: character_sheetRun_1
+    21300004: character_sheetRun_2
+    21300006: character_sheetRun_3
+    21300008: character_sheetRun_4
+    21300010: character_sheetRun_5
+    21300012: character_sheetRun_6
+    21300014: character_sheetRun_7
+    21300016: character_sheetRun_8
+    21300018: character_sheetRun_9
+    21300020: character_sheetRun_10
+    21300022: character_sheetRun_11
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -35,6 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
@@ -50,6 +64,7 @@ TextureImporter:
         height: 307
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: character_sheetRun_1
       rect:
         serializedVersion: 2
@@ -59,6 +74,7 @@ TextureImporter:
         height: 313
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: character_sheetRun_2
       rect:
         serializedVersion: 2
@@ -68,6 +84,7 @@ TextureImporter:
         height: 313
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: character_sheetRun_3
       rect:
         serializedVersion: 2
@@ -77,6 +94,7 @@ TextureImporter:
         height: 316
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: character_sheetRun_4
       rect:
         serializedVersion: 2
@@ -86,6 +104,7 @@ TextureImporter:
         height: 313
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: character_sheetRun_5
       rect:
         serializedVersion: 2
@@ -95,6 +114,7 @@ TextureImporter:
         height: 313
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: character_sheetRun_6
       rect:
         serializedVersion: 2
@@ -104,6 +124,7 @@ TextureImporter:
         height: 308
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: character_sheetRun_7
       rect:
         serializedVersion: 2
@@ -113,6 +134,7 @@ TextureImporter:
         height: 311
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: character_sheetRun_8
       rect:
         serializedVersion: 2
@@ -122,6 +144,7 @@ TextureImporter:
         height: 313
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: character_sheetRun_9
       rect:
         serializedVersion: 2
@@ -131,6 +154,7 @@ TextureImporter:
         height: 316
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: character_sheetRun_10
       rect:
         serializedVersion: 2
@@ -140,6 +164,7 @@ TextureImporter:
         height: 313
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: character_sheetRun_11
       rect:
         serializedVersion: 2
@@ -149,5 +174,6 @@ TextureImporter:
         height: 311
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
