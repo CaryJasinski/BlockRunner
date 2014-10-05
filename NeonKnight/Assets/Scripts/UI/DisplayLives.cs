@@ -20,7 +20,7 @@ public class DisplayLives : MonoBehaviour {
 	{
 		GUI.skin = NeonKnightGUI;
 		GUI.Label(new Rect (60, 32, 20, 30), "x", smallerText);
-		GUI.Label(new Rect (5, 0, 170, 50), "" + m_gameManager.intPlayerLives/2 + "");
+		GUI.Label(new Rect (5, 0, 170, 50), "" + m_gameManager.intPlayerLives + "");
 		GUI.Label(new Rect (-5, 0, 100, 50), neonKnightIcon);
 	}
 }
