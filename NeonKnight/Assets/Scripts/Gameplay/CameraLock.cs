@@ -18,18 +18,16 @@ public class CameraLock : MonoBehaviour {
 	{
 		PlayerPos.z = transform.position.z;
 	}
+
 	void FixedUpdate ()
 	{
+
 		if (isPlaying) 
 		{
-            if (camera.orthographicSize < cameraSize)
-            {
-                if(transform.localScale.y < 1)
-                {
-                    transform.localScale += new Vector3((growthSpeed/8) * Time.fixedDeltaTime, (growthSpeed/8) * Time.fixedDeltaTime, 0);
-                }
-                camera.orthographicSize += growthSpeed * Time.fixedDeltaTime;
-            }
+			if (camera.orthographicSize < cameraSize)
+			{
+				camera.orthographicSize += growthSpeed * Time.fixedDeltaTime;
+			}
 		}
 
 		PlayerPos.x = Player.transform.position.x + fltCameraOffset;
@@ -41,6 +39,6 @@ public class CameraLock : MonoBehaviour {
 		transform.position = Vector3.SmoothDamp(CameraPos, PlayerPos, ref velocity, fltSmoothTime);
 
 		if(PlayerPos.x + 5 > CameraPos.x)
-			Player.GetComponent<PlayerScript>().blnPlayerActive = true;
+			Player.GetComponent<PlayerScript>().playerActive = true;
 	}
 }

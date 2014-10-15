@@ -5,6 +5,7 @@ public class Pausing : MonoBehaviour {
 
 	public bool trigPause = false;
 	public bool startFrozen = true;
+	public float startDelay = 0.5f;
 
 	// Use this for initialization
 	void Start () {
@@ -19,21 +20,6 @@ public class Pausing : MonoBehaviour {
 		    PauseMenu();
 	}
 
-	void OnGUI()
-	    {
-		if (Application.loadedLevelName != "MainMenu")
-		  if (GUI.Button (new Rect (0,Screen.height - 50,100,50), "Pause"))
-			{
-				trigPause = true;
-	   	    }
-
-		 if (startFrozen && Application.loadedLevelName != "MainMenu")
-			 startButton ();
-		 
-		if(trigPause)
-			PauseMenu();
-	}
-
 	void Pause()
 	{
 		if (trigPause)
@@ -43,12 +29,12 @@ public class Pausing : MonoBehaviour {
 	}
 
 	void Freeze()
-		{
-			if (startFrozen) 
-			   Time.timeScale = 0F;
-			else 
-			   Time.timeScale = 1f;
-		}
+	{
+		if (startFrozen) 
+		   Time.timeScale = 0F;
+		else 
+		   Time.timeScale = 1f;
+	}
 
 	void PauseMenu()
 	{
@@ -60,13 +46,22 @@ public class Pausing : MonoBehaviour {
 			Application.Quit();
 	}
 
-	void startButton()
+	public void pauseGame()
 	{
-		if (GUI.Button (new Rect (Screen.width/2,Screen.height/2,100,50), "Go!"))
-		{
-			GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraLock>().isPlaying = true;
-			startFrozen = false;
-		}
+		trigPause = true;
+	}
+
+	public void startGame()
+	{
+		Camera.main.GetComponent<CameraLock>().isPlaying = true;
+		startFrozen = false;
+		//StartCoroutine (DelayGameStart ());
+	}
+
+	IEnumerator DelayGameStart()
+	{
+
+		yield return new WaitForSeconds (startDelay);
 	}
 	
 }

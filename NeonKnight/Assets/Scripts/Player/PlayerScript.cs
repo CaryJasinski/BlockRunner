@@ -3,10 +3,11 @@ using System.Collections;
 
 public class PlayerScript: MonoBehaviour 
 {
-	public float fltMoveSpeed = 4;
-	public float fltJumpHeight = 10;
-	public Vector3 StartingPosition;
-	public bool blnPlayerActive = true;
+	public float moveSpeed = 4;
+	public float jumpHeight = 10;
+	public float superJumpHeight = 20;
+	public Vector3 startingPosition;
+	public bool playerActive = true;
 	
 	//private GameManager m_gameManager;
 	
@@ -18,62 +19,39 @@ public class PlayerScript: MonoBehaviour
 	
 	void Start () 
 	{	
-		m_JumpHeight = fltJumpHeight;
-		StartingPosition = transform.position;
-		//m_gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+		m_JumpHeight = jumpHeight;
+		startingPosition = transform.position;;
 		playerAnimator = transform.GetChild(0).GetComponent<Animator>();
 		playerAnimator.SetInteger("Movement", 1);
 	}
 
 	void Update ()
 	{
-		if (Input.GetKeyDown (KeyCode.Space))
-			Jump ();
-
-		if(!jumping)
-			playerAnimator.SetInteger("Movement", 1);
+		HandleInput ();
+		//if(!jumping)
+			//playerAnimator.SetInteger("Movement", 1);
 	}
 
 	void FixedUpdate () 
 	{
 		MovePlayer();
+	}
 
+	void HandleInput ()
+	{
+		if (Input.GetKeyDown (KeyCode.Space))
+			Jump ();
 	}
 
 	void Jump()
 	{
 		if (superJump) 
-		{
-			m_JumpHeight = fltJumpHeight * 1.5f;
-			Debug.Log (m_JumpHeight);
-		} else {
-			m_JumpHeight = fltJumpHeight;
-		}
-		this.rigidbody2D.velocity = new Vector2 (fltMoveSpeed, m_JumpHeight);
+			m_JumpHeight = jumpHeight * 1.5f;
+		else
+			m_JumpHeight = jumpHeight;
+
+		this.rigidbody2D.velocity = new Vector2 (moveSpeed, m_JumpHeight);
 		StartCoroutine(JumpAnimation());
-	}
-
-	void OnTriggerEnter2D (Collider2D other)
-	{
-		if(other.CompareTag("JumpPad"))
-		   superJump = true;
-	}
-
-	void OnTriggerExit2D (Collider2D other)
-	{
-		if(other.CompareTag("JumpPad"))
-			superJump = false;
-	}
-
-	void OnCollisionEnter2D(Collision2D collision)
-	{
-		if(collision.gameObject.tag == "MovablePlatform")
-			this.transform.parent = collision.gameObject.transform;
-	}
-
-	void OnCollisionExit2D(Collision2D collision)
-	{
-		this.transform.parent = null;
 	}
 
 	IEnumerator JumpAnimation()
@@ -86,15 +64,38 @@ public class PlayerScript: MonoBehaviour
 
 	void MovePlayer()
 	{
-		if(blnPlayerActive)
+		if(playerActive)
 		{
 			this.rigidbody2D.isKinematic = false;
-			this.rigidbody2D.velocity = new Vector2(fltMoveSpeed, this.rigidbody2D.velocity.y);
+			this.rigidbody2D.velocity = new Vector2(moveSpeed, this.rigidbody2D.velocity.y);
 		}
 		else
 		{
 			this.rigidbody2D.isKinematic = true;
 			this.rigidbody2D.velocity = Vector2.zero;
 		}
+	}
+
+	void OnTriggerEnter2D (Collider2D other)
+	{
+		if(other.CompareTag("JumpPad"))
+			superJump = true;
+	}
+	
+	void OnTriggerExit2D (Collider2D other)
+	{
+		if(other.CompareTag("JumpPad"))
+			superJump = false;
+	}
+	
+	void OnCollisionEnter2D(Collision2D collision)
+	{
+		if(collision.gameObject.tag == "MovablePlatform")
+			this.transform.parent = collision.gameObject.transform;
+	}
+	
+	void OnCollisionExit2D(Collision2D collision)
+	{
+		this.transform.parent = null;
 	}
 }
