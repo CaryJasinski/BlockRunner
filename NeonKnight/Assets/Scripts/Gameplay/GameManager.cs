@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour {
 		Player = GameObject.Find("NeonKnight"); 
 		m_playerScript = Player.GetComponent<PlayerScript>();
 		m_moveablePlatforms = GameObject.FindGameObjectsWithTag("MoveablePlatform");
-		uiManagerScript.UpdateLifeDisplay (intPlayerLives);
 		if(intPlayerLives < 0)
 			m_blnCanDie = false;
 	}

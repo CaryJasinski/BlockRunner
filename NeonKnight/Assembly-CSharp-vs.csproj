@@ -99,10 +99,17 @@
      <Compile Include="Assets\Scripts\UI\MainMenu.cs" />
      <Compile Include="Assets\Scripts\UI\MenuPlatformSwipe.cs" />
      <Compile Include="Assets\Scripts\UI\Pausing.cs" />
+     <Compile Include="Assets\Scripts\UI\PlayerHUD\PausePanel.cs" />
      <Compile Include="Assets\Scripts\UI\PlayerLifePanel.cs" />
      <Compile Include="Assets\Scripts\UI\SwipeLevelLoad.cs" />
      <Compile Include="Assets\Scripts\UI\TapTutorial.cs" />
-     <Compile Include="Assets\Scripts\UI\UIManager.cs" />
+     <Compile Include="Assets\Scripts\UI\UIManager\CreditMenuManager.cs" />
+     <Compile Include="Assets\Scripts\UI\UIManager\InGameUIManager.cs" />
+     <Compile Include="Assets\Scripts\UI\UIManager\LevelFailManager.cs" />
+     <Compile Include="Assets\Scripts\UI\UIManager\LevelSuccessManager.cs" />
+     <Compile Include="Assets\Scripts\UI\UIManager\PauseMenuManager.cs" />
+     <Compile Include="Assets\Scripts\UI\UIManager\StartMenuManager.cs" />
+     <Compile Include="Assets\Scripts\UI\UIManager\UIManager.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/New folder/Unity4.6/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>

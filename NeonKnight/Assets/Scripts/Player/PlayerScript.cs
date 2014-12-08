@@ -5,7 +5,7 @@ public class PlayerScript: MonoBehaviour
 {
 	public float moveSpeed = 4;
 	public float jumpHeight = 10;
-	public float superJumpHeight = 20;
+	public float canSuperJumpHeight = 20;
 	public Vector3 startingPosition;
 	public bool playerActive = true;
 	
@@ -13,9 +13,11 @@ public class PlayerScript: MonoBehaviour
 	
 	[HideInInspector]
 	public Animator playerAnimator;
-	private bool jumping = false;
-	private bool superJump = false;
+	private bool isGrounded = false;
+	private bool isJumping = false;
+	private bool canSuperJump = false;
 	private float m_JumpHeight;
+
 	
 	void Start () 
 	{	
@@ -28,7 +30,7 @@ public class PlayerScript: MonoBehaviour
 	void Update ()
 	{
 		HandleInput ();
-		//if(!jumping)
+		//if(!isJumping)
 			//playerAnimator.SetInteger("Movement", 1);
 	}
 
@@ -45,19 +47,22 @@ public class PlayerScript: MonoBehaviour
 
 	void Jump()
 	{
-		if (superJump) 
-			m_JumpHeight = jumpHeight * 1.5f;
-		else
-			m_JumpHeight = jumpHeight;
+		if(isGrounded)
+		{
+			if (canSuperJump) 
+				m_JumpHeight = jumpHeight * 1.5f;
+			else
+				m_JumpHeight = jumpHeight;
 
-		this.rigidbody2D.velocity = new Vector2 (moveSpeed, m_JumpHeight);
-		StartCoroutine(JumpAnimation());
+			this.rigidbody2D.velocity = new Vector2 (moveSpeed, m_JumpHeight);
+			StartCoroutine(JumpAnimation());
+		}
 	}
 
 	IEnumerator JumpAnimation()
 	{
 		playerAnimator.SetInteger("Movement", 0);
-		jumping = true;
+		isJumping = true;
 		yield return new WaitForSeconds(0.5f);
 		playerAnimator.SetInteger("Movement", 1);
 	}
@@ -79,23 +84,25 @@ public class PlayerScript: MonoBehaviour
 	void OnTriggerEnter2D (Collider2D other)
 	{
 		if(other.CompareTag("JumpPad"))
-			superJump = true;
+			canSuperJump = true;
 	}
 	
 	void OnTriggerExit2D (Collider2D other)
 	{
 		if(other.CompareTag("JumpPad"))
-			superJump = false;
+			canSuperJump = false;
 	}
 	
 	void OnCollisionEnter2D(Collision2D collision)
 	{
+		isGrounded = true;
 		if(collision.gameObject.tag == "MovablePlatform")
 			this.transform.parent = collision.gameObject.transform;
 	}
 	
 	void OnCollisionExit2D(Collision2D collision)
 	{
+		isGrounded = false;
 		this.transform.parent = null;
 	}
 }

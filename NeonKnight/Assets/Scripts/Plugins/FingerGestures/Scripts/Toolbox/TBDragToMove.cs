@@ -7,7 +7,7 @@ using System.Collections;
 [AddComponentMenu( "FingerGestures/Toolbox/Drag To Move" )]
 public class TBDragToMove : MonoBehaviour
 {
-	public Pausing pauseManager;
+	public Pausing pausing;
 
 	public Collider DragPlaneCollider;      // collider used when dragPlaneType is set to DragPlaneType.UseCollider
     public float DragPlaneOffset = 0.0f;    // distance between dragged object and drag constraint plane
@@ -65,7 +65,7 @@ public class TBDragToMove : MonoBehaviour
 
 	void Start()
 	{
-		pauseManager = GameObject.Find("GameManager").GetComponent<Pausing>();	
+		pausing = GameObject.Find("UIManager").GetComponent<Pausing>();	
 		if( !RaycastCamera )
 			RaycastCamera = Camera.main;
 	}
@@ -173,8 +173,8 @@ void HandleDrag( DragGesture gesture )
 
     void OnDrag( DragGesture gesture )
     {
-		if(pauseManager.trigPause == false)
-        HandleDrag( gesture );
+		if(pausing.isPaused == false)
+        	HandleDrag( gesture );
     }
 
     void OnDisable()
