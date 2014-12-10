@@ -1,24 +1,16 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UI\UIManager\UIManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\UI\PlayerLifePanel.cs" Line="9" Column="2" />
-      <File FileName="Assets\Scripts\UI\UIManager\StartMenuManager.cs" Line="12" Column="1" />
-      <File FileName="Assets\Scripts\UI\UIManager\InGameUIManager.cs" Line="20" Column="3" />
-      <File FileName="Assets\Scripts\UI\UIManager\PauseMenuManager.cs" Line="7" Column="2" />
-      <File FileName="Assets\Scripts\UI\UIManager\LevelFailManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UI\UIManager\LevelSuccessManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UI\UIManager\CreditMenuManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UI\UIManager\UIManager.cs" Line="50" Column="34" />
-      <File FileName="Assets\Scripts\Gameplay\GameManager.cs" Line="22" Column="79" />
-      <File FileName="Assets\Scripts\UI\Pausing.cs" Line="48" Column="58" />
-      <File FileName="Assets\Scripts\Plugins\FingerGestures\Scripts\Toolbox\TBDragToMove.cs" Line="176" Column="22" />
+      <File FileName="Assets\Scripts\UI\UIManager\UIManager.cs" Line="93" Column="1" />
+      <File FileName="Assets\Scripts\UI\UIManager\UIManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI\UIManager\InGameUIManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI\Pausing.cs" Line="20" Column="1" />
+      <File FileName="Assets\Scripts\Gameplay\GameManager.cs" Line="32" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="C:\Users\Cary\Documents\GitHub\NeonKnight\NeonKnight\Assets\Scripts\UI\UIManager\UIManager.cs" line="33" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

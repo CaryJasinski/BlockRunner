@@ -29,7 +29,6 @@ public class GameManager : MonoBehaviour {
 		if(m_blnCanDie && intPlayerLives <= 0)
 			Application.LoadLevel("LoseScreen");
 	}
-	
 
 	public void KillPlayer()
 	{

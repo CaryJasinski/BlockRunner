@@ -13,7 +13,7 @@ public class UIManager : MonoBehaviour {
 	private PauseMenuManager pauseMenu;
 	private LevelFailManager levelFail;
 	private LevelSuccessManager levelSuccess;
-	private CreditMenuManager creditMenu;
+	private CreditsMenuManager creditMenu;
 
 	void Start () 
 	{
@@ -23,7 +23,7 @@ public class UIManager : MonoBehaviour {
 		pauseMenu = GetComponent<PauseMenuManager> ();
 		levelFail = GetComponent<LevelFailManager> ();
 		levelSuccess = GetComponent<LevelSuccessManager> ();
-		creditMenu = GetComponent<CreditMenuManager> ();
+		creditMenu = GetComponent<CreditsMenuManager> ();
 	}
 
 	void Update()
@@ -60,33 +60,33 @@ public class UIManager : MonoBehaviour {
 		if (uiState == UIState.PauseMenu) 
 		{
 			previousUIState = UIState.PauseMenu;
-			//pauseMenu.EnableOverlay(true);
+			pauseMenu.EnableOverlay(true);
 		} 
-		//else
-			//inGameUI.EnableOverlay(false);
+		else
+			pauseMenu.EnableOverlay(false);
 
-//		if (uiState == UIState.LevelFail) 
-//		{
-//			previousUIState = UIState.LevelFail;
-//			levelFail.EnableOverlay(true);
-//		} 
-//		else
-//			levelFail.EnableOverlay(false);
-//
-//		if (uiState == UIState.LevelSuccess) 
-//		{
-//			previousUIState = UIState.LevelSuccess;
-//			levelSuccess.EnableOverlay(true);
-//		} 
-//		else
-//			levelSuccess.EnableOverlay(false);
-//
-//		if (uiState == UIState.Credits) 
-//		{
-//			previousUIState = UIState.Credits;
-//			creditMenu.EnableOverlay(true);
-//		}
-//		else
-//			creditMenu.EnableOverlay(false);
+		if (uiState == UIState.LevelFail) 
+		{
+			previousUIState = UIState.LevelFail;
+			levelFail.EnableOverlay(true);
+		} 
+		else
+			levelFail.EnableOverlay(false);
+
+		if (uiState == UIState.LevelSuccess) 
+		{
+			previousUIState = UIState.LevelSuccess;
+			levelSuccess.EnableOverlay(true);
+		} 
+		else
+			levelSuccess.EnableOverlay(false);
+
+		if (uiState == UIState.Credits) 
+		{
+			previousUIState = UIState.Credits;
+			creditMenu.EnableOverlay(true);
+		}
+		else
+			creditMenu.EnableOverlay(false);
 	}
 }

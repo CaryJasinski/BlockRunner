@@ -6,55 +6,29 @@ public class Pausing : MonoBehaviour {
 	public bool isPaused = false;
 	public bool startFrozen = true;
 	public float startDelay = 0.5f;
-	
-	void Update()
-	{
-		Freeze();
-		//Pause ();
-	}
 
-	void Pause()
+	void Start()
 	{
-		if (isPaused) 
-		{
-			Time.timeScale = 0F;
-		} 
-		else 
-		{
-			Time.timeScale = 1f;
-		}
+		Freeze ();
 	}
 
 	void Freeze()
 	{
-		if (startFrozen) 
-		   Time.timeScale = 0F;
-		else 
-		   Time.timeScale = 1f;
+		Time.timeScale = 0f;
 	}
-
-	void PauseMenu()
-	{
-		if (GUI.Button (new Rect (Screen.width/2,Screen.height/2 - 50,100,50), "Main Menu"))
-			Application.LoadLevel("MainMenu");
-		if (GUI.Button (new Rect (Screen.width/2,Screen.height/2 - 100,100,50), "Resume"))
-			isPaused = false;
-		if (GUI.Button (new Rect (Screen.width/2,Screen.height/2,100,50), "Quit"))
-			Application.Quit();
-	}
-
+	
 	public void PauseGame()
 	{
-		UIManager.manager.uiState = UIManager.UIState.PauseMenu;
 		isPaused = true;
-		Time.timeScale = 0F;
+		Time.timeScale = 0f;
+		UIManager.manager.uiState = UIManager.UIState.PauseMenu;
 	}
 
 	public void ResumeGame()
 	{
-		UIManager.manager.uiState = UIManager.UIState.InGameUI;
 		isPaused = false;
-		Time.timeScale = 1F;
+		Time.timeScale = 1f;
+		UIManager.manager.uiState = UIManager.UIState.InGameUI;
 	}
 
 	public void TogglePause()
@@ -70,12 +44,11 @@ public class Pausing : MonoBehaviour {
 		StartCoroutine (DelayGameStart ());
 		Camera.main.GetComponent<CameraLock>().isPlaying = true;
 		UIManager.manager.uiState = UIManager.UIState.InGameUI;
-		startFrozen = false;
+		Time.timeScale = 1f;
 	}
 
 	IEnumerator DelayGameStart()
 	{
-
 		yield return new WaitForSeconds (startDelay);
 	}
 	

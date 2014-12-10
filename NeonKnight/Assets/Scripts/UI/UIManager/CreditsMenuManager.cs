@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections;
 
-public class CreditMenuManager : MonoBehaviour 
+public class CreditsMenuManager : MonoBehaviour 
 {
 	public Canvas creditsMenuCanvas;
 	
