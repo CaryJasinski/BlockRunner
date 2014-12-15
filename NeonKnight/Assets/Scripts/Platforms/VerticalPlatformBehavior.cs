@@ -20,6 +20,16 @@ public class VerticalPlatformBehavior : MonoBehaviour {
 
 	private Vector3 velocity = Vector3.zero;
 
+	#if UNITY_EDITOR
+	void OnDrawGizmos()
+	{
+		startPosition = transform.position;
+		solutionPosition = new Vector2 (startPosition.x, startPosition.y + fltSolutionOffset);
+		Gizmos.color = Color.green;
+		Gizmos.DrawWireCube(solutionPosition, new Vector3(5.75f,0.25f,0));
+	}
+	#endif
+
 	void Start () 
 	{
 		startPosition = transform.position;

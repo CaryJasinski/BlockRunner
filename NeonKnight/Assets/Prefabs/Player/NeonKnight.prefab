@@ -29,7 +29,6 @@ GameObject:
   - 50: {fileID: 5000000}
   - 114: {fileID: 11400002}
   - 61: {fileID: 6100004}
-  - 61: {fileID: 6100002}
   m_Layer: 0
   m_Name: NeonKnight
   m_TagString: Player
@@ -56,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -35.4810982, y: -29.47258, z: 0}
+  m_LocalPosition: {x: .99000001, y: 10.9799995, z: 0}
   m_LocalScale: {x: 1.00741696, y: 1.22111118, z: 1}
   m_Children:
   - {fileID: 400000}
@@ -75,26 +74,15 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
-  m_Mass: 1
+  m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 2.20000005
+  m_GravityScale: 1
   m_FixedAngle: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!61 &6100002
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Size: {x: .870000005, y: .889999986}
-  m_Center: {x: -.239999995, y: -.839999974}
 --- !u!61 &6100004
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -132,11 +120,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1df1f3b5bcddd544d9df3bcc45fd4829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fltMoveSpeed: 4.5
-  fltJumpHeight: 10
-  StartingPosition: {x: 0, y: 0, z: 0}
-  blnPlayerActive: 1
+  moveSpeed: 4
+  acceleration: 2000
+  jumpHeight: 6
+  canSuperJumpHeight: 10
+  startingPosition: {x: 0, y: 0, z: 0}
+  playerActive: 1
   playerAnimator: {fileID: 0}
+  canSuperJump: 0
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

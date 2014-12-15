@@ -4,7 +4,8 @@ using System.Collections;
 public class PlayerScript: MonoBehaviour 
 {
 	public float moveSpeed = 4;
-	public float jumpHeight = 10;
+	public float acceleration = 20;
+	public float jumpHeight = 4;
 	public float canSuperJumpHeight = 20;
 	public Vector3 startingPosition;
 	public bool playerActive = true;
@@ -15,7 +16,7 @@ public class PlayerScript: MonoBehaviour
 	public Animator playerAnimator;
 	private bool isGrounded = false;
 	private bool isJumping = false;
-	private bool canSuperJump = false;
+	public bool canSuperJump = false;
 	private float m_JumpHeight;
 
 	
@@ -50,7 +51,7 @@ public class PlayerScript: MonoBehaviour
 		if(isGrounded)
 		{
 			if (canSuperJump) 
-				m_JumpHeight = jumpHeight * 1.5f;
+				m_JumpHeight = canSuperJumpHeight;
 			else
 				m_JumpHeight = jumpHeight;
 
@@ -72,7 +73,9 @@ public class PlayerScript: MonoBehaviour
 		if(playerActive)
 		{
 			this.rigidbody2D.isKinematic = false;
-			this.rigidbody2D.velocity = new Vector2(moveSpeed, this.rigidbody2D.velocity.y);
+			if(rigidbody2D.velocity.x < moveSpeed)
+				this.rigidbody2D.AddForce(new Vector2(acceleration, 0));
+			//this.rigidbody2D.velocity = new Vector2(moveSpeed, this.rigidbody2D.velocity.y);
 		}
 		else
 		{
