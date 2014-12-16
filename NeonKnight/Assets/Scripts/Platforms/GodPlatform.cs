@@ -8,6 +8,8 @@ public class GodPlatform : MonoBehaviour {
 	public float fltSolutionOffset = 5.0f;
 	public float fltSnappingSpeed = 0.5f;
 	public bool hasJumpPad = false;
+	public bool enableGuideLinesGizmo = false;
+	public bool enableJumpDistanceGizmo = false;
 
 	public GameObject goJumpPad;
 	public GameObject goPositionDot;
@@ -20,29 +22,59 @@ public class GodPlatform : MonoBehaviour {
 	[HideInInspector] public Vector2 centerPosition;
 	[HideInInspector] public Vector2 solutionPosition;
 	private bool m_positive;
-	
 	Vector2 currentPosition;
-	
 	public Vector2 GetStartPosition(){ return startPosition; }
 	public Vector2 GetSolutionPosition(){ return solutionPosition; }
-	
 	private Vector3 velocity = Vector3.zero;
+	
+//Gizmos Code Holder
+#if UNITY_EDITOR 
+	void OnDrawGizmosSelected() 
+	{
 
-//	switch(platformType)
-//	{
-//	case PlatformType.Static:
-//		
-//		break;
-//	case PlatformType.MoveableHorizontal:
-//		
-//		break;
-//	case PlatformType.MoveableVertical:
-//	default:
-//		
-//		break;
-//	}
+		switch(platformType)
+		{
+		case PlatformType.Static:
+			
+			break;
+		case PlatformType.MoveableHorizontal:
+			HorizontalSelectedGizmo();
+			break;
+		case PlatformType.MoveableVertical:
+		default:
+			VerticalSelectedGizmo();
+			break;
+		}
 
-	#if UNITY_EDITOR
+		//Used to help game design process
+		if(enableGuideLinesGizmo) // horizontal and vertical lines that originate from the objects center 
+		{
+			Gizmos.color = Color.grey;
+			Gizmos.DrawLine(new Vector2(transform.position.x - 50, transform.position.y + 0.242f), 
+			                new Vector2(transform.position.x + 50, transform.position.y + 0.242f));
+			Gizmos.DrawLine(new Vector2(transform.position.x, transform.position.y - 50), 
+			                new Vector2(transform.position.x, transform.position.y + 50));
+		}
+
+		//Used to help game design process
+		if(enableJumpDistanceGizmo)
+		{
+			Gizmos.color = Color.yellow;
+			float jumpDistance = 3.0f; //offset from the plat's right edge as to where the players falrthest juemp will land them
+			float gizmoLineLength = 1.30f; //this is actually half the lenght of the line
+
+			//Right jump distance indicator
+			Vector2 platformRightEdge = new Vector2(transform.position.x + 3.0f, transform.position.y);
+			Gizmos.DrawLine(new Vector2(platformRightEdge.x + jumpDistance, transform.position.y - gizmoLineLength), 
+			                new Vector2(platformRightEdge.x + jumpDistance, transform.position.y + gizmoLineLength));
+
+			//Left jump distance indicator
+			Vector2 platformLeftEdge = new Vector2(transform.position.x - 3.0f, transform.position.y);
+			Gizmos.DrawLine(new Vector2(platformLeftEdge.x - jumpDistance, transform.position.y - gizmoLineLength), 
+			                new Vector2(platformLeftEdge.x - jumpDistance, transform.position.y + gizmoLineLength));
+		}
+	}
+
 	void OnDrawGizmos()
 	{
 		switch(platformType)
@@ -65,14 +97,43 @@ public class GodPlatform : MonoBehaviour {
 			Gizmos.DrawWireCube(new Vector2(transform.position.x + 2.24f, transform.position.y + 0.68f), new Vector3(1.5f,0.75f,0));
 		}
 	}
-	#endif
 
 	void VerticalGizmo()
 	{
 		startPosition = transform.position;
 		solutionPosition = new Vector2 (startPosition.x, startPosition.y + fltSolutionOffset);
 		Gizmos.color = Color.red;
-		Gizmos.DrawWireCube(solutionPosition, new Vector3(5.75f,0.25f,0));
+		Gizmos.DrawWireCube(solutionPosition, new Vector3(5.75f,0.4f,0));
+	}
+
+	void VerticalSelectedGizmo()
+	{
+		startPosition = transform.position;
+		solutionPosition = new Vector2 (startPosition.x, startPosition.y + fltSolutionOffset);
+		
+		if(enableJumpDistanceGizmo)
+		{
+			Gizmos.color = Color.green;
+			float jumpDistance = 3.0f; //offset from the plat's right edge as to where the players falrthest juemp will land them
+			float gizmoLineLength = 1.30f; //this is actually half the lenght of the line
+			
+			//Right jump distance indicator
+			Vector2 platformRightEdge = new Vector2(transform.position.x + 3.0f, solutionPosition.y);
+			Gizmos.DrawLine(new Vector2(platformRightEdge.x + jumpDistance, solutionPosition.y - gizmoLineLength), 
+			                new Vector2(platformRightEdge.x + jumpDistance, solutionPosition.y + gizmoLineLength));
+			
+			//Left jump distance indicator
+			Vector2 platformLeftEdge = new Vector2(transform.position.x - 3.0f, solutionPosition.y);
+			Gizmos.DrawLine(new Vector2(platformLeftEdge.x - jumpDistance, solutionPosition.y - gizmoLineLength), 
+			                new Vector2(platformLeftEdge.x - jumpDistance, solutionPosition.y + gizmoLineLength));
+		}
+
+		if(enableGuideLinesGizmo) // horizontal and vertical lines that originate from the objects center 
+		{
+			Gizmos.color = Color.grey;
+			Gizmos.DrawLine(new Vector2(transform.position.x - 50, solutionPosition.y + 0.242f), 
+			                new Vector2(transform.position.x + 50, solutionPosition.y + 0.242f));
+		}
 	}
 
 	void HorizontalGizmo()
@@ -80,8 +141,32 @@ public class GodPlatform : MonoBehaviour {
 		startPosition = transform.position;
 		solutionPosition = new Vector2 (startPosition.x + fltSolutionOffset, startPosition.y);
 		Gizmos.color = Color.magenta;
-		Gizmos.DrawWireCube(solutionPosition, new Vector3(5.75f,0.25f,0));
+		Gizmos.DrawWireCube(solutionPosition, new Vector3(5.75f,0.4f,0));
 	}
+
+	void HorizontalSelectedGizmo()
+	{
+		startPosition = transform.position;
+		solutionPosition = new Vector2 (startPosition.x + fltSolutionOffset, startPosition.y);
+		
+		if(enableJumpDistanceGizmo)
+		{
+			Gizmos.color = Color.green;
+			float jumpDistance = 3.0f; //offset from the plat's right edge as to where the players falrthest juemp will land them
+			float gizmoLineLength = 1.30f; //this is actually half the lenght of the line
+			
+			//Right jump distance indicator
+			Vector2 platformRightEdge = new Vector2(solutionPosition.x + 3.0f, solutionPosition.y);
+			Gizmos.DrawLine(new Vector2(platformRightEdge.x + jumpDistance, transform.position.y - gizmoLineLength), 
+			                new Vector2(platformRightEdge.x + jumpDistance, transform.position.y + gizmoLineLength));
+			
+			//Left jump distance indicator
+			Vector2 platformLeftEdge = new Vector2(solutionPosition.x - 3.0f, solutionPosition.y);
+			Gizmos.DrawLine(new Vector2(platformLeftEdge.x - jumpDistance, platformLeftEdge.y - gizmoLineLength), 
+			                new Vector2(platformLeftEdge.x - jumpDistance, platformLeftEdge.y + gizmoLineLength));
+		}
+	}
+#endif
 
 	void Start () 
 	{

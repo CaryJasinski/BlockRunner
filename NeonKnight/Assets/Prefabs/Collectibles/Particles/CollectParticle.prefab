@@ -14,7 +14,7 @@ GameObject:
   - 58: {fileID: 5800000}
   m_Layer: 0
   m_Name: CollectParticle
-  m_TagString: Untagged
+  m_TagString: collectibleIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68,7 +68,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4edb2edcb6c2f9b408532be8f2ec38f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: .300000012
   target: {fileID: 100002, guid: 0ed4eefc47b4beb45ae3ec1ede7287a3, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:

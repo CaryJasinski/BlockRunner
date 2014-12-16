@@ -73,9 +73,9 @@ public class PlayerScript: MonoBehaviour
 		if(playerActive)
 		{
 			this.rigidbody2D.isKinematic = false;
-			if(rigidbody2D.velocity.x < moveSpeed)
-				this.rigidbody2D.AddForce(new Vector2(acceleration, 0));
-			//this.rigidbody2D.velocity = new Vector2(moveSpeed, this.rigidbody2D.velocity.y);
+//			if(rigidbody2D.velocity.x < moveSpeed)
+//				this.rigidbody2D.AddForce(new Vector2(acceleration, 0));
+			this.rigidbody2D.velocity = new Vector2(moveSpeed, this.rigidbody2D.velocity.y);
 		}
 		else
 		{
@@ -88,6 +88,8 @@ public class PlayerScript: MonoBehaviour
 	{
 		if(other.CompareTag("JumpPad"))
 			canSuperJump = true;
+		if(other.tag == "collectibleIcon")
+			Destroy (other.gameObject);
 	}
 	
 	void OnTriggerExit2D (Collider2D other)
