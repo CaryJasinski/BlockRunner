@@ -1,16 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UI\Pausing.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UI\UIManager\InGameUIManager.cs">
     <Files>
-      <File FileName="NeonKnight.sln" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UI\Pausing.cs" Line="23" Column="19" />
-      <File FileName="Assets\Scripts\Platforms\GodPlatform.cs" Line="90" Column="5" />
-      <File FileName="Assets\Scripts\Player\PlayerScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Platforms\HorizontalPlatformBehavior.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Platforms\VerticalPlatformBehavior.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Platforms\DragAndRotate.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UI\UIManager\UIManager.cs" Line="93" Column="1" />
-      <File FileName="Assets\Scripts\Gameplay\EndPortal.cs" Line="31" Column="1" />
+      <File FileName="Assets\Scripts\UI\UIManager\InGameUIManager.cs" Line="15" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
