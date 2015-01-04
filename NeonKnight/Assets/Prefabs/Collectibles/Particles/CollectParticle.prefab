@@ -69,6 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 100002, guid: 0ed4eefc47b4beb45ae3ec1ede7287a3, type: 2}
+  particleDuration: 1
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

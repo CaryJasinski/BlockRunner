@@ -5,19 +5,26 @@ public class ParticleBehavior : MonoBehaviour {
 
 	
 	public GameObject target;
+	public float particleDuration = 0.5f;
 	Vector2 dir;
 	
 	void Start ()
 	{
-		this.rigidbody2D.AddForce(Random.insideUnitCircle * 100);
+		this.rigidbody2D.AddForce(new Vector2(Random.Range(500, 750), Random.Range(-100, 100)));
 	}
 	
-	// Update is called once per frame
 	void Update () 
 	{
-		transform.position = Vector2.Lerp(transform.position, target.transform.position, 0.25f*Time.deltaTime);
-		//if(transform.position == new Vector2(target.x)
-		//rigidbody2D.AddForce((-target.transform.position) * force * Time.smoothDeltaTime);
-		//Destroy (gameObject);
+		if(gameObject.activeInHierarchy)
+		{
+			transform.position = Vector2.Lerp(transform.position, target.transform.position, 0.5f*Time.deltaTime);
+			StartCoroutine(DeactivateParticle());
+		}
+	}
+
+	IEnumerator DeactivateParticle()
+	{
+		yield return new WaitForSeconds(particleDuration);
+		gameObject.SetActive(false);
 	}
 }
