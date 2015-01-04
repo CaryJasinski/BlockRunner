@@ -16,7 +16,13 @@ public class Pausing : MonoBehaviour {
 	{
 		Time.timeScale = 0f;
 	}
-	
+
+	void Update()
+	{
+		if(Input.GetKeyDown(KeyCode.P)
+		   startGame(); 
+	}
+
 	public void PauseGame()
 	{
 		isPaused = true;
