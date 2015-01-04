@@ -1,15 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Platforms\GodPlatform.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Gameplay\EndPortal.cs">
     <Files>
-      <File FileName="Assets\Scripts\Platforms\GodPlatform.cs" Line="135" Column="75" />
-      <File FileName="Assets\Scripts\Player\PlayerScript.cs" Line="92" Column="29" />
+      <File FileName="Assets\Scripts\Platforms\GodPlatform.cs" Line="90" Column="5" />
+      <File FileName="Assets\Scripts\Player\PlayerScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Platforms\HorizontalPlatformBehavior.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Platforms\VerticalPlatformBehavior.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Platforms\DragAndRotate.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UI\UIManager\UIManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Plugins\FingerGestures\Scripts\Toolbox\TBDragToMove.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Gameplay\ParticleBehavior.cs" Line="18" Column="89" />
+      <File FileName="Assets\Scripts\Platforms\DragAndRotate.cs" Line="40" Column="1" />
+      <File FileName="Assets\Scripts\UI\UIManager\UIManager.cs" Line="93" Column="1" />
+      <File FileName="Assets\Scripts\Gameplay\EndPortal.cs" Line="31" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
