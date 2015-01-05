@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\Gameplay\GameManager.cs" />
      <Compile Include="Assets\Scripts\Gameplay\KillVolume.cs" />
      <Compile Include="Assets\Scripts\Gameplay\ParticleBehavior.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\Portal.cs" />
      <Compile Include="Assets\Scripts\Managers\PersistantData.cs" />
      <Compile Include="Assets\Scripts\Platforms\ClickAndRotate.cs" />
      <Compile Include="Assets\Scripts\Platforms\DragAndRotate.cs" />

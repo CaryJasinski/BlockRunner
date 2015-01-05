@@ -1,10 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Gameplay\ParticleBehavior.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Gameplay\GameManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\Managers\PersistantData.cs" Line="14" Column="21" />
-      <File FileName="Assets\Scripts\Gameplay\CollectBehavior.cs" Line="20" Column="3" />
-      <File FileName="Assets\Scripts\Gameplay\ParticleBehavior.cs" Line="16" Column="1" />
+      <File FileName="Assets\Scripts\Gameplay\Portal.cs" Line="18" Column="3" />
+      <File FileName="Assets\Scripts\Gameplay\GameManager.cs" Line="36" Column="49" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class ParticleBehavior : MonoBehaviour {
-
 	
 	public GameObject target;
 	public float particleDuration = 0.5f;
