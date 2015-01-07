@@ -33,12 +33,7 @@ public class UIManager : MonoBehaviour {
 			SetUIState ();
 		}
 	}
-
-	public void UpdateLifeDisplay(int lifeCount)
-	{
-		inGameUI.SetTextValue (lifeCount);
-	}
-
+	
 	void SetUIState()
 	{
 		if (uiState == UIState.StartMenu) 

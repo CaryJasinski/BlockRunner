@@ -15,6 +15,7 @@ public class EndPortal : MonoBehaviour {
 		if(collider.CompareTag("Player"))
 		{
 			Application.LoadLevel(m_currentLevelIndex++);
+			PersistantData.persistantDataController.SaveAllData();
 		}
 	}
 }

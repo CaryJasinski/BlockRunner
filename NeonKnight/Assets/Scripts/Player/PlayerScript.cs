@@ -18,8 +18,12 @@ public class PlayerScript: MonoBehaviour
 	private bool isJumping = false;
 	public bool canSuperJump = false;
 	private float m_JumpHeight;
-
 	
+	void OnDrawGizmos()
+	{
+
+	}
+
 	void Start () 
 	{	
 		m_JumpHeight = jumpHeight;
@@ -37,6 +41,7 @@ public class PlayerScript: MonoBehaviour
 
 	void FixedUpdate () 
 	{
+	
 		MovePlayer();
 	}
 
@@ -86,6 +91,8 @@ public class PlayerScript: MonoBehaviour
 
 	void OnTriggerEnter2D (Collider2D other)
 	{
+		if(other.CompareTag ("platform"))
+			rigidbody2D.gravityScale = 20.0f;
 		if(other.CompareTag("JumpPad"))
 			canSuperJump = true;
 		if(other.tag == "collectibleIcon")
@@ -94,6 +101,8 @@ public class PlayerScript: MonoBehaviour
 	
 	void OnTriggerExit2D (Collider2D other)
 	{
+		if(other.CompareTag ("platform"))
+			rigidbody2D.gravityScale = 3.0f;
 		if(other.CompareTag("JumpPad"))
 			canSuperJump = false;
 	}

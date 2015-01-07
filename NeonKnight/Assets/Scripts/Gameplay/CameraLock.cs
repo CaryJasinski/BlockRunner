@@ -38,7 +38,9 @@ public class CameraLock : MonoBehaviour {
 		
 		transform.position = Vector3.SmoothDamp(CameraPos, PlayerPos, ref velocity, fltSmoothTime);
 
-		if(PlayerPos.x + 5 > CameraPos.x)
+		if(PlayerPos.x + 2 > CameraPos.x && PlayerPos.x - 10 < CameraPos.x)
 			Player.GetComponent<PlayerScript>().playerActive = true;
+		if(PlayerPos.x - 11 > CameraPos.x)
+			Player.GetComponent<PlayerScript>().playerActive = false;
 	}
 }

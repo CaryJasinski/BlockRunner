@@ -5,12 +5,8 @@ using System.Collections.Generic;
 public class GameManager : MonoBehaviour {
 
 	public static GameObject manager;
-	public GameObject uiManager;
-	private UIManager uiManagerScript;
 	public GameObject Player;
 	private PlayerScript m_playerScript;
-	public int intCollectibles = 0;
-	public int intPlayerLives = 5;
 	public Transform platformHolder;
 	private List<Transform> m_moveablePlatforms = new List<Transform>();
 	private bool m_blnCanDie = true;
@@ -18,13 +14,12 @@ public class GameManager : MonoBehaviour {
 	void Start () 
 	{
 		manager = this.gameObject;
-		uiManagerScript = uiManager.GetComponent<UIManager> ();
 		Player = GameObject.Find("NeonKnight"); 
 		m_playerScript = Player.GetComponent<PlayerScript>();
 
 		StartCoroutine(Delayed());
 
-		if(intPlayerLives < 0)
+		if(PersistantData.persistantDataController.playerLives < 0)
 			m_blnCanDie = false;
 	}
 
@@ -39,7 +34,7 @@ public class GameManager : MonoBehaviour {
 
 	void Update () 
 	{
-		if(m_blnCanDie && intPlayerLives <= 0)
+		if(m_blnCanDie && PersistantData.persistantDataController.playerLives <= 0)
 			Application.LoadLevel("LoseScreen");
 	}
 
@@ -50,8 +45,7 @@ public class GameManager : MonoBehaviour {
 
 		if (m_blnCanDie) 
 		{
-			intPlayerLives--;
-			uiManagerScript.UpdateLifeDisplay(intPlayerLives);
+			PersistantData.persistantDataController.playerLives--;
 		}
 
 		ResetPlatformPositions();
@@ -64,10 +58,5 @@ public class GameManager : MonoBehaviour {
 			if(platform.GetComponent<GodPlatform>() != null)
 				platform.position = platform.GetComponent<GodPlatform>().GetStartPosition();
 		}
-	}
-
-	public void IncreaseScore()
-	{
-		intCollectibles +=1;
 	}
 }

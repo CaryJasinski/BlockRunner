@@ -10,6 +10,7 @@ public class PersistantData : MonoBehaviour
 	public static PersistantData persistantDataController;
 	
 	//inventory
+	public int playerLives = 5;
 	public int bytes = 0;
 	public int bits = 0;
 	
@@ -129,10 +130,11 @@ public class PersistantData : MonoBehaviour
 [Serializable]
 public class PlayerProfileData
 {
-	public int bytes;
-	public int bits;
+	public int playerLives = 5;
+	public int bytes = 0;
+	public int bits = 0;
 	
-	public int lastLevelCompleted;
+	public int lastLevelCompleted = 0;
 	public bool level01Unlock = false;
 	public bool level02Unlock = false;
 	public bool level03Unlock = false;

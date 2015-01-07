@@ -6,23 +6,20 @@ using System.Collections;
 public class InGameUIManager : MonoBehaviour 
 {
 	public Canvas inGameUICanvas;
-	public GameObject lifeTextHolder;
-
-	private Text lifeText;
-
-	void Start ()
+	public Text lifeTextHolder;
+	public Text collectibleTextHolder;
+	
+	void Update ()
 	{
-		lifeText = lifeTextHolder.GetComponent<Text> ();
-		SetTextValue (GameManager.manager.GetComponent<GameManager>().intPlayerLives);
+		if(inGameUICanvas.enabled)
+		{
+			lifeTextHolder.text = PersistantData.persistantDataController.playerLives.ToString();
+			collectibleTextHolder.text = PersistantData.persistantDataController.bits.ToString();
+		}
 	}
 
 	public void EnableOverlay(bool enabled)
 	{
 		inGameUICanvas.enabled = enabled;
-	}
-
-	public void SetTextValue(int lifeCount)
-	{
-		lifeText.text = lifeCount.ToString();
 	}
 }

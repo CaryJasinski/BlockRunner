@@ -1523,7 +1523,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inGameUICanvas: {fileID: 22300000}
-  lifeTextHolder: {fileID: 100038}
+  lifeTextHolder: {fileID: 11400054}
+  collectibleTextHolder: {fileID: 11400030}
 --- !u!114 &11400080
 MonoBehaviour:
   m_ObjectHideFlags: 1

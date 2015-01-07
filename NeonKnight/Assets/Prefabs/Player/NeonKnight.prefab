@@ -77,7 +77,7 @@ Rigidbody2D:
   m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_FixedAngle: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -92,8 +92,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .920000017, y: .899999976}
-  m_Center: {x: 0, y: 0}
+  m_Size: {x: .790000021, y: .75}
+  m_Center: {x: 0, y: -.100000001}
 --- !u!95 &9500000
 Animator:
   serializedVersion: 3
@@ -120,10 +120,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1df1f3b5bcddd544d9df3bcc45fd4829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
+  moveSpeed: 7
   acceleration: 2000
-  jumpHeight: 6
-  canSuperJumpHeight: 10
+  jumpHeight: 11
+  canSuperJumpHeight: 17.5
   startingPosition: {x: 0, y: 0, z: 0}
   playerActive: 1
   playerAnimator: {fileID: 0}
@@ -147,7 +147,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 773b5b188cb36f0408fde78470670cbd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
