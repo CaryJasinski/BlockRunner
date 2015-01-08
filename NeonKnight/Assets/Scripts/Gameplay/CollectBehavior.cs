@@ -4,8 +4,6 @@ using System.Collections;
 public class CollectBehavior : MonoBehaviour {
 	
 	public GameObject collectParticle;
-	public GameObject currentCollectible;
-	public GameObject GameManager;
 
 	void OnTriggerEnter2D(Collider2D collider)
 	{
@@ -22,7 +20,7 @@ public class CollectBehavior : MonoBehaviour {
 
 	void SpawnParticles()
 	{
-		Vector2 CollectPosition = (currentCollectible.transform.position);
+		Vector2 CollectPosition = (transform.position);
 		
 		Instantiate(collectParticle, CollectPosition, Quaternion.identity);
 		Instantiate(collectParticle, CollectPosition, Quaternion.identity);

@@ -39,38 +39,25 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity4.6/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity4.6/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Plugins\Editor\FingerGestures\DragRecognizerInspector.cs" />
-     <Compile Include="Assets\Scripts\Plugins\Editor\FingerGestures\FingerDownDetectorInspector.cs" />
-     <Compile Include="Assets\Scripts\Plugins\Editor\FingerGestures\FingerEventDetectorInspector.cs" />
-     <Compile Include="Assets\Scripts\Plugins\Editor\FingerGestures\FingerGesturesEditorUtils.cs" />
-     <Compile Include="Assets\Scripts\Plugins\Editor\FingerGestures\FingerGesturesInspector.cs" />
-     <Compile Include="Assets\Scripts\Plugins\Editor\FingerGestures\FingerHoverDetectorInspector.cs" />
-     <Compile Include="Assets\Scripts\Plugins\Editor\FingerGestures\FingerMotionDetectorInspector.cs" />
-     <Compile Include="Assets\Scripts\Plugins\Editor\FingerGestures\FingerUpDetectorInspector.cs" />
      <Compile Include="Assets\Scripts\Plugins\Editor\FingerGestures\GestureRecognizerInspector.cs" />
-     <Compile Include="Assets\Scripts\Plugins\Editor\FingerGestures\LongPressRecognizerInspector.cs" />
-     <Compile Include="Assets\Scripts\Plugins\Editor\FingerGestures\PinchRecognizerInspector.cs" />
-     <Compile Include="Assets\Scripts\Plugins\Editor\FingerGestures\PointCloudGestureEditor.cs" />
-     <Compile Include="Assets\Scripts\Plugins\Editor\FingerGestures\PointCloudGestureTemplateInspector.cs" />
-     <Compile Include="Assets\Scripts\Plugins\Editor\FingerGestures\PointCloudRecognizerInspector.cs" />
-     <Compile Include="Assets\Scripts\Plugins\Editor\FingerGestures\SwipeRecognizerInspector.cs" />
      <Compile Include="Assets\Scripts\Plugins\Editor\FingerGestures\TapRecognizerInspector.cs" />
      <Compile Include="Assets\Scripts\Plugins\Editor\FingerGestures\TwistRecognizerInspector.cs" />
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files (x86)/Unity4.6/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>C:/Program Files (x86)/Unity4.6/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/Editor/UnityEditor.UI.dll</HintPath>
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/Editor/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
- <HintPath>C:/Program Files (x86)/Unity4.6/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

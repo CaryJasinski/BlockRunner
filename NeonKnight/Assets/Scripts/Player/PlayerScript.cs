@@ -10,24 +10,16 @@ public class PlayerScript: MonoBehaviour
 	public Vector3 startingPosition;
 	public bool playerActive = true;
 	
-	//private GameManager m_gameManager;
-	
 	[HideInInspector]
 	public Animator playerAnimator;
 	private bool isGrounded = false;
-	private bool isJumping = false;
 	public bool canSuperJump = false;
 	private float m_JumpHeight;
-	
-	void OnDrawGizmos()
-	{
-
-	}
 
 	void Start () 
 	{	
 		m_JumpHeight = jumpHeight;
-		startingPosition = transform.position;;
+		startingPosition = transform.position;
 		playerAnimator = transform.GetChild(0).GetComponent<Animator>();
 		playerAnimator.SetInteger("Movement", 1);
 	}
@@ -35,13 +27,10 @@ public class PlayerScript: MonoBehaviour
 	void Update ()
 	{
 		HandleInput ();
-		//if(!isJumping)
-			//playerAnimator.SetInteger("Movement", 1);
 	}
 
 	void FixedUpdate () 
 	{
-	
 		MovePlayer();
 	}
 
@@ -68,7 +57,6 @@ public class PlayerScript: MonoBehaviour
 	IEnumerator JumpAnimation()
 	{
 		playerAnimator.SetInteger("Movement", 0);
-		isJumping = true;
 		yield return new WaitForSeconds(0.5f);
 		playerAnimator.SetInteger("Movement", 1);
 	}
@@ -78,8 +66,6 @@ public class PlayerScript: MonoBehaviour
 		if(playerActive)
 		{
 			this.rigidbody2D.isKinematic = false;
-//			if(rigidbody2D.velocity.x < moveSpeed)
-//				this.rigidbody2D.AddForce(new Vector2(acceleration, 0));
 			this.rigidbody2D.velocity = new Vector2(moveSpeed, this.rigidbody2D.velocity.y);
 		}
 		else
@@ -110,7 +96,7 @@ public class PlayerScript: MonoBehaviour
 	void OnCollisionEnter2D(Collision2D collision)
 	{
 		isGrounded = true;
-		if(collision.gameObject.tag == "MovablePlatform")
+		if(collision.gameObject.tag == "MasterPlatform")
 			this.transform.parent = collision.gameObject.transform;
 	}
 	

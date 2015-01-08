@@ -3,17 +3,11 @@ using System.Collections;
 
 public class EndPortal : MonoBehaviour {
 
-	private int m_currentLevelIndex;
-
-	void Start()
-	{
-		m_currentLevelIndex = Application.loadedLevel;
-	}
-
 	void OnTriggerEnter2D(Collider2D collider)
 	{
 		if(collider.CompareTag("Player"))
 		{
+			int m_currentLevelIndex = Application.loadedLevel;
 			Application.LoadLevel(m_currentLevelIndex++);
 			PersistantData.persistantDataController.SaveAllData();
 		}

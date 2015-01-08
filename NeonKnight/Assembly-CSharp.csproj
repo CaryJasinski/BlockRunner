@@ -39,29 +39,24 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity4.6/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity4.6/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Gameplay\AnimationBehavior.cs" />
      <Compile Include="Assets\Scripts\Gameplay\CameraLock.cs" />
      <Compile Include="Assets\Scripts\Gameplay\CollectBehavior.cs" />
      <Compile Include="Assets\Scripts\Gameplay\EndPortal.cs" />
      <Compile Include="Assets\Scripts\Gameplay\EndPortalBehavior.cs" />
-     <Compile Include="Assets\Scripts\Gameplay\GameManager.cs" />
      <Compile Include="Assets\Scripts\Gameplay\KillVolume.cs" />
      <Compile Include="Assets\Scripts\Gameplay\ParticleBehavior.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Portal.cs" />
+     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
      <Compile Include="Assets\Scripts\Managers\PersistantData.cs" />
-     <Compile Include="Assets\Scripts\Platforms\ClickAndRotate.cs" />
      <Compile Include="Assets\Scripts\Platforms\DragAndRotate.cs" />
      <Compile Include="Assets\Scripts\Platforms\GodPlatform.cs" />
-     <Compile Include="Assets\Scripts\Platforms\HorizontalPlatformBehavior.cs" />
-     <Compile Include="Assets\Scripts\Platforms\MovePlatform.cs" />
-     <Compile Include="Assets\Scripts\Platforms\VerticalPlatformBehavior.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerScript.cs" />
      <Compile Include="Assets\Scripts\Plugins\FingerGestures\Dev\FingerDebug.cs" />
      <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Base\ContinuousGestureRecognizer.cs" />
@@ -77,41 +72,14 @@
      <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Finger Event Detectors\FingerUpDetector.cs" />
      <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\FingerGestures.cs" />
      <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Gesture Recognizers\DragRecognizer.cs" />
-     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Gesture Recognizers\LongPressRecognizer.cs" />
-     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Gesture Recognizers\PinchRecognizer.cs" />
-     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Gesture Recognizers\PointCloudGestureTemplate.cs" />
-     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Gesture Recognizers\PointCloudRegognizer.cs" />
-     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Gesture Recognizers\SwipeRecognizer.cs" />
      <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Gesture Recognizers\TapRecognizer.cs" />
      <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Gesture Recognizers\TwistRecognizer.cs" />
      <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Input Providers\FGInputProvider.cs" />
      <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Input Providers\FGMouseInputProvider.cs" />
      <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Input Providers\FGTouchInputProvider.cs" />
-     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Toolbox\Camera\TBDragView.cs" />
-     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Toolbox\Camera\TBLookAtTap.cs" />
-     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Toolbox\Camera\TBOrbit.cs" />
-     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Toolbox\Camera\TBPan.cs" />
-     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Toolbox\Camera\TBPinchZoom.cs" />
      <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Toolbox\TBDragToMove.cs" />
-     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Toolbox\TBHoverChangeMaterial.cs" />
-     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Toolbox\TBHoverChangeScale.cs" />
-     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Toolbox\TBPinchToScale.cs" />
-     <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Toolbox\TBQuickSetup.cs" />
      <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Toolbox\TBTwistToRotate.cs" />
-     <Compile Include="Assets\Scripts\UI\ButtonScript.cs" />
-     <Compile Include="Assets\Scripts\UI\CreditsMenu\CreditsMenu.cs" />
-     <Compile Include="Assets\Scripts\UI\LevelFail\LevelFail.cs" />
-     <Compile Include="Assets\Scripts\UI\LevelSuccess\LevelSuccess.cs" />
-     <Compile Include="Assets\Scripts\UI\MainMenu.cs" />
-     <Compile Include="Assets\Scripts\UI\MenuPlatformSwipe.cs" />
-     <Compile Include="Assets\Scripts\UI\PauseMenu\PauseMenu.cs" />
      <Compile Include="Assets\Scripts\UI\Pausing.cs" />
-     <Compile Include="Assets\Scripts\UI\PlayerHUD\PausePanel.cs" />
-     <Compile Include="Assets\Scripts\UI\PlayerHUD\PlayerHUD.cs" />
-     <Compile Include="Assets\Scripts\UI\PlayerLifePanel.cs" />
-     <Compile Include="Assets\Scripts\UI\StartMenu\StartMenu.cs" />
-     <Compile Include="Assets\Scripts\UI\SwipeLevelLoad.cs" />
-     <Compile Include="Assets\Scripts\UI\TapTutorial.cs" />
      <Compile Include="Assets\Scripts\UI\UIManager\CreditsMenuManager.cs" />
      <Compile Include="Assets\Scripts\UI\UIManager\InGameUIManager.cs" />
      <Compile Include="Assets\Scripts\UI\UIManager\LevelFailManager.cs" />
@@ -120,7 +88,7 @@
      <Compile Include="Assets\Scripts\UI\UIManager\StartMenuManager.cs" />
      <Compile Include="Assets\Scripts\UI\UIManager\UIManager.cs" />
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files (x86)/Unity4.6/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -4,10 +4,10 @@ using System.Collections;
 public class CameraLock : MonoBehaviour {
 
 	public GameObject Player;
-	public float fltCameraOffset = 7;
-	public float fltSmoothTime = 0.5f;
+	public float cameraOffset = 7f;
+	public float smoothTime = 0.5f;
 	public float cameraSize = 20.0f;
-	public float growthSpeed = 10.0f;
+	public float orthoExpandSpeed = 10.0f;
 	public bool isPlaying = false;
 
 	private Vector3 PlayerPos;
@@ -16,6 +16,7 @@ public class CameraLock : MonoBehaviour {
 	
 	void Start () 
 	{
+		//Locks the cameras z pos to the z pos of the player
 		PlayerPos.z = transform.position.z;
 	}
 
@@ -23,24 +24,25 @@ public class CameraLock : MonoBehaviour {
 	{
 
 		if (isPlaying) 
-		{
+		{   //Expands camera view size over time
 			if (camera.orthographicSize < cameraSize)
 			{
-				camera.orthographicSize += growthSpeed * Time.fixedDeltaTime;
+				camera.orthographicSize += orthoExpandSpeed * Time.fixedDeltaTime;
 			}
 		}
 
-		PlayerPos.x = Player.transform.position.x + fltCameraOffset;
+		PlayerPos.x = Player.transform.position.x + cameraOffset;
 		PlayerPos.y = Player.transform.position.y;
 		
 		CameraPos = transform.position;
 		CameraPos.z = PlayerPos.z;
 		
-		transform.position = Vector3.SmoothDamp(CameraPos, PlayerPos, ref velocity, fltSmoothTime);
+		transform.position = Vector3.SmoothDamp(CameraPos, PlayerPos, ref velocity, smoothTime);
 
-		if(PlayerPos.x + 2 > CameraPos.x && PlayerPos.x - 10 < CameraPos.x)
+		//Deactivates player movement while camera is not viewing the player
+		if(PlayerPos.x + 2 > CameraPos.x && PlayerPos.x - 12 < CameraPos.x)
 			Player.GetComponent<PlayerScript>().playerActive = true;
-		if(PlayerPos.x - 11 > CameraPos.x)
+		if(PlayerPos.x - 13 > CameraPos.x)
 			Player.GetComponent<PlayerScript>().playerActive = false;
 	}
 }
