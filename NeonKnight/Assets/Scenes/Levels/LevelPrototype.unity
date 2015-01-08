@@ -2322,9 +2322,9 @@ MonoBehaviour:
   platformTexture: {fileID: 20429584}
   staticTexture: {fileID: 21300000, guid: e4992336bac39664ea1f5e69f094397a, type: 3}
   movableTexture: {fileID: 21300000, guid: aa11bd580f63d9e42a91a196ba3c9251, type: 3}
-  startPosition: {x: 55.9900017, y: 7.53000021}
+  startPosition: {x: 55.2900009, y: 7.46999979}
   centerPosition: {x: 0, y: 0}
-  solutionPosition: {x: 55.9900017, y: 10.75}
+  solutionPosition: {x: 55.2900009, y: 10.6899996}
   enableGuideLinesGizmo: 1
   enableJumpDistanceGizmo: 1
   gizmoJumpDistance: 3
@@ -7688,9 +7688,9 @@ MonoBehaviour:
   platformTexture: {fileID: 164735779}
   staticTexture: {fileID: 21300000, guid: e4992336bac39664ea1f5e69f094397a, type: 3}
   movableTexture: {fileID: 21300000, guid: aa11bd580f63d9e42a91a196ba3c9251, type: 3}
-  startPosition: {x: 142.119995, y: 6.07999992}
+  startPosition: {x: 142.880005, y: 9.56000042}
   centerPosition: {x: 0, y: 0}
-  solutionPosition: {x: 142.119995, y: 9.07999992}
+  solutionPosition: {x: 142.880005, y: 12.5600004}
   enableGuideLinesGizmo: 1
   enableJumpDistanceGizmo: 1
   gizmoJumpDistance: 3
@@ -8253,9 +8253,9 @@ MonoBehaviour:
   platformTexture: {fileID: 1883121469}
   staticTexture: {fileID: 21300000, guid: e4992336bac39664ea1f5e69f094397a, type: 3}
   movableTexture: {fileID: 21300000, guid: aa11bd580f63d9e42a91a196ba3c9251, type: 3}
-  startPosition: {x: 136.770004, y: 9.06999969}
+  startPosition: {x: 136.970001, y: 12.5600004}
   centerPosition: {x: 0, y: 0}
-  solutionPosition: {x: 136.770004, y: 9.06999969}
+  solutionPosition: {x: 133.970001, y: 12.5600004}
   enableGuideLinesGizmo: 0
   enableJumpDistanceGizmo: 1
   gizmoJumpDistance: 3
@@ -8637,9 +8637,9 @@ MonoBehaviour:
   platformTexture: {fileID: 1372217734}
   staticTexture: {fileID: 21300000, guid: e4992336bac39664ea1f5e69f094397a, type: 3}
   movableTexture: {fileID: 21300000, guid: aa11bd580f63d9e42a91a196ba3c9251, type: 3}
-  startPosition: {x: 37.6100006, y: 10.6300001}
+  startPosition: {x: 41.1399994, y: 10.5799999}
   centerPosition: {x: 0, y: 0}
-  solutionPosition: {x: 37.6100006, y: 10.6300001}
+  solutionPosition: {x: 38.1399994, y: 10.5799999}
   enableGuideLinesGizmo: 0
   enableJumpDistanceGizmo: 1
   gizmoJumpDistance: 3

@@ -11,14 +11,15 @@ public class GameManager : MonoBehaviour {
 
 	void Awake()
 	{          //If manager doesn't exist, create one
-		if(manager == null)
-		{
-			DontDestroyOnLoad(gameObject);
-			manager = this;
-		} else if(manager != null)    //if manager does exist, destroy this copy
-		{
-			Destroy(gameObject);
-		}
+//		if(manager == null)
+//		{
+//			DontDestroyOnLoad(gameObject);
+//			manager = this;
+//		} else if(manager != null)    //if manager does exist, destroy this copy
+//		{
+//			Destroy(gameObject);
+//		}
+		manager = this;
 	}
 
 	void Start () 
