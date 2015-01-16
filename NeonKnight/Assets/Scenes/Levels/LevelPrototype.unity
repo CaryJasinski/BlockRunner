@@ -241,7 +241,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 19980134}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &19980134
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -646,7 +650,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 99958414}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &99958414
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -788,7 +796,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 105501004}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &105501004
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -974,7 +986,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 139137123}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &139137123
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1361,7 +1377,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 170804348}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &170804348
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1389,7 +1409,7 @@ SpriteRenderer:
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
-  m_PrefabInternal: {fileID: 644471058}
+  m_PrefabInternal: {fileID: 1121880043}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 172144403}
@@ -1408,20 +1428,24 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11400000, guid: d04bbd32de75416419ea882096a2436e,
     type: 2}
-  m_PrefabInternal: {fileID: 644471058}
+  m_PrefabInternal: {fileID: 1121880043}
   m_GameObject: {fileID: 172144399}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 172144402}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 1
 --- !u!61 &172144401
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6100000, guid: d04bbd32de75416419ea882096a2436e,
     type: 2}
-  m_PrefabInternal: {fileID: 644471058}
+  m_PrefabInternal: {fileID: 1121880043}
   m_GameObject: {fileID: 172144399}
   m_Enabled: 1
   m_Material: {fileID: 0}
@@ -1433,7 +1457,7 @@ SpriteRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 21200000, guid: d04bbd32de75416419ea882096a2436e,
     type: 2}
-  m_PrefabInternal: {fileID: 644471058}
+  m_PrefabInternal: {fileID: 1121880043}
   m_GameObject: {fileID: 172144399}
   m_Enabled: 1
   m_CastShadows: 0
@@ -1455,10 +1479,10 @@ SpriteRenderer:
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
-  m_PrefabInternal: {fileID: 644471058}
+  m_PrefabInternal: {fileID: 1121880043}
   m_GameObject: {fileID: 172144399}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.9399996, y: 9.90999985, z: 0}
+  m_LocalPosition: {x: 11.9399996, y: 9.97999954, z: 0}
   m_LocalScale: {x: .5, y: .5, z: 1}
   m_Children: []
   m_Father: {fileID: 706448338}
@@ -1517,7 +1541,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 180799058}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &180799058
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1885,7 +1913,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 224089706}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!61 &224089705
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1987,7 +2019,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 227505664}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &227505664
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2930,7 +2966,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 351166839}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &351166839
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3165,7 +3205,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 387035889}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &387035889
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3877,7 +3921,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 477965156}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &477965156
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4546,7 +4594,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 567165158}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &567165158
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4688,7 +4740,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 570911845}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &570911845
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5092,50 +5148,6 @@ Prefab:
   m_RootGameObject: {fileID: 1239521036}
   m_IsPrefabParent: 0
   m_IsExploded: 1
---- !u!1001 &644471058
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 706448338}
-    m_Modifications:
-    - target: {fileID: 400000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 11.9399996
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 9.90999985
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
-  m_RootGameObject: {fileID: 172144399}
-  m_IsPrefabParent: 0
-  m_IsExploded: 1
 --- !u!1 &654152859
 GameObject:
   m_ObjectHideFlags: 0
@@ -5166,7 +5178,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 654152862}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!61 &654152861
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5268,7 +5284,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 657248431}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &657248431
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5346,7 +5366,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 659767008}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &659767008
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5612,7 +5636,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 694883549}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &694883549
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5976,7 +6004,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 720899902}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &720899902
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6119,7 +6151,7 @@ Prefab:
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
-  m_PrefabInternal: {fileID: 1007021234}
+  m_PrefabInternal: {fileID: 1488026278}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 779576051}
@@ -6138,20 +6170,24 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11400000, guid: d04bbd32de75416419ea882096a2436e,
     type: 2}
-  m_PrefabInternal: {fileID: 1007021234}
+  m_PrefabInternal: {fileID: 1488026278}
   m_GameObject: {fileID: 779576047}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 779576050}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!61 &779576049
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6100000, guid: d04bbd32de75416419ea882096a2436e,
     type: 2}
-  m_PrefabInternal: {fileID: 1007021234}
+  m_PrefabInternal: {fileID: 1488026278}
   m_GameObject: {fileID: 779576047}
   m_Enabled: 1
   m_Material: {fileID: 0}
@@ -6163,7 +6199,7 @@ SpriteRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 21200000, guid: d04bbd32de75416419ea882096a2436e,
     type: 2}
-  m_PrefabInternal: {fileID: 1007021234}
+  m_PrefabInternal: {fileID: 1488026278}
   m_GameObject: {fileID: 779576047}
   m_Enabled: 1
   m_CastShadows: 0
@@ -6185,7 +6221,7 @@ SpriteRenderer:
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
-  m_PrefabInternal: {fileID: 1007021234}
+  m_PrefabInternal: {fileID: 1488026278}
   m_GameObject: {fileID: 779576047}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 13.71, y: 9.90999985, z: 0}
@@ -6496,7 +6532,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 852319019}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &852319019
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6735,7 +6775,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 876744884}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &876744884
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7156,7 +7200,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 921047136}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &921047136
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7362,50 +7410,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
   m_RootGameObject: {fileID: 2113361605}
-  m_IsPrefabParent: 0
-  m_IsExploded: 1
---- !u!1001 &1007021234
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 706448338}
-    m_Modifications:
-    - target: {fileID: 400000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 13.71
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 9.90999985
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
-  m_RootGameObject: {fileID: 779576047}
   m_IsPrefabParent: 0
   m_IsExploded: 1
 --- !u!1 &1011387382
@@ -8090,6 +8094,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1472142167}
   platformHolder: {fileID: 1241236895}
+  bitValue: 1
+  byteValue: 8
 --- !u!1 &1101449238
 GameObject:
   m_ObjectHideFlags: 0
@@ -8144,7 +8150,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 1101449242}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &1101449242
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8335,7 +8345,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 1108652885}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &1108652885
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8466,6 +8480,54 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 807587706}
   m_GameObject: {fileID: 1114013417}
+--- !u!1001 &1121880043
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 706448338}
+    m_Modifications:
+    - target: {fileID: 400000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 11.9399996
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 9.97999954
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
+      propertyPath: collectibleType
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
+  m_RootGameObject: {fileID: 172144399}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &1125006248
 GameObject:
   m_ObjectHideFlags: 0
@@ -8763,7 +8825,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 1129670621}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &1129670621
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8871,8 +8937,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerLives: 8
-  bytes: 0
   bits: 0
+  bytes: 0
+  megaBytes: 0
   lastLevelCompleted: 0
   level01Unlock: 1
   level02Unlock: 0
@@ -8884,6 +8951,16 @@ MonoBehaviour:
   level08Unlock: 0
   level09Unlock: 0
   level10Unlock: 0
+  level01MegaBytes: 000000
+  level02MegaBytes: 000000
+  level03MegaBytes: 000000
+  level04MegaBytes: 000000
+  level05MegaBytes: 000000
+  level06MegaBytes: 000000
+  level07MegaBytes: 000000
+  level08MegaBytes: 000000
+  level09MegaBytes: 000000
+  level10MegaBytes: 000000
 --- !u!4 &1143008697
 Transform:
   m_ObjectHideFlags: 0
@@ -9062,7 +9139,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 1165889797}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &1165889797
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9116,7 +9197,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 1171665696}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!61 &1171665695
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9395,7 +9480,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 1229729932}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &1229729932
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9537,7 +9626,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 1239521040}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &1239521040
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9969,7 +10062,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 1348466140}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &1348466140
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10533,7 +10630,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 1427494085}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &1427494085
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10611,7 +10712,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 1427568817}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &1427568817
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11329,6 +11434,50 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 807587706}
   m_GameObject: {fileID: 1486936650}
+--- !u!1001 &1488026278
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 706448338}
+    m_Modifications:
+    - target: {fileID: 400000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 13.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 9.90999985
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: d04bbd32de75416419ea882096a2436e, type: 2}
+  m_RootGameObject: {fileID: 779576047}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1001 &1495857675
 Prefab:
   m_ObjectHideFlags: 0
@@ -11496,7 +11645,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 1521972366}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &1521972366
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12095,7 +12248,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 1592542292}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &1592542292
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12217,7 +12374,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 1595671068}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &1595671068
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12895,7 +13056,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 1695088469}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &1695088469
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12949,7 +13114,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 1719989664}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!61 &1719989663
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13649,7 +13818,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 1817133626}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &1817133626
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13969,7 +14142,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 1831829125}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &1831829125
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14414,7 +14591,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 1884027192}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &1884027192
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14836,7 +15017,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 1935602547}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &1935602547
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15034,7 +15219,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 1950518836}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &1950518836
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15872,7 +16061,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 2046195653}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &2046195653
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16090,7 +16283,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 2051739497}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &2051739497
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16674,7 +16871,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 2113361609}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
+  collectibleType: 0
 --- !u!212 &2113361609
 SpriteRenderer:
   m_ObjectHideFlags: 0

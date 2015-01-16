@@ -11,8 +11,9 @@ public class PersistantData : MonoBehaviour
 	
 	//inventory
 	public int playerLives = 5;
-	public int bytes = 0;
 	public int bits = 0;
+	public int bytes = 0;
+	public int megaBytes = 0;
 	
 	//level unlocks
 	public int lastLevelCompleted = 0;
@@ -26,6 +27,17 @@ public class PersistantData : MonoBehaviour
 	public bool level08Unlock = false;
 	public bool level09Unlock = false;
 	public bool level10Unlock = false;
+	
+	public bool[] level01MegaBytes = new bool[3];
+	public bool[] level02MegaBytes = new bool[3];
+	public bool[] level03MegaBytes = new bool[3];
+	public bool[] level04MegaBytes = new bool[3];
+	public bool[] level05MegaBytes = new bool[3];
+	public bool[] level06MegaBytes = new bool[3];
+	public bool[] level07MegaBytes = new bool[3];
+	public bool[] level08MegaBytes = new bool[3];
+	public bool[] level09MegaBytes = new bool[3];
+	public bool[] level10MegaBytes = new bool[3];
 	
 	//create controller in each scene and persist and replace/destroy anything that is not this
 	void Awake () 
@@ -61,9 +73,21 @@ public class PersistantData : MonoBehaviour
 		BinaryFormatter bf = new BinaryFormatter();
 		FileStream file = File.Create(Application.persistentDataPath + "/playerInfo.dat");
 		PlayerProfileData data = new PlayerProfileData ();
-
-		data.bytes = bytes;
+		
 		data.bits = bits;
+		data.bytes = bytes;
+		data.megaBytes = megaBytes;
+		
+		data.level01MegaBytes = level01MegaBytes;
+		data.level02MegaBytes = level02MegaBytes;
+		data.level03MegaBytes = level03MegaBytes;
+		data.level04MegaBytes = level04MegaBytes;
+		data.level05MegaBytes = level05MegaBytes;
+		data.level06MegaBytes = level06MegaBytes;
+		data.level07MegaBytes = level07MegaBytes;
+		data.level08MegaBytes = level08MegaBytes;
+		data.level09MegaBytes = level09MegaBytes;
+		data.level10MegaBytes = level10MegaBytes;
 		
 		bf.Serialize(file, data);
 		file.Close();
@@ -75,9 +99,9 @@ public class PersistantData : MonoBehaviour
 		BinaryFormatter bf = new BinaryFormatter();
 		FileStream file = File.Create(Application.persistentDataPath + "/playerInventory.dat");
 		PlayerProfileData data = new PlayerProfileData ();
-
+		
 		data.lastLevelCompleted = lastLevelCompleted;
-
+		
 		data.level01Unlock = level01Unlock;
 		data.level02Unlock = level02Unlock;
 		data.level03Unlock = level03Unlock;
@@ -86,7 +110,9 @@ public class PersistantData : MonoBehaviour
 		data.level06Unlock = level06Unlock;
 		data.level07Unlock = level07Unlock;
 		data.level08Unlock = level08Unlock;
-
+		data.level09Unlock = level09Unlock;
+		data.level10Unlock = level10Unlock;
+		
 		bf.Serialize(file, data);
 		file.Close();
 	}
@@ -100,9 +126,21 @@ public class PersistantData : MonoBehaviour
 			FileStream file = File.Open (Application.persistentDataPath + "/playerInfo.dat", FileMode.Open);
 			PlayerProfileData data = (PlayerProfileData)bf.Deserialize(file);
 			file.Close ();
-
-			bytes = data.bytes;
+			
 			bits = data.bits;
+			bytes = data.bytes;
+			megaBytes = data.megaBytes;
+			
+			level01MegaBytes = data.level01MegaBytes;
+			level02MegaBytes = data.level02MegaBytes;
+			level03MegaBytes = data.level03MegaBytes;
+			level04MegaBytes = data.level04MegaBytes;
+			level05MegaBytes = data.level05MegaBytes;
+			level06MegaBytes = data.level06MegaBytes;
+			level07MegaBytes = data.level07MegaBytes;
+			level08MegaBytes = data.level08MegaBytes;
+			level09MegaBytes = data.level09MegaBytes;
+			level10MegaBytes = data.level10MegaBytes;
 		}
 	}
 	
@@ -113,7 +151,7 @@ public class PersistantData : MonoBehaviour
 		FileStream file = File.Open(Application.persistentDataPath + "/playerInventory.dat", FileMode.Open);
 		PlayerProfileData data = (PlayerProfileData)bf.Deserialize(file);
 		file.Close ();
-
+		
 		lastLevelCompleted = data.lastLevelCompleted;
 		level01Unlock = data.level01Unlock;
 		level02Unlock = data.level02Unlock;
@@ -123,6 +161,8 @@ public class PersistantData : MonoBehaviour
 		level06Unlock = data.level06Unlock;
 		level07Unlock = data.level07Unlock;
 		level08Unlock = data.level08Unlock;
+		level09Unlock = data.level09Unlock;
+		level10Unlock = data.level10Unlock;
 	}
 }
 
@@ -131,8 +171,10 @@ public class PersistantData : MonoBehaviour
 public class PlayerProfileData
 {
 	public int playerLives = 5;
-	public int bytes = 0;
+	
 	public int bits = 0;
+	public int bytes = 0;
+	public int megaBytes = 0;
 	
 	public int lastLevelCompleted = 0;
 	public bool level01Unlock = false;
@@ -145,4 +187,15 @@ public class PlayerProfileData
 	public bool level08Unlock = false;
 	public bool level09Unlock = false;
 	public bool level10Unlock = false;
+	
+	public bool[] level01MegaBytes = new bool[3];
+	public bool[] level02MegaBytes = new bool[3];
+	public bool[] level03MegaBytes = new bool[3];
+	public bool[] level04MegaBytes = new bool[3];
+	public bool[] level05MegaBytes = new bool[3];
+	public bool[] level06MegaBytes = new bool[3];
+	public bool[] level07MegaBytes = new bool[3];
+	public bool[] level08MegaBytes = new bool[3];
+	public bool[] level09MegaBytes = new bool[3];
+	public bool[] level10MegaBytes = new bool[3];
 }

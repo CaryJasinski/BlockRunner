@@ -8,17 +8,19 @@ public class GameManager : MonoBehaviour {
 	private PlayerScript m_playerScript;
 	public Transform platformHolder;
 	private GameObject[] m_moveablePlatforms;
+	public int bitValue = 1;
+	public int byteValue = 8;
 
 	void Awake()
 	{          //If manager doesn't exist, create one
-//		if(manager == null)
-//		{
-//			DontDestroyOnLoad(gameObject);
-//			manager = this;
-//		} else if(manager != null)    //if manager does exist, destroy this copy
-//		{
-//			Destroy(gameObject);
-//		}
+		if(manager == null)
+		{
+			DontDestroyOnLoad(gameObject);
+			manager = this;
+		} else if(manager != null)    //if manager does exist, destroy this copy
+		{
+			Destroy(gameObject);
+		}
 		manager = this;
 	}
 

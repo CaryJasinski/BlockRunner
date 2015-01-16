@@ -25,7 +25,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.0100002, y: 9.90999985, z: 0}
+  m_LocalPosition: {x: 11.9399996, y: 9.97999954, z: 0}
   m_LocalScale: {x: .5, y: .5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -52,9 +52,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79caa844cf11d4749980d985788a4844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitSprite: {fileID: 21300000, guid: 3571e809af36c65498968c319bfd264e, type: 3}
+  byteSprite: {fileID: 21300000, guid: cafdf2ccfa81b594394457be3281c5a4, type: 3}
+  collectibleSprite: {fileID: 21200000}
   collectParticle: {fileID: 100000, guid: 720766c2cc9ec7649903230f233645fb, type: 2}
-  currentCollectible: {fileID: 100000}
-  GameManager: {fileID: 0}
+  collectibleType: 0
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
