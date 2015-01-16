@@ -50,6 +50,7 @@ public class PersistantData : MonoBehaviour
 		{
 			Destroy(gameObject);
 		}
+		SaveAllData();
 		LoadAllData();
 	}
 	

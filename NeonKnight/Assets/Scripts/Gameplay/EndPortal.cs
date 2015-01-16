@@ -9,7 +9,7 @@ public class EndPortal : MonoBehaviour {
 		{
 			int m_currentLevelIndex = Application.loadedLevel;
 			Application.LoadLevel(m_currentLevelIndex++);
-			PersistantData.persistantDataController.SaveAllData();
+			GameManager.manager.LevelSuccess();
 		}
 	}
 }

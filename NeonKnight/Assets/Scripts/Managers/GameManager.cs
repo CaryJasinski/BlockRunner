@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour {
 
 	public static GameManager manager;
 	public GameObject Player;
+	public GameObject megaByteManager;
 	private PlayerScript m_playerScript;
 	public Transform platformHolder;
 	private GameObject[] m_moveablePlatforms;
@@ -62,5 +63,11 @@ public class GameManager : MonoBehaviour {
 					platform.transform.position = platform.GetComponent<GodPlatform>().GetStartPosition();
 			}
 		}
+	}
+
+	public void LevelSuccess()
+	{
+		megaByteManager.GetComponent<MegaByteManager>().assignCollection();
+		PersistantData.persistantDataController.SaveAllData();
 	}
 }
