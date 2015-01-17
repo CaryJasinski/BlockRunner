@@ -7,7 +7,6 @@ public class KillVolume : MonoBehaviour {
 	{
 		if (collider.CompareTag("Player")) 
 		{
-			Debug.Log ("Cary is God Tier");
 			GameManager.manager.KillPlayer();
 		}
 	}

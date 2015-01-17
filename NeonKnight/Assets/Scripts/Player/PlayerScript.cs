@@ -3,11 +3,12 @@ using System.Collections;
 
 public class PlayerScript: MonoBehaviour 
 {
-	public float moveSpeed = 4;
+	public float moveSpeed = 7;
 	public float acceleration = 20;
-	public float jumpHeight = 4;
-	public float canSuperJumpHeight = 20;
+	public float jumpHeight = 11;
+	public float canSuperJumpHeight = 17.5f;
 	public Vector3 startingPosition;
+	public bool canJump = true;
 	public bool playerActive = true;
 	
 	[HideInInspector]
@@ -22,6 +23,19 @@ public class PlayerScript: MonoBehaviour
 		startingPosition = transform.position;
 		playerAnimator = transform.GetChild(0).GetComponent<Animator>();
 		playerAnimator.SetInteger("Movement", 1);
+
+		if (Application.loadedLevelName == "Level 1") 
+		{
+			moveSpeed = 5;
+			jumpHeight = 10;
+			canSuperJumpHeight = 15;
+		} 
+		else 
+		{
+			moveSpeed = 7;
+			jumpHeight = 11;
+			canSuperJumpHeight = 17.5f;
+		}
 	}
 
 	void Update ()
@@ -36,7 +50,7 @@ public class PlayerScript: MonoBehaviour
 
 	void HandleInput ()
 	{
-		if (Input.GetKeyDown (KeyCode.Space))
+		if (Input.GetKeyDown (KeyCode.Space) && canJump)
 			Jump ();
 	}
 
@@ -65,11 +79,14 @@ public class PlayerScript: MonoBehaviour
 	{
 		if(playerActive)
 		{
+			canJump = true;
 			this.rigidbody2D.isKinematic = false;
 			this.rigidbody2D.velocity = new Vector2(moveSpeed, this.rigidbody2D.velocity.y);
 		}
 		else
 		{
+			canJump = false;
+			Debug.Log("player cant move");
 			this.rigidbody2D.isKinematic = true;
 			this.rigidbody2D.velocity = Vector2.zero;
 		}

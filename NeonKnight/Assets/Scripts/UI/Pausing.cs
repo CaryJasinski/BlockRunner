@@ -12,7 +12,7 @@ public class Pausing : MonoBehaviour {
 		Freeze ();
 	}
 
-	void Freeze()
+	public void Freeze()
 	{
 		Time.timeScale = 0f;
 	}
