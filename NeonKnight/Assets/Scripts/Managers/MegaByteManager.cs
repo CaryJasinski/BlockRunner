@@ -5,6 +5,7 @@ public class MegaByteManager : MonoBehaviour {
 
 	public GameObject[] megaByteArray = new GameObject[3];
 	public Sprite collectedSprite;
+
 	void Start () 
 	{
 		LoadCollectedMegaBytes();
@@ -12,47 +13,21 @@ public class MegaByteManager : MonoBehaviour {
 
 	public void SaveCollectedMegaBytes()
 	{
-		for(int index = 0; index < PersistantData.persistantDataController.megaBytesPerLevel[Application.loadedLevel].Length; index ++)
+		for(int index = 0; index < PersistantData.data.megaBytesPerLevel[Application.loadedLevel].Length; index ++)
 		{
-			PersistantData.persistantDataController.megaBytesPerLevel[Application.loadedLevel][index] = megaByteArray[index].GetComponent<MegaByteCollect>().wasCollected;
-			if(megaByteArray[index].GetComponent<MegaByteCollect>().wasCollected)
-				PersistantData.persistantDataController.megaBytes+=1;
+			PersistantData.data.megaBytesPerLevel[Application.loadedLevel][index] = megaByteArray[index].GetComponent<MegaByteCollect>().wasCollected;
 		}
-		
 	}
 
 	public void LoadCollectedMegaBytes()
 	{
-		Color tempColor;
-		for(int index = 0; index < PersistantData.persistantDataController.megaBytesPerLevel[Application.loadedLevel].Length; index ++)
+		for(int index = 0; index < PersistantData.data.megaBytesPerLevel[Application.loadedLevel].Length; index ++)
 		{
-			if(PersistantData.persistantDataController.megaBytesPerLevel[Application.loadedLevel][index])
+			if(PersistantData.data.megaBytesPerLevel[Application.loadedLevel][index])
 			{
 				megaByteArray[index].GetComponent<SpriteRenderer>().sprite = collectedSprite;
-				megaByteArray[index].GetComponent<MegaByteCollect>().wasCollected = PersistantData.persistantDataController.megaBytesPerLevel[Application.loadedLevel][index];
+				megaByteArray[index].GetComponent<MegaByteCollect>().wasCollected = PersistantData.data.megaBytesPerLevel[Application.loadedLevel][index];
 			}
 		}
 	}
-
-	//Old 
-//	public void SaveCollectedMegaBytes()
-//	{
-//		for(int index = 0; index < PersistantData.persistantDataController.level01MegaBytes.Length; index ++)
-//		{
-//			PersistantData.persistantDataController.level01MegaBytes[index]=megaByteArray[index].GetComponent<MegaByteCollect>().wasCollected;
-//			if(megaByteArray[index].GetComponent<MegaByteCollect>().wasCollected)
-//				PersistantData.persistantDataController.megaBytes+=1;
-//		}
-//
-//	}
-
-	//Old 
-	//	public void LoadCollectedMegaBytes()
-	//	{
-	//		for(int index = 0; index < PersistantData.persistantDataController.level01MegaBytes.Length; index ++)
-	//		{
-	//			megaByteArray[index].GetComponent<MegaByteCollect>().wasCollected=PersistantData.persistantDataController.level01MegaBytes[index];
-	//		}
-	//	}
-
 }

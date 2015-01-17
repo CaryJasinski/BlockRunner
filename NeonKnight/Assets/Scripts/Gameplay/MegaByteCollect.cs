@@ -8,10 +8,7 @@ public class MegaByteCollect : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D collider)
 	{
 		if (collider.CompareTag ("Player")) 
-		{
-			Debug.Log("megabyte");
 			collectMegaByte();
-		}
 	}
 
 	void collectMegaByte()

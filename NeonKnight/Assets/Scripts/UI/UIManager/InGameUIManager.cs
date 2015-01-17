@@ -20,8 +20,8 @@ public class InGameUIManager : MonoBehaviour
 	{
 		if(inGameUICanvas.enabled)
 		{
-			lifeTextHolder.text = PersistantData.persistantDataController.playerLives.ToString();
-			collectibleTextHolder.text = PersistantData.persistantDataController.bits.ToString();
+			lifeTextHolder.text = PersistantData.data.playerLives.ToString();
+			collectibleTextHolder.text = PersistantData.data.bits.ToString();
 		}
 	}
 }

@@ -33,20 +33,18 @@ public class CollectBehavior : MonoBehaviour {
 
 	void CollectBit()
 	{
-		PersistantData.persistantDataController.bits += GameManager.manager.bitValue;
+		Debug.Log("Hit");
+		PersistantData.data.bits += GameManager.manager.bitValue;
 		gameObject.SetActive(false);
 		SpawnParticles();
 	}
 
 	void CollectByte()
 	{
-		PersistantData.persistantDataController.bits += GameManager.manager.byteValue;
+		Debug.Log("Hit");
+		PersistantData.data.bits += GameManager.manager.byteValue;
 		gameObject.SetActive(false);
 		SpawnParticles();
-	}
-
-	void CollectMegaByte()
-	{
 	}
 	
 	void SpawnParticles()

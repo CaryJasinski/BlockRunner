@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour {
 
 	void Update () 
 	{
-		if(PersistantData.persistantDataController.playerLives <= 0)
+		if(PersistantData.data.playerLives <= 0)
 			Application.LoadLevel("LoseScreen");
 	}
 
@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour {
 	{
 		Player.transform.position = m_playerScript.startingPosition;
 		m_playerScript.playerActive = false;
-		PersistantData.persistantDataController.playerLives--;
+		PersistantData.data.playerLives--;
 		ResetPlatformPositions();
 	}
 
@@ -70,6 +70,6 @@ public class GameManager : MonoBehaviour {
 		UIManager.manager.uiState = UIManager.UIState.LevelSuccess;
 		Time.timeScale = 0f;
 		megaByteManager.GetComponent<MegaByteManager>().SaveCollectedMegaBytes();
-		PersistantData.persistantDataController.SaveAllData();
+		PersistantData.data.SaveAllData();
 	}
 }

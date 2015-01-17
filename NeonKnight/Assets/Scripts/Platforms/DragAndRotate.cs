@@ -16,8 +16,7 @@ public class DragAndRotate : MonoBehaviour {
 	{
 		Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
 		diff.Normalize();
-		
-		float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+	
 		float transRotZ = transform.eulerAngles.z;
 
 		if((startRotationZ + 90) > transRotZ && transRotZ > startRotationZ)
