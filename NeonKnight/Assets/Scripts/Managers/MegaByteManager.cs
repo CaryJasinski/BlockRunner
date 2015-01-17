@@ -2,10 +2,9 @@
 using System.Collections;
 
 public class MegaByteManager : MonoBehaviour {
-	
 
 	public GameObject[] megaByteArray = new GameObject[3];
-
+	public Sprite collectedSprite;
 	void Start () 
 	{
 		LoadCollectedMegaBytes();
@@ -24,9 +23,14 @@ public class MegaByteManager : MonoBehaviour {
 
 	public void LoadCollectedMegaBytes()
 	{
+		Color tempColor;
 		for(int index = 0; index < PersistantData.persistantDataController.megaBytesPerLevel[Application.loadedLevel].Length; index ++)
 		{
-			megaByteArray[index].GetComponent<MegaByteCollect>().wasCollected = PersistantData.persistantDataController.megaBytesPerLevel[Application.loadedLevel][index];
+			if(PersistantData.persistantDataController.megaBytesPerLevel[Application.loadedLevel][index])
+			{
+				megaByteArray[index].GetComponent<SpriteRenderer>().sprite = collectedSprite;
+				megaByteArray[index].GetComponent<MegaByteCollect>().wasCollected = PersistantData.persistantDataController.megaBytesPerLevel[Application.loadedLevel][index];
+			}
 		}
 	}
 

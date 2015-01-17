@@ -55,7 +55,9 @@ public class PersistantData : MonoBehaviour
 		for(int index = 0; index < megaBytesPerLevel.Length; index++)
 			megaBytesPerLevel[index] = new bool[3];
 
-		SaveAllData();
+#if UNITY_EDITOR
+		SaveAllData();//This line needs to be removed after testing
+#endif
 		LoadAllData();
 	}
 	

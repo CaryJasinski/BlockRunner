@@ -1,13 +1,17 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Managers\MegaByteManager.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Managers\PersistantData.cs">
     <Files>
-      <File FileName="Assets\Scripts\Managers\GameManager.cs" Line="8" Column="4" />
-      <File FileName="Assets\Scripts\Managers\MegaByteManager.cs" Line="44" Column="5" />
-      <File FileName="Assets\Scripts\Managers\PersistantData.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Gameplay\MegaByteCollect.cs" Line="19" Column="1" />
-      <File FileName="Assets\Scripts\Player\PlayerScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Managers\PersistantData.cs" Line="59" Column="3" />
+      <File FileName="Assets\Scripts\Managers\GameManager.cs" Line="71" Column="23" />
+      <File FileName="Assets\Scripts\Managers\MegaByteManager.cs" Line="31" Column="82" />
+      <File FileName="Assets\Scripts\Gameplay\MegaByteCollect.cs" Line="12" Column="26" />
+      <File FileName="Assets\Scripts\Player\PlayerScript.cs" Line="33" Column="3" />
       <File FileName="Assets\Scripts\Gameplay\CollectBehavior.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI\UIManager\LevelSuccessManager.cs" Line="31" Column="4" />
+      <File FileName="Assets\Scripts\Gameplay\EndPortal.cs" Line="12" Column="6" />
+      <File FileName="Assets\Scripts\UI\UIManager\UIManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI\Pausing.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
