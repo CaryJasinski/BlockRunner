@@ -2,11 +2,8 @@
 using System.Collections;
 
 public class MegaByteCollect : MonoBehaviour {
-	public bool wasCollected = false;
 
-	void Start () {
-	
-	}
+	public bool wasCollected = false;
 
 	void OnTriggerEnter2D(Collider2D collider)
 	{
@@ -20,5 +17,6 @@ public class MegaByteCollect : MonoBehaviour {
 	void collectMegaByte()
 	{
 		wasCollected = true;
+		gameObject.SetActive(false);
 	}
 }

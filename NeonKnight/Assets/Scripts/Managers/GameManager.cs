@@ -67,7 +67,9 @@ public class GameManager : MonoBehaviour {
 
 	public void LevelSuccess()
 	{
-		megaByteManager.GetComponent<MegaByteManager>().assignCollection();
+		UIManager.manager.uiState = UIManager.UIState.LevelSuccess;
+		Time.timeScale = 0f;
+		megaByteManager.GetComponent<MegaByteManager>().SaveCollectedMegaBytes();
 		PersistantData.persistantDataController.SaveAllData();
 	}
 }
