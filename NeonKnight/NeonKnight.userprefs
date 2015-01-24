@@ -1,13 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Gameplay\Portal.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Gameplay\CameraLock.cs">
     <Files>
-      <File FileName="Assets\Scripts\Gameplay\CameraLock.cs" Line="43" Column="5" />
+      <File FileName="Assets\Scripts\Gameplay\CameraLock.cs" Line="43" Column="55" />
       <File FileName="Assets\Scripts\Managers\MegaByteManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Platforms\DragAndRotate.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\PlayerScript.cs" Line="74" Column="41" />
+      <File FileName="Assets\Scripts\Player\PlayerScript.cs" Line="57" Column="13" />
       <File FileName="Assets\Scripts\Gameplay\Tutorial\TutorialText.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Managers\GameManager.cs" Line="28" Column="16" />
+      <File FileName="Assets\Scripts\Managers\GameManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Gameplay\CollectBehavior.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Gameplay\Portal.cs" Line="27" Column="40" />
     </Files>
