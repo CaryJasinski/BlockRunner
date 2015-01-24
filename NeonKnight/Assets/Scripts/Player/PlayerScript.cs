@@ -26,12 +26,14 @@ public class PlayerScript: MonoBehaviour
 
 		if (Application.loadedLevelName == "Level 1") 
 		{
+			canJump = false;
 			moveSpeed = 5;
 			jumpHeight = 10;
 			canSuperJumpHeight = 15;
 		} 
 		else 
 		{
+			canJump = true;
 			moveSpeed = 7;
 			jumpHeight = 11;
 			canSuperJumpHeight = 17.5f;
@@ -54,7 +56,7 @@ public class PlayerScript: MonoBehaviour
 			Jump ();
 	}
 
-	void Jump()
+	public void Jump()
 	{
 		if(isGrounded)
 		{
@@ -79,14 +81,12 @@ public class PlayerScript: MonoBehaviour
 	{
 		if(playerActive)
 		{
-			canJump = true;
 			this.rigidbody2D.isKinematic = false;
 			this.rigidbody2D.velocity = new Vector2(moveSpeed, this.rigidbody2D.velocity.y);
 		}
 		else
 		{
 			canJump = false;
-			Debug.Log("player cant move");
 			this.rigidbody2D.isKinematic = true;
 			this.rigidbody2D.velocity = Vector2.zero;
 		}

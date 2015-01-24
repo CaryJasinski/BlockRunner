@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour {
 		PersistantData.data.playerLives--;
 		ResetPlatformPositions();
 		StartCoroutine(ResumePlayer());
+		TutorialText.tutorialText.DeathReset();
 	}
 
 	IEnumerator ResumePlayer()
