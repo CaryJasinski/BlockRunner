@@ -51,6 +51,13 @@ public class GameManager : MonoBehaviour {
 		m_playerScript.playerActive = false;
 		PersistantData.data.playerLives--;
 		ResetPlatformPositions();
+		StartCoroutine(ResumePlayer());
+	}
+
+	IEnumerator ResumePlayer()
+	{
+		yield return new WaitForSeconds(0.5f);
+		m_playerScript.playerActive = true;
 	}
 
 	public void ResetPlatformPositions()

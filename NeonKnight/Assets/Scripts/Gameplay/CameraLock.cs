@@ -40,8 +40,8 @@ public class CameraLock : MonoBehaviour {
 		transform.position = Vector3.SmoothDamp(CameraPos, PlayerPos, ref velocity, smoothTime);
 
 		//Deactivates player movement while camera is not viewing the player
-		if(PlayerPos.x + 2 > CameraPos.x && PlayerPos.x - 12 < CameraPos.x)
-			Player.GetComponent<PlayerScript>().playerActive = true;
+		//if(PlayerPos.x + 5 > CameraPos.x && PlayerPos.x - 12 < CameraPos.x)
+			//Player.GetComponent<PlayerScript>().playerActive = true;
 		if(PlayerPos.x - 13 > CameraPos.x)
 			Player.GetComponent<PlayerScript>().playerActive = false;
 	}

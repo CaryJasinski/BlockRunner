@@ -1,13 +1,15 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\PlayerScript.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Gameplay\Portal.cs">
     <Files>
+      <File FileName="Assets\Scripts\Gameplay\CameraLock.cs" Line="43" Column="5" />
       <File FileName="Assets\Scripts\Managers\MegaByteManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Platforms\DragAndRotate.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Player\PlayerScript.cs" Line="74" Column="41" />
-      <File FileName="Assets\Scripts\Gameplay\Tutorial\TutorialText.cs" Line="18" Column="24" />
-      <File FileName="Assets\Scripts\Managers\GameManager.cs" Line="32" Column="29" />
+      <File FileName="Assets\Scripts\Gameplay\Tutorial\TutorialText.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Managers\GameManager.cs" Line="28" Column="16" />
       <File FileName="Assets\Scripts\Gameplay\CollectBehavior.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Gameplay\Portal.cs" Line="27" Column="40" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
