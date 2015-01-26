@@ -76,7 +76,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.52999997, y: 10.0299997, z: -10}
+  m_LocalPosition: {x: 1.63, y: 10.0600004, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22400000}
@@ -163,10 +163,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  fltCameraOffset: 7
-  fltSmoothTime: .5
+  cameraXOffset: 7
+  cameraYOffset: 0
+  smoothTime: .5
   cameraSize: 7
-  growthSpeed: 5
+  orthoExpandSpeed: 10
   isPlaying: 0
 --- !u!114 &11400004
 MonoBehaviour:
@@ -218,7 +219,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -10
 --- !u!224 &22400000
 RectTransform:
   m_ObjectHideFlags: 1
