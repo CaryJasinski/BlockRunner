@@ -21,7 +21,7 @@ public class LevelSuccessManager : MonoBehaviour
 
 	void DisplayBitByteScore()
 	{
-		collectibleCount.text = PersistantData.data.bits.ToString();
+			collectibleCount.text = PersistantData.data.bits.ToString();
 	}
 
 	void DisplayMegaByteScore()

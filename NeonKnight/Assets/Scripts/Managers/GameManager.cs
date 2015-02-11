@@ -27,8 +27,11 @@ public class GameManager : MonoBehaviour {
 
 	void Start () 
 	{
-		Player = GameObject.Find("NeonKnight"); 
-		m_playerScript = Player.GetComponent<PlayerScript>();
+		if(Application.loadedLevelName == "LevelPrototype")
+		{
+			Player = GameObject.Find("NeonKnight"); 
+			m_playerScript = Player.GetComponent<PlayerScript>();
+		}
 
 		StartCoroutine(Delayed());
 	}
