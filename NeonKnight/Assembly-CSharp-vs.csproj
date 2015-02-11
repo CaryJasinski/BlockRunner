@@ -46,6 +46,14 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\GUI\Pausing.cs" />
+     <Compile Include="Assets\Scripts\GUI\UIManager\CreditsMenuManager.cs" />
+     <Compile Include="Assets\Scripts\GUI\UIManager\InGameUIManager.cs" />
+     <Compile Include="Assets\Scripts\GUI\UIManager\LevelFailManager.cs" />
+     <Compile Include="Assets\Scripts\GUI\UIManager\LevelSuccessManager.cs" />
+     <Compile Include="Assets\Scripts\GUI\UIManager\PauseMenuManager.cs" />
+     <Compile Include="Assets\Scripts\GUI\UIManager\StartMenuManager.cs" />
+     <Compile Include="Assets\Scripts\GUI\UIManager\UIManager.cs" />
      <Compile Include="Assets\Scripts\Gameplay\CameraLock.cs" />
      <Compile Include="Assets\Scripts\Gameplay\CollectBehavior.cs" />
      <Compile Include="Assets\Scripts\Gameplay\EndPortal.cs" />
@@ -55,9 +63,15 @@
      <Compile Include="Assets\Scripts\Gameplay\ParticleBehavior.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Portal.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Tutorial\TutorialText.cs" />
-     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
+     <Compile Include="Assets\Scripts\Managers\CollectibleManager.cs" />
+     <Compile Include="Assets\Scripts\Managers\LevelManager.cs" />
      <Compile Include="Assets\Scripts\Managers\MegaByteManager.cs" />
-     <Compile Include="Assets\Scripts\Managers\PersistantData.cs" />
+     <Compile Include="Assets\Scripts\Managers\PlatformManager.cs" />
+     <Compile Include="Assets\Scripts\Managers\PlayerManager.cs" />
+     <Compile Include="Assets\Scripts\Managers\PortalManager.cs" />
+     <Compile Include="Assets\Scripts\Managers\ScenePersistant\AudioManager.cs" />
+     <Compile Include="Assets\Scripts\Managers\ScenePersistant\GameManager.cs" />
+     <Compile Include="Assets\Scripts\Managers\ScenePersistant\SceneLoader.cs" />
      <Compile Include="Assets\Scripts\Platforms\DragAndRotate.cs" />
      <Compile Include="Assets\Scripts\Platforms\GodPlatform.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerScript.cs" />
@@ -82,14 +96,7 @@
      <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Input Providers\FGTouchInputProvider.cs" />
      <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Toolbox\TBDragToMove.cs" />
      <Compile Include="Assets\Scripts\Plugins\FingerGestures\Scripts\Toolbox\TBTwistToRotate.cs" />
-     <Compile Include="Assets\Scripts\UI\Pausing.cs" />
-     <Compile Include="Assets\Scripts\UI\UIManager\CreditsMenuManager.cs" />
-     <Compile Include="Assets\Scripts\UI\UIManager\InGameUIManager.cs" />
-     <Compile Include="Assets\Scripts\UI\UIManager\LevelFailManager.cs" />
-     <Compile Include="Assets\Scripts\UI\UIManager\LevelSuccessManager.cs" />
-     <Compile Include="Assets\Scripts\UI\UIManager\PauseMenuManager.cs" />
-     <Compile Include="Assets\Scripts\UI\UIManager\StartMenuManager.cs" />
-     <Compile Include="Assets\Scripts\UI\UIManager\UIManager.cs" />
+     <Compile Include="Assets\Scripts\Utilities\Data\PersistantData.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity4.6/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>

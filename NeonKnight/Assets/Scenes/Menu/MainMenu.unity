@@ -780,7 +780,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11452536, guid: 6651a859a77915a47b66a4e75f3887bd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6651a859a77915a47b66a4e75f3887bd, type: 2}
   m_RootGameObject: {fileID: 1656000749}
   m_IsPrefabParent: 0
@@ -2897,7 +2898,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1656000751}
   - 114: {fileID: 1656000750}
-  - 114: {fileID: 1656000752}
+  - 114: {fileID: 1656000754}
+  - 114: {fileID: 1656000753}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -2934,22 +2936,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
---- !u!114 &1656000752
+--- !u!114 &1656000753
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11452536, guid: 6651a859a77915a47b66a4e75f3887bd,
-    type: 2}
-  m_PrefabInternal: {fileID: 293294815}
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1656000749}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a57265d69c42eb49a68c61295e9d7f0, type: 3}
+  m_Script: {fileID: 11500000, guid: e2558fccec6321948be4020e3f61113f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLives: 3
-  bits: 0
-  lastLevelCompleted: 0
-  levelUnlocks: 01000000000000000000
+--- !u!114 &1656000754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1656000749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c2ebd42c862a0849b619bb67205c001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1738519869
 GameObject:
   m_ObjectHideFlags: 0
