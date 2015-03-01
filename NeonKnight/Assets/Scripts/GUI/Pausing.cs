@@ -3,58 +3,25 @@ using System.Collections;
 
 public class Pausing : MonoBehaviour {
 
-	public bool isPaused = false;
-	public bool startFrozen = true;
-	public float startDelay = 0.5f;
-
-	void Start()
-	{
-		Freeze ();
-	}
-
-	public void Freeze()
-	{
-		Time.timeScale = 0f;
-	}
-
-	void Update()
-	{
-		//if(Input.GetKeyDown(KeyCode.P))
-		   //startGame(); 
-	}
-
 	public void PauseGame()
 	{
-		isPaused = true;
-		Time.timeScale = 0f;
+		GameManager.manager.gameState = GameManager.GameState.Paused;
+		LevelManager.manager.DisablePlayer();
 		UIManager.manager.SetUIState(UIManager.UIState.PauseMenu);
 	}
 
 	public void ResumeGame()
 	{
-		isPaused = false;
-		Time.timeScale = 1f;
+		GameManager.manager.gameState = GameManager.GameState.InGame;
+		LevelManager.manager.EnablePlayer();
 		UIManager.manager.SetUIState(UIManager.UIState.InGameUI);
 	}
 
 	public void TogglePause()
 	{
-		if (isPaused) 
+		if (GameManager.manager.gameState == GameManager.GameState.Paused) 
 			ResumeGame();
 		else
 			PauseGame();
 	}
-
-	public void startGame()
-	{
-		StartCoroutine (DelayGameStart ());
-		UIManager.manager.SetUIState(UIManager.UIState.InGameUI);
-		Time.timeScale = 1f;
-	}
-
-	IEnumerator DelayGameStart()
-	{
-		yield return new WaitForSeconds (startDelay);
-	}
-	
 }

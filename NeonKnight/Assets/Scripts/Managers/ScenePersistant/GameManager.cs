@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour {
 
 	public void StartRun()
 	{
-		LevelManager.manager.StartRun();
+		LevelManager.manager.EnablePlayer();
 	}
 
 	public void KillPlayer()
@@ -68,10 +68,17 @@ public class GameManager : MonoBehaviour {
 		}
 		else
 		{
-			LevelManager.manager.LevelFail();
+			LevelManager.manager.DisablePlayer();
 			UIManager.manager.SetUIState(UIManager.UIState.LevelFail);
 		}
+	}
 
+	public void LevelSuccess()
+	{
+		LevelManager.manager.DisablePlayer();
+		UIManager.manager.SetUIState(UIManager.UIState.LevelSuccess);
+		MegaByteManager.manager.SaveCollectedMegaBytes();
+		PersistantData.data.SaveAllData();
 	}
 
 	//============================================
@@ -89,20 +96,8 @@ public class GameManager : MonoBehaviour {
 
 			break; 
 		case GameState.InGame:
-//			bool isLoading = true;
-//			int loadingIndex = 0;
-//
-//			while(isLoading)
-//			{
-//				Debug.Log("loading loops: " + loadingIndex);
-//				loadingIndex++;
-//				if(SceneLoader.manager.loadState == SceneLoader.LoadState.complete)
-//					isLoading = false;
-//			}
-
 			UIManager.manager.SetUIState(UIManager.UIState.InGameUI);
 			InitializeRun();
-			Time.timeScale = 1f;
 			break;
 		case GameState.Paused:
 

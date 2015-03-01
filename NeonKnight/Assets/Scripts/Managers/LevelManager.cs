@@ -10,12 +10,12 @@ public class LevelManager : MonoBehaviour {
 		manager = this;
 	}
 
-	public void StartRun()
+	public void EnablePlayer()
 	{
 		GetComponent<PlayerManager>().EnablePlayer();
 	}
 
-	public void LevelFail()
+	public void DisablePlayer()
 	{
 		GetComponent<PlayerManager>().DisablePlayer();
 	}

@@ -26,7 +26,8 @@ public class SceneLoader : MonoBehaviour {
 	{
 		int currLevelIndex = previousLevelIndex = Application.loadedLevel;
 		loadState = LoadState.loading;
-		Application.LoadLevel(currLevelIndex++);
+		currLevelIndex++;
+		Application.LoadLevel(currLevelIndex);
 	}
 
 	public void SetLevel(int levelIndex)
@@ -47,7 +48,17 @@ public class SceneLoader : MonoBehaviour {
 	{
 		previousLevelIndex = Application.loadedLevel;
 		loadState = LoadState.loading;
+		DestroyPersistantObjects();
 		Application.LoadLevel(0);
+	}
+
+	public void DestroyPersistantObjects()
+	{
+		Destroy(GameObject.FindGameObjectWithTag("GameManager"));
+		Destroy(GameObject.FindGameObjectWithTag("UIManager"));
+		Destroy(GameObject.FindGameObjectWithTag("FingerGestures"));
+		Destroy(GameObject.FindGameObjectWithTag("Gestures"));
+		Destroy(GameObject.FindGameObjectWithTag("MainCamera"));
 	}
 
 	void Update () 

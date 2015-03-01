@@ -26,7 +26,10 @@ public class CameraManager : MonoBehaviour {
 		if(cameraInstance !=null)
 		{
 			if(cameraTarget.tag == "Player")
+			{
 				cameraInstance.GetComponent<CameraLock>().SetCameraTargetPlayer(cameraTarget);
+				cameraInstance.transform.position = cameraTarget.transform.position;
+			}
 		}
 	}
 }

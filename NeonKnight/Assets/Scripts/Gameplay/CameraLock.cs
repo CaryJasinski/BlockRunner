@@ -3,6 +3,8 @@ using System.Collections;
 
 public class CameraLock : MonoBehaviour {
 
+	public static CameraLock cameraLock;
+
 	public enum TargetType { player, staticObject, movingObject }
 	public TargetType targetType = TargetType.staticObject;
 
@@ -10,6 +12,19 @@ public class CameraLock : MonoBehaviour {
 	public float playerXOffset = 7f;
 	public float smoothTime = 0.5f;
 	private Vector3 velocity = Vector3.zero;
+
+	void Awake()
+	{          
+		if(cameraLock == null)           //If manager doesn't exist, create one
+		{
+			DontDestroyOnLoad(gameObject);
+			cameraLock = this;
+		} else if(cameraLock != null)    //if manager does exist, destroy this copy
+		{
+			Destroy(gameObject);
+		}
+		cameraLock = this;
+	}
 
 	void FixedUpdate ()
 	{
@@ -44,7 +59,6 @@ public class CameraLock : MonoBehaviour {
 				transform.position = Vector3.zero;
 			break;
 		}
-
 	}
 
 	private void TargetTypePlayer()

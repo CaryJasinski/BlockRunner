@@ -7,11 +7,7 @@ public class EndPortal : MonoBehaviour {
 	{
 		if(collider.CompareTag("Player"))
 		{
-			//int m_currentLevelIndex = Application.loadedLevel;
-			//Application.LoadLevel(m_currentLevelIndex++);
-			//Debug.Log(m_currentLevelIndex);
-			//GameManager.manager.LevelSuccess();
-			Debug.Log("Not Hooked up");
+			GameManager.manager.LevelSuccess();
 		}
 	}
 }

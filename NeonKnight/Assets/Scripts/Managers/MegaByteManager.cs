@@ -3,11 +3,14 @@ using System.Collections;
 
 public class MegaByteManager : MonoBehaviour {
 
+	public static MegaByteManager manager;
+
 	public GameObject[] megaByteArray = new GameObject[3];
 	public Sprite collectedSprite;
 
 	void Start () 
 	{
+		manager = this;
 		//LoadCollectedMegaBytes();
 	}
 

@@ -50,9 +50,11 @@ public class LevelSuccessManager : MonoBehaviour
 		}
 	}
 
-	public void ReturnToTitle()
+	public void LoadNextLevel()
 	{
-		Application.LoadLevel(Application.loadedLevel);
+		GameManager.manager.SetGameState(GameManager.GameState.InGame);
+		UIManager.manager.SetUIState(UIManager.UIState.InGameUI);
+		SceneLoader.manager.SetLevel(Application.loadedLevel + 1);
 	}
 }
 

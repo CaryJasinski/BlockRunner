@@ -1,18 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Gameplay\CameraLock.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Gameplay\EndPortal.cs">
     <Files>
-      <File FileName="Assets\Scripts\Gameplay\KillVolume.cs" Line="13" Column="1" />
-      <File FileName="Assets\Scripts\Player\PlayerScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Managers\ScenePersistant\GameManager.cs" Line="18" Column="2" />
-      <File FileName="Assets\Scripts\Plugins\FingerGestures\Scripts\Toolbox\TBDragToMove.cs" Line="70" Column="35" />
-      <File FileName="Assets\Scripts\Managers\CameraManager.cs" Line="6" Column="16" />
-      <File FileName="Assets\Scripts\Managers\ScenePersistant\SceneLoader.cs" Line="52" Column="2" />
-      <File FileName="Assets\Scripts\GUI\UIManager\LevelSelectManager.cs" Line="19" Column="23" />
-      <File FileName="Assets\Scripts\Plugins\FingerGestures\Scripts\Components\ScreenRaycaster.cs" Line="33" Column="29" />
-      <File FileName="Assets\Scripts\Gameplay\CameraLock.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Managers\LevelManager.cs" Line="26" Column="50" />
-      <File FileName="Assets\Scripts\Managers\PlayerManager.cs" Line="18" Column="1" />
+      <File FileName="Assets\Scripts\Gameplay\EndPortal.cs" Line="14" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
