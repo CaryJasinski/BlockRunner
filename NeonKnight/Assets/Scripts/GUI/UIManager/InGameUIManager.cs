@@ -9,11 +9,18 @@ public class InGameUIManager : MonoBehaviour
 	public Text lifeTextHolder;
 	public Text collectibleTextHolder;
 	public Text maxCollectibleTextHolder;
+	public Canvas startRunCanvas;
+
 
 	//Use this for initialization
 	public void EnableOverlay(bool enabled)
 	{
 		inGameUICanvas.enabled = enabled;
+
+		if(enabled)
+			startRunCanvas.enabled = true;
+		else
+			startRunCanvas.enabled = false;
 	}
 
 	void Update ()

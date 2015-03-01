@@ -3,13 +3,19 @@ using System.Collections;
 
 public class CollectibleManager : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+	private GameObject[] m_collectibles;
 	
+	public void InitializeCollectibles()
+	{
+		m_collectibles = GameObject.FindGameObjectsWithTag ("Collectible");
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
+	public void ResetCollectibles()
+	{
+		foreach(GameObject collectible in m_collectibles)
+		{
+			collectible.SetActive(true);
+		}
 	}
+
 }

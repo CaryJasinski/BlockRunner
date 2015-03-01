@@ -10,6 +10,10 @@ public class LevelFailManager : MonoBehaviour
 	public void EnableOverlay(bool enabled)
 	{
 		levelFailCanvas.enabled = enabled;
+		if(enabled)
+		{
+			//Initialization code goes here
+		}
 	}
 }
 

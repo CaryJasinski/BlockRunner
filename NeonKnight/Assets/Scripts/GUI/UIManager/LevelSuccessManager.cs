@@ -15,8 +15,11 @@ public class LevelSuccessManager : MonoBehaviour
 	public void EnableOverlay(bool enabled)
 	{
 		levelSuccessCanavs.enabled = enabled;
-		DisplayBitByteScore();
-		DisplayMegaByteScore();
+		if(enabled)
+		{
+			DisplayBitByteScore();
+			DisplayMegaByteScore();
+		}
 	}
 
 	void DisplayBitByteScore()

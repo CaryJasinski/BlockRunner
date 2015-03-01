@@ -10,7 +10,8 @@ public class EndPortal : MonoBehaviour {
 			//int m_currentLevelIndex = Application.loadedLevel;
 			//Application.LoadLevel(m_currentLevelIndex++);
 			//Debug.Log(m_currentLevelIndex);
-			GameManager.manager.LevelSuccess();
+			//GameManager.manager.LevelSuccess();
+			Debug.Log("Not Hooked up");
 		}
 	}
 }

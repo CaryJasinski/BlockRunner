@@ -19,22 +19,22 @@ public class Pausing : MonoBehaviour {
 
 	void Update()
 	{
-		if(Input.GetKeyDown(KeyCode.P))
-		   startGame(); 
+		//if(Input.GetKeyDown(KeyCode.P))
+		   //startGame(); 
 	}
 
 	public void PauseGame()
 	{
 		isPaused = true;
 		Time.timeScale = 0f;
-		UIManager.manager.uiState = UIManager.UIState.PauseMenu;
+		UIManager.manager.SetUIState(UIManager.UIState.PauseMenu);
 	}
 
 	public void ResumeGame()
 	{
 		isPaused = false;
 		Time.timeScale = 1f;
-		UIManager.manager.uiState = UIManager.UIState.InGameUI;
+		UIManager.manager.SetUIState(UIManager.UIState.InGameUI);
 	}
 
 	public void TogglePause()
@@ -48,8 +48,7 @@ public class Pausing : MonoBehaviour {
 	public void startGame()
 	{
 		StartCoroutine (DelayGameStart ());
-		Camera.main.GetComponent<CameraLock>().isPlaying = true;
-		UIManager.manager.uiState = UIManager.UIState.InGameUI;
+		UIManager.manager.SetUIState(UIManager.UIState.InGameUI);
 		Time.timeScale = 1f;
 	}
 

@@ -10,5 +10,14 @@ public class StartMenuManager : MonoBehaviour
 	public void EnableOverlay(bool enabled)
 	{
 		startMenuCanvas.enabled = enabled;
+		if(enabled)
+		{
+			//Initialization code goes here
+		}
+	}
+
+	public void OpenWorldSelectMenu()
+	{
+		UIManager.manager.SetUIState(UIManager.UIState.WorldSelect);
 	}
 }

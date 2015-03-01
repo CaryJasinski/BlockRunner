@@ -31,7 +31,7 @@ public class PersistantData : MonoBehaviour
 			megaBytesPerLevel[index] = new bool[3];
 
 #if UNITY_EDITOR
-		SaveAllData();//This line needs to be removed after testing
+		SaveAllData();//REMOVE: This line needs to be removed after testing
 #endif
 		LoadAllData();
 	}

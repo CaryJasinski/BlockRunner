@@ -10,6 +10,10 @@ public class CreditsMenuManager : MonoBehaviour
 	public void EnableOverlay(bool enabled)
 	{
 		creditsMenuCanvas.enabled = enabled;
+		if(enabled)
+		{
+			//Initialization code goes here
+		}
 	}
 }
 

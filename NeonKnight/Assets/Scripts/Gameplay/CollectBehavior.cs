@@ -10,6 +10,17 @@ public class CollectBehavior : MonoBehaviour {
 	public enum CollectibleType {bitCollectible, byteCollectible}
 	public CollectibleType collectibleType = CollectibleType.bitCollectible;
 
+#if UNITY_EDITOR
+	void OnDrawGizmos()
+	{
+		if(collectibleType == CollectibleType.byteCollectible)
+		{
+			Gizmos.color = Color.red;
+			Gizmos.DrawWireSphere(transform.position, 0.5f);
+		}
+	}
+#endif
+
 	void Start()
 	{
 		if (collectibleType == CollectibleType.bitCollectible)

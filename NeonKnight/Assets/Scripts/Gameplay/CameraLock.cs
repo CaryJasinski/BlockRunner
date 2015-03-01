@@ -3,59 +3,64 @@ using System.Collections;
 
 public class CameraLock : MonoBehaviour {
 
-	public GameObject Player;
-	private PlayerScript playerScript;
-	public float cameraXOffset = 7f;
-	public float cameraYOffset = 0f;
-	public float smoothTime = 0.5f;
-	public float cameraSize = 20.0f;
-	public float orthoExpandSpeed = 10.0f;
-	public bool isPlaying = false;
+	public enum TargetType { player, staticObject, movingObject }
+	public TargetType targetType = TargetType.staticObject;
 
-	private Vector3 PlayerPos;
-	private Vector3 CameraPos;
+	public GameObject target;
+	public float playerXOffset = 7f;
+	public float smoothTime = 0.5f;
 	private Vector3 velocity = Vector3.zero;
-	
-	void Start () 
-	{
-		//Locks the cameras z pos to the z pos of the player
-		PlayerPos.z = transform.position.z;
-		playerScript = Player.GetComponent<PlayerScript>();
-	}
 
 	void FixedUpdate ()
 	{
+		if(target != null)
+			PositionCamera();
+	}
 
-		if (isPlaying) 
-		{   //Expands camera view size over time
-			if (camera.orthographicSize < cameraSize)
-			{
-				camera.orthographicSize += orthoExpandSpeed * Time.fixedDeltaTime;
-			}
-		}
+	public void SetCameraTargetPlayer(GameObject newTarget)
+	{
+		target = newTarget;
+		targetType = TargetType.player;
+	}
 
-		Debug.Log( Player.rigidbody2D.velocity.y);
+	public void SetCameraTarget(GameObject newTarget, TargetType newTargetType)
+	{
+		target = newTarget;
+		targetType = newTargetType;
+	}
 
-		cameraYOffset = 0;
-
-		if(Player.rigidbody2D.velocity.y < 0 && Player.rigidbody2D.velocity.y < -15)
+	private void PositionCamera()
+	{
+		switch(targetType)
 		{
-			cameraYOffset = Player.rigidbody2D.velocity.y*0.75f;
+		case TargetType.player:
+			TargetTypePlayer();
+			break;
+		case TargetType.movingObject:
+			break;
+		case TargetType.staticObject:
+		default:
+			if(transform.position != Vector3.zero)
+				transform.position = Vector3.zero;
+			break;
 		}
 
-		PlayerPos.x = Player.transform.position.x + cameraXOffset;
-		PlayerPos.y = Player.transform.position.y + cameraYOffset;
+	}
 
-
-		CameraPos = transform.position;
-		CameraPos.z = PlayerPos.z;
+	private void TargetTypePlayer()
+	{
+		Vector3 playerPos = Vector3.zero;
+		float cameraYOffset = 0f;
 		
-		transform.position = Vector3.SmoothDamp(CameraPos, PlayerPos, ref velocity, smoothTime);
-
-		//Deactivates player movement while camera is not viewing the player
-		//if(PlayerPos.x + 5 > CameraPos.x && PlayerPos.x - 12 < CameraPos.x)
-			//Player.GetComponent<PlayerScript>().playerActive = true;
-		if(PlayerPos.x - 13 > CameraPos.x)
-			playerScript.playerActive = false;
+		if(target.rigidbody2D.velocity.y < 0 && target.rigidbody2D.velocity.y < -15)
+		{
+			cameraYOffset = target.rigidbody2D.velocity.y*0.75f;
+		}
+		
+		playerPos.x = target.transform.position.x + playerXOffset;
+		playerPos.y = target.transform.position.y + cameraYOffset;
+		playerPos.z = -10f;
+		
+		transform.position = Vector3.SmoothDamp(transform.position, playerPos, ref velocity, smoothTime);
 	}
 }

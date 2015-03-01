@@ -10,6 +10,10 @@ public class PauseMenuManager : MonoBehaviour
 	public void EnableOverlay(bool enabled)
 	{
 		pauseMenuCanvas.enabled = enabled;
+		if(enabled)
+		{
+			//Initialization code goes here
+		}
 	}
 }
 

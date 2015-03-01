@@ -8,7 +8,7 @@ public class MegaByteManager : MonoBehaviour {
 
 	void Start () 
 	{
-		LoadCollectedMegaBytes();
+		//LoadCollectedMegaBytes();
 	}
 
 	public void SaveCollectedMegaBytes()

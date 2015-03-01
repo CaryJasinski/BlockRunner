@@ -65,9 +65,15 @@ public class TBDragToMove : MonoBehaviour
 
 	void Start()
 	{
-		pausing = GameObject.Find("UIManager").GetComponent<Pausing>();	
+		//pausing = GameObject.Find("UIManager").GetComponent<Pausing>();	
 		if( !RaycastCamera )
-			RaycastCamera = Camera.main;
+			StartCoroutine(DelayedStart());
+	}
+	
+	IEnumerator DelayedStart()
+	{
+		yield return new WaitForSeconds(0.25f);
+		RaycastCamera = Camera.main;
 	}
 
     // converts a screen-space position to a world-space position constrained to the current drag plane type
@@ -173,8 +179,8 @@ void HandleDrag( DragGesture gesture )
 
     void OnDrag( DragGesture gesture )
     {
-		if(pausing.isPaused == false)
-        	HandleDrag( gesture );
+		//if(pausing.isPaused == false)
+        HandleDrag( gesture );
     }
 
     void OnDisable()

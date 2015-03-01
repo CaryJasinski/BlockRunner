@@ -2,83 +2,111 @@
 using System.Collections;
 
 public class UIManager : MonoBehaviour {
-	
-	public enum UIState { StartMenu, InGameUI, LevelFail, LevelSuccess, PauseMenu, Credits };
-	public UIState uiState = UIState.StartMenu;
-	public UIState previousUIState;
+
 	public static UIManager manager;
 
+	public enum UIState { StartMenu, WorldSelect, LevelSelect, InGameUI, LevelFail, LevelSuccess, PauseMenu, Credits };
+	public UIState uiState = UIState.StartMenu;
+	public UIState previousUIState;
+
 	private StartMenuManager startMenu;
+	private WorldSelectManager worldSelect;
+	private LevelSelectManager levelSelect;
 	private InGameUIManager inGameUI;
 	private PauseMenuManager pauseMenu;
 	private LevelFailManager levelFail;
 	private LevelSuccessManager levelSuccess;
 	private CreditsMenuManager creditMenu;
 
+	void Awake()
+	{          
+		if(manager == null)           //If manager doesn't exist, create one
+		{
+			DontDestroyOnLoad(gameObject);
+			manager = this;
+		} else if(manager != null)    //if manager does exist, destroy this copy
+		{
+			Destroy(gameObject);
+		}
+		manager = this;
+	}
+
 	void Start () 
 	{
 		manager = GetComponent<UIManager> ();
 		startMenu = GetComponent<StartMenuManager> ();
+		worldSelect = GetComponent<WorldSelectManager>();
+		levelSelect = GetComponent<LevelSelectManager>();
 		inGameUI = GetComponent<InGameUIManager> ();
 		pauseMenu = GetComponent<PauseMenuManager> ();
 		levelFail = GetComponent<LevelFailManager> ();
 		levelSuccess = GetComponent<LevelSuccessManager> ();
 		creditMenu = GetComponent<CreditsMenuManager> ();
+
+		SetUIState(UIState.StartMenu);
 	}
 
-	void Update()
+	public void SetUIState(UIState newUIState)
 	{
-		if (!Application.isLoadingLevel && previousUIState != uiState) 
+		if (newUIState == UIState.StartMenu) 
 		{
-			SetUIState ();
-		}
-	}
-	
-	void SetUIState()
-	{
-		if (uiState == UIState.StartMenu) 
-		{
-			previousUIState = UIState.StartMenu;
+			uiState = UIState.StartMenu;
 			startMenu.EnableOverlay (true);
 		} 
 		else
 			startMenu.EnableOverlay (false);
 
-		if (uiState == UIState.InGameUI) 
+		if (newUIState == UIState.WorldSelect) 
 		{
-			previousUIState = UIState.InGameUI;
+			uiState = UIState.WorldSelect;
+			worldSelect.EnableOverlay (true);
+		} 
+		else
+			worldSelect.EnableOverlay (false);
+
+		if (newUIState == UIState.LevelSelect) 
+		{
+			uiState = UIState.LevelSelect;
+			levelSelect.EnableOverlay (true);
+		} 
+		else
+			levelSelect.EnableOverlay (false);
+
+		if (newUIState == UIState.InGameUI) 
+		{
+			uiState = UIState.InGameUI;
 			inGameUI.EnableOverlay (true);
 		} 
 		else
 			inGameUI.EnableOverlay (false);
 
-		if (uiState == UIState.PauseMenu) 
+		if (newUIState == UIState.PauseMenu) 
 		{
-			previousUIState = UIState.PauseMenu;
+			uiState = UIState.PauseMenu;
 			pauseMenu.EnableOverlay(true);
 		} 
 		else
 			pauseMenu.EnableOverlay(false);
 
-		if (uiState == UIState.LevelFail) 
+		if (newUIState == UIState.LevelFail) 
 		{
-			previousUIState = UIState.LevelFail;
+			uiState = UIState.LevelFail;
 			levelFail.EnableOverlay(true);
 		} 
 		else
 			levelFail.EnableOverlay(false);
 
-		if (uiState == UIState.LevelSuccess) 
+		if (newUIState == UIState.LevelSuccess) 
 		{
-			previousUIState = UIState.LevelSuccess;
+			uiState = UIState.LevelSuccess;
 			levelSuccess.EnableOverlay(true);
 		} 
 		else
 			levelSuccess.EnableOverlay(false);
 
-		if (uiState == UIState.Credits) 
+		if (newUIState == UIState.Credits) 
 		{
-			previousUIState = UIState.Credits;
+			uiState = UIState.Credits;
 			creditMenu.EnableOverlay(true);
 		}
 		else

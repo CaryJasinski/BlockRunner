@@ -3,13 +3,22 @@ using System.Collections;
 
 public class PlatformManager : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
+	private GameObject[] m_moveablePlatforms;
+
+	public void InitializePlatorms()
+	{
+		m_moveablePlatforms = GameObject.FindGameObjectsWithTag ("MasterPlatform");
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	public void ResetPlatformPositions()
+	{
+		foreach(GameObject platform in m_moveablePlatforms)
+		{
+			if(platform.GetComponent<GodPlatform>() != null)
+			{
+				if(platform.GetComponent<GodPlatform>().platformType != GodPlatform.PlatformType.Static)
+					platform.transform.position = platform.GetComponent<GodPlatform>().GetStartPosition();
+			}
+		}
 	}
 }

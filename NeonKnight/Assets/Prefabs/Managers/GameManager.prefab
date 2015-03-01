@@ -9,7 +9,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400006}
-  - 114: {fileID: 11452536}
+  - 114: {fileID: 11426622}
+  - 114: {fileID: 11426620}
+  - 114: {fileID: 11472748}
+  - 114: {fileID: 11472746}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -40,12 +43,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1a32a0d4a0ee064fa17bd43187aa45c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  megaByteManager: {fileID: 0}
-  platformHolder: {fileID: 0}
+  sceneLoader: {fileID: 11426622}
+  audioManager: {fileID: 11426620}
+  cameraManager: {fileID: 0}
+  gameState: 0
   bitValue: 1
   byteValue: 8
---- !u!114 &11452536
+--- !u!114 &11426620
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2558fccec6321948be4020e3f61113f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11426622
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c2ebd42c862a0849b619bb67205c001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadState: 2
+--- !u!114 &11472746
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -56,10 +83,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a57265d69c42eb49a68c61295e9d7f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLives: 3
+  playerLives: 5
   bits: 0
   lastLevelCompleted: 0
-  levelUnlocks: 01000000000000000000
+  levelUnlocks: 00000000000000000000
+--- !u!114 &11472748
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a478c1cd1202fea4ead8f2226c86f5f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraPrefab: {fileID: 100000, guid: 44af594466d79cc4b905a7699e73885f, type: 2}
+  cameraInstance: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
