@@ -6,7 +6,6 @@ public class Pausing : MonoBehaviour {
 	public void PauseGame()
 	{
 		Debug.Log("Pause");
-		GameManager.manager.gameState = GameManager.GameState.Paused;
 		LevelManager.manager.DisablePlayer();
 		UIManager.manager.SetUIState(UIManager.UIState.PauseMenu);
 	}
@@ -14,7 +13,6 @@ public class Pausing : MonoBehaviour {
 	public void ResumeGame()
 	{
 		Debug.Log("Resume");
-		GameManager.manager.gameState = GameManager.GameState.InGame;
 		LevelManager.manager.EnablePlayer();
 		UIManager.manager.SetUIState(UIManager.UIState.InGameUI);
 	}
