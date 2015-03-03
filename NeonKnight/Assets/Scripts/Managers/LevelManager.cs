@@ -4,11 +4,13 @@ using System.Collections;
 public class LevelManager : MonoBehaviour {
 
 	public static LevelManager manager;
-
+	public PlayerManager playerManager;
 
 	void Awake()
 	{          
 		manager = this;
+
+		playerManager = GetComponent<PlayerManager>();
 	}
 
 	public GameObject GetPlayerInstance()

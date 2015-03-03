@@ -5,7 +5,7 @@ public class PlayerManager : MonoBehaviour {
 
 	public GameObject playerPrefab;
 	public Transform playerStartMarker;
-	private GameObject playerInstance = null;
+	public GameObject playerInstance = null;
 
 	public void InitializePlayer()
 	{

@@ -16,9 +16,15 @@ public class LevelSelectManager : MonoBehaviour {
 		}
 	}
 
-	public void OpenLevel()
+	public void OpenTutorial()
 	{
-		SceneLoader.manager.SetLevel(1);
+		SceneLoader.manager.SetLevel("Level 1");
+		GameManager.manager.SetGameState(GameManager.GameState.InGame);
+	}
+
+	public void OpenLevelOne()
+	{
+		SceneLoader.manager.SetLevel("LevelPrototype");
 		GameManager.manager.SetGameState(GameManager.GameState.InGame);
 	}
 }
