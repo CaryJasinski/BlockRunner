@@ -65,7 +65,6 @@
      <Compile Include="Assets\Scripts\Gameplay\MegaByteCollect.cs" />
      <Compile Include="Assets\Scripts\Gameplay\ParticleBehavior.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Portal.cs" />
-     <Compile Include="Assets\Scripts\Gameplay\Tutorial\TutorialText.cs" />
      <Compile Include="Assets\Scripts\Managers\CameraManager.cs" />
      <Compile Include="Assets\Scripts\Managers\CollectibleManager.cs" />
      <Compile Include="Assets\Scripts\Managers\LevelManager.cs" />

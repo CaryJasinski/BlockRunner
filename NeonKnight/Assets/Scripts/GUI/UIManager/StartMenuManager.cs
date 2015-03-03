@@ -20,4 +20,14 @@ public class StartMenuManager : MonoBehaviour
 	{
 		UIManager.manager.SetUIState(UIManager.UIState.WorldSelect);
 	}
+
+	public void OpenStartMenu()
+	{
+		UIManager.manager.SetUIState(UIManager.UIState.StartMenu);
+	}
+
+	public void OpenCredits()
+	{
+		UIManager.manager.SetUIState(UIManager.UIState.Credits);
+	}
 }

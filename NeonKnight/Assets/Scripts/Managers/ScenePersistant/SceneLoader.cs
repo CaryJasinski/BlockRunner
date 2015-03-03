@@ -30,6 +30,11 @@ public class SceneLoader : MonoBehaviour {
 		Application.LoadLevel(currLevelIndex);
 	}
 
+	public void ReloadScene()
+	{
+		Application.LoadLevel(Application.loadedLevel);
+	}
+
 	public void SetLevel(int levelIndex)
 	{
 		previousLevelIndex = Application.loadedLevel;
