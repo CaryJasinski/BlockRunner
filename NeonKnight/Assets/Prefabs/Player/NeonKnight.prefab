@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMotorState: 2
-  jumpState: 0
+  jumpState: 2
   jumpTypeState: 0
   moveSpeed: 7
   acceleration: 2000

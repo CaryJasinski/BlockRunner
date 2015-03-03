@@ -79,6 +79,15 @@ public class PlayerScript: MonoBehaviour
 		}
 	}
 
+//	void OnTap (TapGesture gesture)
+//	{
+//		Debug.Log(gesture.Recognizer.name);
+//		if(playerMotorState != PlayerMotorState.disabled)
+//		{
+//			Jump ();
+//		}
+//	}
+
 	public void Jump()
 	{
 		if(jumpState == JumpState.grounded)

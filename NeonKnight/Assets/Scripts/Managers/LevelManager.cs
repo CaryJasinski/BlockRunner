@@ -5,9 +5,15 @@ public class LevelManager : MonoBehaviour {
 
 	public static LevelManager manager;
 
+
 	void Awake()
 	{          
 		manager = this;
+	}
+
+	public GameObject GetPlayerInstance()
+	{
+		return GetComponent<PlayerManager>().GetPlayer();
 	}
 
 	public void EnablePlayer()

@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour {
 	public enum GameState { Splash, Menus, InGame, Paused, Empty}
 	public GameState gameState = GameState.Splash;
 
+	public float onStartRunDelay = 0.25f;
 	public int bitValue = 1;
 	public int byteValue = 8;
 
@@ -55,9 +56,14 @@ public class GameManager : MonoBehaviour {
 
 	public void StartRun()
 	{
-		LevelManager.manager.EnablePlayer();
+		StartCoroutine(DelayStart());
 	}
 
+	IEnumerator DelayStart()
+	{
+		yield return new WaitForSeconds(onStartRunDelay);
+		LevelManager.manager.EnablePlayer();
+	}
 	public void KillPlayer()
 	{
 		if(PersistantData.data.playerLives > 0)

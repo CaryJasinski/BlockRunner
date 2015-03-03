@@ -45,20 +45,18 @@ public class FingerDebug : MonoBehaviour
             distance = -1;
         }
 
-        int i = 0;
-        for( ; i < FingerGestures.Touches.Count; ++i )
-        {
-            FingerGestures.Finger finger = FingerGestures.Touches[i];
 
-            Rect inset = icons[i].pixelInset;
-            inset.x = finger.Position.x - inset.width/2;
-            inset.y = finger.Position.y - inset.height/2;
-            icons[i].pixelInset = inset;
-            icons[i].enabled = true;
-        }
+        FingerGestures.Finger finger = FingerGestures.Touches[0];
 
-        for( ; i < icons.Length; ++i )
-            icons[i].enabled = false;
+        Rect inset = icons[0].pixelInset;
+        inset.x = finger.Position.x - inset.width/2;
+        inset.y = finger.Position.y - inset.height/2;
+        icons[0].pixelInset = inset;
+        icons[0].enabled = true;
+        
+
+
+        icons[0].enabled = false;
     }
 
     void OnGUI()

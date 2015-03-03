@@ -1016,7 +1016,7 @@ Transform:
   m_Children:
   - {fileID: 2008280801}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1 &170804344
 GameObject:
   m_ObjectHideFlags: 0
@@ -6099,7 +6099,7 @@ Transform:
   - {fileID: 332881925}
   - {fileID: 1562264614}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1 &999140492
 GameObject:
   m_ObjectHideFlags: 0
@@ -9347,7 +9347,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 26f7f528588b20d40b30bf89892375f2, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5800000, guid: 26f7f528588b20d40b30bf89892375f2, type: 2}
       propertyPath: m_Radius

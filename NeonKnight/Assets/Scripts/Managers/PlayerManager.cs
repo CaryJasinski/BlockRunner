@@ -35,4 +35,9 @@ public class PlayerManager : MonoBehaviour {
 		playerInstance.transform.position = playerStartMarker.position;
 		DisablePlayer();
 	}
+
+	public GameObject GetPlayer()
+	{
+		return playerInstance;
+	}
 }
