@@ -66,9 +66,9 @@ public class CameraLock : MonoBehaviour {
 		Vector3 playerPos = Vector3.zero;
 		float cameraYOffset = 0f;
 		
-		if(target.rigidbody2D.velocity.y < 0 && target.rigidbody2D.velocity.y < -15)
+		if(target.GetComponent<Rigidbody2D>().velocity.y < 0 && target.GetComponent<Rigidbody2D>().velocity.y < -15)
 		{
-			cameraYOffset = target.rigidbody2D.velocity.y*0.75f;
+			cameraYOffset = target.GetComponent<Rigidbody2D>().velocity.y*0.75f;
 		}
 		
 		playerPos.x = target.transform.position.x + playerXOffset;

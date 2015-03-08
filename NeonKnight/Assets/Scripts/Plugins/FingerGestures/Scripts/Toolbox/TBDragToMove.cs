@@ -37,20 +37,20 @@ public class TBDragToMove : MonoBehaviour
             {
                 dragging = value;
 
-                if( rigidbody )
+                if( GetComponent<Rigidbody>() )
                 {
                     if( dragging )
                     {
-                        oldUseGravity = rigidbody.useGravity;
-                        oldIsKinematic = rigidbody.isKinematic;
-                        rigidbody.useGravity = false;
-                        rigidbody.isKinematic = true;
+                        oldUseGravity = GetComponent<Rigidbody>().useGravity;
+                        oldIsKinematic = GetComponent<Rigidbody>().isKinematic;
+                        GetComponent<Rigidbody>().useGravity = false;
+                        GetComponent<Rigidbody>().isKinematic = true;
                     }
                     else
                     {
-                        rigidbody.isKinematic = oldIsKinematic;
-                        rigidbody.useGravity = oldUseGravity;
-                        rigidbody.velocity = Vector3.zero;
+                        GetComponent<Rigidbody>().isKinematic = oldIsKinematic;
+                        GetComponent<Rigidbody>().useGravity = oldUseGravity;
+                        GetComponent<Rigidbody>().velocity = Vector3.zero;
                     }
                 }
             }
@@ -153,7 +153,7 @@ void HandleDrag( DragGesture gesture )
                 }
             }
 
-            if( rigidbody )
+            if( GetComponent<Rigidbody>() )
                 physxDragMove += move; // this will be used in FixedUpdate() to properly move the rigidbody
             else
                 tf.position += move;
@@ -167,10 +167,10 @@ void HandleDrag( DragGesture gesture )
 
     void FixedUpdate()
     {
-        if( Dragging && rigidbody )
+        if( Dragging && GetComponent<Rigidbody>() )
         {
             // use MovePosition() for physics objects
-            rigidbody.MovePosition( rigidbody.position + physxDragMove );
+            GetComponent<Rigidbody>().MovePosition( GetComponent<Rigidbody>().position + physxDragMove );
 
             // reset the accumulated drag amount value 
             physxDragMove = Vector3.zero;

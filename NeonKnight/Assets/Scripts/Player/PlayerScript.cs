@@ -54,7 +54,7 @@ public class PlayerScript: MonoBehaviour
 	{
 		HandleInput ();
 
-		if(rigidbody2D.velocity.y < -0.5f)
+		if(GetComponent<Rigidbody2D>().velocity.y < -0.5f)
 		{
 			jumpState = JumpState.falling;
 		}
@@ -94,7 +94,7 @@ public class PlayerScript: MonoBehaviour
 		{
 			jumpState = JumpState.jumping;
 			m_JumpHeight = GetJumpHeight();
-			this.rigidbody2D.velocity = new Vector2 (moveSpeed, m_JumpHeight);
+			this.GetComponent<Rigidbody2D>().velocity = new Vector2 (moveSpeed, m_JumpHeight);
 			StartCoroutine(JumpAnimation());
 		}
 	}
@@ -116,8 +116,8 @@ public class PlayerScript: MonoBehaviour
 		switch(playerMotorState)
 		{
 		case PlayerMotorState.walking:
-			this.rigidbody2D.isKinematic = false;
-			this.rigidbody2D.velocity = new Vector2(moveSpeed, this.rigidbody2D.velocity.y);
+			this.GetComponent<Rigidbody2D>().isKinematic = false;
+			this.GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, this.GetComponent<Rigidbody2D>().velocity.y);
 			break;
 		case PlayerMotorState.running:
 
@@ -125,8 +125,8 @@ public class PlayerScript: MonoBehaviour
 		case PlayerMotorState.disabled:
 		default:
 			//canJump = false;
-			this.rigidbody2D.isKinematic = true;
-			this.rigidbody2D.velocity = Vector2.zero;
+			this.GetComponent<Rigidbody2D>().isKinematic = true;
+			this.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 			break; 
 		}
 	}
@@ -134,7 +134,7 @@ public class PlayerScript: MonoBehaviour
 	void OnTriggerEnter2D (Collider2D other)
 	{
 		if(other.CompareTag ("platform"))
-			rigidbody2D.gravityScale = 20.0f;
+			GetComponent<Rigidbody2D>().gravityScale = 20.0f;
 		if(other.CompareTag("JumpPad"))
 			jumpTypeState = JumpTypeState.super;
 		if(other.tag == "collectibleIcon")
@@ -144,7 +144,7 @@ public class PlayerScript: MonoBehaviour
 	void OnTriggerExit2D (Collider2D other)
 	{
 		if(other.CompareTag ("platform"))
-			rigidbody2D.gravityScale = 3.0f;
+			GetComponent<Rigidbody2D>().gravityScale = 3.0f;
 		if(other.CompareTag("JumpPad"))
 			jumpTypeState = JumpTypeState.normal;
 	}

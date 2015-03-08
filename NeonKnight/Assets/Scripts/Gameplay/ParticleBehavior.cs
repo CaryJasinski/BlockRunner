@@ -9,7 +9,7 @@ public class ParticleBehavior : MonoBehaviour {
 	
 	void Start ()
 	{
-		this.rigidbody2D.AddForce(new Vector2(Random.Range(500, 750), Random.Range(-100, 100)));
+		this.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(500, 750), Random.Range(-100, 100)));
 	}
 	
 	void Update () 
