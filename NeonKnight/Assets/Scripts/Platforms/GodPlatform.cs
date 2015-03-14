@@ -298,37 +298,37 @@ public class GodPlatform : MonoBehaviour {
 
 	void HorizontalPlatformConstraints()
 	{
-		transform.position = new Vector2(transform.position.x, startPosition.y);
+		transform.position = new Vector3(transform.position.x, startPosition.y, 0);
 		if(m_positive) 
 		{
-			if(transform.position.x < centerPosition.x - fltSolutionOffset/8)
-				transform.position = Vector3.SmoothDamp(transform.position, startPosition, ref velocity, fltSnappingSpeed);
-			else
-				transform.position = Vector3.SmoothDamp(transform.position, solutionPosition, ref velocity, fltSnappingSpeed);
+//			if(transform.position.x < centerPosition.x - fltSolutionOffset/8)
+//				transform.position = Vector3.SmoothDamp(transform.position, startPosition, ref velocity, fltSnappingSpeed);
+//			else
+//				transform.position = Vector3.SmoothDamp(transform.position, solutionPosition, ref velocity, fltSnappingSpeed);
 			
 			if(this.transform.position.x >= solutionPosition.x)
 			{
-				this.transform.position = new Vector2(solutionPosition.x, transform.position.y);
+				this.transform.position = new Vector3(solutionPosition.x, transform.position.y, 0);
 			}
 			if(this.transform.position.x <= startPosition.x)
 			{
-				this.transform.position = new Vector2(startPosition.x, transform.position.y);
+				this.transform.position = new Vector3(startPosition.x, transform.position.y, 0);
 			}
 		}
 		else
 		{
-			if(transform.position.x < centerPosition.x - fltSolutionOffset/8)
-				transform.position = Vector3.SmoothDamp(transform.position, solutionPosition, ref velocity, fltSnappingSpeed);
-			else
-				transform.position = Vector3.SmoothDamp(transform.position, startPosition, ref velocity, fltSnappingSpeed);
+//			if(transform.position.x < centerPosition.x - fltSolutionOffset/8)
+//				transform.position = Vector3.SmoothDamp(transform.position, solutionPosition, ref velocity, fltSnappingSpeed);
+//			else
+//				transform.position = Vector3.SmoothDamp(transform.position, startPosition, ref velocity, fltSnappingSpeed);
 			
 			if(this.transform.position.x >= startPosition.x)
 			{
-				this.transform.position = new Vector2(startPosition.x, transform.position.y);
+				this.transform.position = new Vector3(startPosition.x, transform.position.y, 0);
 			}
 			if(this.transform.position.x <= solutionPosition.x)
 			{
-				this.transform.position = new Vector2(solutionPosition.x, transform.position.y);
+				this.transform.position = new Vector3(solutionPosition.x, transform.position.y, 0);
 			}
 		}
 	}
