@@ -10,6 +10,7 @@ public class CameraLock : MonoBehaviour {
 
 	public GameObject target;
 	public float playerXOffset = 7f;
+	public float playerYOffset = 0f;
 	public float smoothTime = 0.5f;
 	private Vector3 velocity = Vector3.zero;
 
@@ -72,7 +73,7 @@ public class CameraLock : MonoBehaviour {
 		}
 		
 		playerPos.x = target.transform.position.x + playerXOffset;
-		playerPos.y = target.transform.position.y + cameraYOffset;
+		playerPos.y = target.transform.position.y + cameraYOffset + playerYOffset;
 		playerPos.z = -10f;
 		
 		transform.position = Vector3.SmoothDamp(transform.position, playerPos, ref velocity, smoothTime);

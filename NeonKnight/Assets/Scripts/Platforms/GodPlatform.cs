@@ -301,10 +301,10 @@ public class GodPlatform : MonoBehaviour {
 		transform.position = new Vector3(transform.position.x, startPosition.y, 0);
 		if(m_positive) 
 		{
-//			if(transform.position.x < centerPosition.x - fltSolutionOffset/8)
-//				transform.position = Vector3.SmoothDamp(transform.position, startPosition, ref velocity, fltSnappingSpeed);
-//			else
-//				transform.position = Vector3.SmoothDamp(transform.position, solutionPosition, ref velocity, fltSnappingSpeed);
+			if(transform.position.x < centerPosition.x - fltSolutionOffset/8)
+				transform.position = Vector3.SmoothDamp(transform.position, startPosition, ref velocity, fltSnappingSpeed);
+			else
+				transform.position = Vector3.SmoothDamp(transform.position, solutionPosition, ref velocity, fltSnappingSpeed);
 			
 			if(this.transform.position.x >= solutionPosition.x)
 			{
@@ -317,10 +317,10 @@ public class GodPlatform : MonoBehaviour {
 		}
 		else
 		{
-//			if(transform.position.x < centerPosition.x - fltSolutionOffset/8)
-//				transform.position = Vector3.SmoothDamp(transform.position, solutionPosition, ref velocity, fltSnappingSpeed);
-//			else
-//				transform.position = Vector3.SmoothDamp(transform.position, startPosition, ref velocity, fltSnappingSpeed);
+			if(transform.position.x < centerPosition.x - fltSolutionOffset/8)
+				transform.position = Vector3.SmoothDamp(transform.position, solutionPosition, ref velocity, fltSnappingSpeed);
+			else
+				transform.position = Vector3.SmoothDamp(transform.position, startPosition, ref velocity, fltSnappingSpeed);
 			
 			if(this.transform.position.x >= startPosition.x)
 			{
