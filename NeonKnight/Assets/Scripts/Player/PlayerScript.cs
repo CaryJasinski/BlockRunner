@@ -12,8 +12,8 @@ public class PlayerScript: MonoBehaviour
 	public enum JumpTypeState { normal, super }
 	public JumpTypeState jumpTypeState = JumpTypeState.normal;
 
-	public float moveSpeed = 7;
-	public float acceleration = 20;
+	public float walkingSpeed = 3;
+	public float runningSpeed = 7;
 	public float jumpHeight = 11;
 	public float superJumpHeight = 17.5f;
 	public bool canJump = true;
@@ -33,41 +33,19 @@ public class PlayerScript: MonoBehaviour
 	void Start () 
 	{	
 		playerAnimator.SetInteger("Movement", 1);
-
-		if (Application.loadedLevelName == "Level 1") 
-		{
-			canJump = false;
-			moveSpeed = 5;
-			jumpHeight = 10;
-			superJumpHeight = 15;
-		} 
-		else 
-		{
-			canJump = true;
-			moveSpeed = 7;
-			jumpHeight = 11;
-			superJumpHeight = 17.5f;
-		}
 	}
 
 	void Update ()
 	{
 		HandleInput ();
+		MovePlayer();
 
 		if(GetComponent<Rigidbody2D>().velocity.y < -0.5f)
-		{
 			jumpState = JumpState.falling;
-		}
-
-		if(playerMotorState == PlayerMotorState.disabled)
-			playerAnimator.speed = 0;
-		else
-			playerAnimator.speed = 1;
 	}
 
 	void FixedUpdate () 
 	{
-		MovePlayer();
 	}
 
 	void HandleInput ()
@@ -94,7 +72,7 @@ public class PlayerScript: MonoBehaviour
 		{
 			jumpState = JumpState.jumping;
 			m_JumpHeight = GetJumpHeight();
-			this.GetComponent<Rigidbody2D>().velocity = new Vector2 (moveSpeed, m_JumpHeight);
+			this.GetComponent<Rigidbody2D>().velocity = new Vector2 (walkingSpeed, m_JumpHeight);
 			StartCoroutine(JumpAnimation());
 		}
 	}
@@ -116,15 +94,18 @@ public class PlayerScript: MonoBehaviour
 		switch(playerMotorState)
 		{
 		case PlayerMotorState.walking:
+			playerAnimator.speed = 0.5f;
 			this.GetComponent<Rigidbody2D>().isKinematic = false;
-			this.GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, this.GetComponent<Rigidbody2D>().velocity.y);
+			this.GetComponent<Rigidbody2D>().velocity = new Vector2(walkingSpeed, this.GetComponent<Rigidbody2D>().velocity.y);
 			break;
 		case PlayerMotorState.running:
-
+			playerAnimator.speed = 1f;
+			this.GetComponent<Rigidbody2D>().isKinematic = false;
+			this.GetComponent<Rigidbody2D>().velocity = new Vector2(runningSpeed, this.GetComponent<Rigidbody2D>().velocity.y);
 			break;
 		case PlayerMotorState.disabled:
 		default:
-			//canJump = false;
+			playerAnimator.speed = 0;
 			this.GetComponent<Rigidbody2D>().isKinematic = true;
 			this.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 			break; 
