@@ -21,7 +21,7 @@ public class PlayerManager : MonoBehaviour {
 	public void EnablePlayer()
 	{
 		PlayerScript playerScript = playerInstance.GetComponent<PlayerScript>();
-		playerScript.playerMotorState = PlayerScript.PlayerMotorState.walking;
+		playerScript.playerMotorState = PlayerScript.PlayerMotorState.running;
 	}
 
 	public void DisablePlayer()

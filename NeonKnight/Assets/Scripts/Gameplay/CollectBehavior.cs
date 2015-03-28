@@ -44,15 +44,16 @@ public class CollectBehavior : MonoBehaviour {
 
 	void CollectBit()
 	{
-		PersistantData.data.bits += GameManager.manager.bitValue;
+		LevelManager.manager.collectibleManager.AddCollectibleScore (GameManager.manager.bitValue);
+		//PersistantData.data.bits += GameManager.manager.bitValue;
 		gameObject.SetActive(false);
 		SpawnParticles();
 	}
 
 	void CollectByte()
 	{
-		Debug.Log("Hit");
-		PersistantData.data.bits += GameManager.manager.byteValue;
+		LevelManager.manager.collectibleManager.AddCollectibleScore (GameManager.manager.byteValue);
+		//PersistantData.data.bits += GameManager.manager.byteValue;
 		gameObject.SetActive(false);
 		SpawnParticles();
 	}
@@ -64,7 +65,5 @@ public class CollectBehavior : MonoBehaviour {
 		Instantiate(collectParticle, CollectPosition, Quaternion.identity);
 		Instantiate(collectParticle, CollectPosition, Quaternion.identity);
 		Instantiate(collectParticle, CollectPosition, Quaternion.identity);
-		Instantiate(collectParticle, CollectPosition, Quaternion.identity);
-		Instantiate(collectParticle, CollectPosition, Quaternion.identity);	
 	}
 }

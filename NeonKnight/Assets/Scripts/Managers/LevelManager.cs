@@ -5,12 +5,14 @@ public class LevelManager : MonoBehaviour {
 
 	public static LevelManager manager;
 	public PlayerManager playerManager;
+	public CollectibleManager collectibleManager;
 
 	void Awake()
 	{          
 		manager = this;
 
 		playerManager = GetComponent<PlayerManager>();
+		collectibleManager = GetComponent<CollectibleManager> ();
 	}
 
 	public GameObject GetPlayerInstance()
@@ -31,18 +33,18 @@ public class LevelManager : MonoBehaviour {
 	//Everything that needs to be setup when the level is first loaded.
 	public void InitializeLevel()
 	{
-		GetComponent<PlayerManager>().InitializePlayer();
+		playerManager.InitializePlayer();
+		collectibleManager.InitializeCollectibles();
 		GetComponent<PlatformManager>().InitializePlatorms();
-		GetComponent<CollectibleManager>().InitializeCollectibles();
 		GetComponent<MegaByteManager>().LoadCollectedMegaBytes();
 	}
 	
 	//Everything that needs to be reset upon player death 
 	public void ResetLevel()
 	{
-		GetComponent<PlayerManager>().ResetPlayer();
+		playerManager.ResetPlayer();
+		collectibleManager.ResetCollectibles();
 		GetComponent<PlatformManager>().ResetPlatformPositions();
-		GetComponent<CollectibleManager>().ResetCollectibles();
 		GetComponent<MegaByteManager>().LoadCollectedMegaBytes();
 	}
 }

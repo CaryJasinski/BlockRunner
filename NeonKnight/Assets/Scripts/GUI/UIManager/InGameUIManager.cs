@@ -8,7 +8,7 @@ public class InGameUIManager : MonoBehaviour
 	public Canvas inGameUICanvas;
 	public Text lifeTextHolder;
 	public Text collectibleTextHolder;
-	public Text maxCollectibleTextHolder;
+	//public Text maxCollectibleTextHolder;
 	public Canvas startRunCanvas;
 
 
@@ -28,7 +28,8 @@ public class InGameUIManager : MonoBehaviour
 		if(inGameUICanvas.enabled)
 		{
 			lifeTextHolder.text = PersistantData.data.playerLives.ToString();
-			collectibleTextHolder.text = PersistantData.data.bits.ToString();
+			//collectibleTextHolder.text = PersistantData.data.bits.ToString();
+			collectibleTextHolder.text = LevelManager.manager.collectibleManager.GetCollectibleScore().ToString();
 		}
 	}
 }
