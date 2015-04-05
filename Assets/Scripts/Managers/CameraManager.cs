@@ -23,7 +23,7 @@ public class CameraManager : MonoBehaviour {
 			cameraInstance = (GameObject)Instantiate(cameraPrefab, cameraTarget.transform.position, Quaternion.identity);
 		}
 
-		if(cameraInstance !=null)
+		if(cameraInstance != null)
 		{
 			if(cameraTarget.tag == "Player")
 			{

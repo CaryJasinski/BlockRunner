@@ -44,7 +44,8 @@ public class CollectBehavior : MonoBehaviour {
 
 	void CollectBit()
 	{
-		LevelManager.manager.collectibleManager.AddCollectibleScore (GameManager.manager.bitValue);
+		if(GameManager.manager != null)
+			LevelManager.manager.collectibleManager.AddCollectibleScore (GameManager.manager.bitValue);
 		//PersistantData.data.bits += GameManager.manager.bitValue;
 		gameObject.SetActive(false);
 		SpawnParticles();

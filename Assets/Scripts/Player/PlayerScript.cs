@@ -42,6 +42,8 @@ public class PlayerScript: MonoBehaviour
 
 		if(GetComponent<Rigidbody2D>().velocity.y < -0.5f)
 			jumpState = JumpState.falling;
+		if(GetComponent<Rigidbody2D>().velocity.y < -10)
+			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, -17);
 	}
 
 	void FixedUpdate () 

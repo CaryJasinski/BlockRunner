@@ -65,15 +65,15 @@ public class CameraLock : MonoBehaviour {
 	private void TargetTypePlayer()
 	{
 		Vector3 playerPos = Vector3.zero;
-		float cameraYOffset = 0f;
+		//float cameraYOffset = 0f;
 		
-		if(target.GetComponent<Rigidbody2D>().velocity.y < 0 && target.GetComponent<Rigidbody2D>().velocity.y < -15)
-		{
-			cameraYOffset = target.GetComponent<Rigidbody2D>().velocity.y*0.75f;
-		}
+		if(target.GetComponent<Rigidbody2D>().velocity.y < 0 && target.GetComponent<Rigidbody2D>().velocity.y < -10)
+			playerYOffset = Mathf.Lerp(playerYOffset, -6, Time.fixedDeltaTime*7);
+		else
+			playerYOffset = Mathf.Lerp(playerYOffset, 1, Time.fixedDeltaTime*10);
 		
 		playerPos.x = target.transform.position.x + playerXOffset;
-		playerPos.y = target.transform.position.y + cameraYOffset + playerYOffset;
+		playerPos.y = target.transform.position.y + playerYOffset;
 		playerPos.z = -10f;
 		
 		transform.position = Vector3.SmoothDamp(transform.position, playerPos, ref velocity, smoothTime);

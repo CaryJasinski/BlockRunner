@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Portal : MonoBehaviour {
 
+	public float disablePlayerDuration = 0.5f;
 	public GameObject exitPortal;
 
 #if UNITY_EDITOR
@@ -18,6 +19,7 @@ public class Portal : MonoBehaviour {
 		if(collider.CompareTag("Player"))
 		{
 			collider.transform.position = exitPortal.transform.position;
+			LevelManager.manager.playerManager.DisablePlayerForDuration(disablePlayerDuration);
 		}
 	}
 }

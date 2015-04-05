@@ -30,6 +30,19 @@ public class PlayerManager : MonoBehaviour {
 		playerScript.playerMotorState = PlayerScript.PlayerMotorState.disabled;
 	}
 
+	public void DisablePlayerForDuration(float disableDuration)
+	{
+		StartCoroutine(DisablePlayerCorutine(disableDuration));
+	}
+
+	IEnumerator DisablePlayerCorutine(float disableDuration)
+	{
+		PlayerScript playerScript = playerInstance.GetComponent<PlayerScript>();
+		playerScript.playerMotorState = PlayerScript.PlayerMotorState.disabled;
+		yield return new WaitForSeconds(disableDuration);
+		playerScript.playerMotorState = PlayerScript.PlayerMotorState.running;
+	}
+
 	public void ResetPlayer()
 	{
 		playerInstance.transform.position = playerStartMarker.position;
